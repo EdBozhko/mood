@@ -1,0 +1,39 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": false,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmitOnError": true,
+    "jsx": "preserve",
+    "types": [
+      "node",
+      "jest",
+      "jasmine",
+      "react",
+      "styled-components",
+      "styled-theming",
+      "prop-types"
+    ],
+    "baseUrl": ".",
+    "paths": {
+      "@comp/*": ["components/*"],
+      "@utils/*": ["utils/*"],
+      "@public/*": ["public/*"],
+      "@customTypes/*": ["customTypes/*"],
+      "@themeConfigs/*": ["themeConfigs/*"],
+      "@img/*": ["public/static/images/*"]
+    }
+  },
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "next-sitemap.js"],
+  "exclude": ["node_modules"]
+}
