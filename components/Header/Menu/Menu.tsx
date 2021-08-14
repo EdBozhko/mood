@@ -18,11 +18,11 @@ const data = [
   },
   {
     value: 'етапи роботи',
-    link: '/work-stages',
+    link: '/stages',
   },
   {
     value: 'про нас',
-    link: '/about-us',
+    link: '/about',
   },
   {
     value: 'контакти',
