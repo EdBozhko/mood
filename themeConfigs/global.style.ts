@@ -19,6 +19,7 @@ body {
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
     overflow-x: hidden;
+    margin-left: 100px;
 }
 
 a {

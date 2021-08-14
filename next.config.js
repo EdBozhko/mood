@@ -10,7 +10,9 @@ const nextConfig = {
     return 'my-build-id';
   },
   distDir: 'build',
-  images: { domains: ['mood-design.com.ua'] },
+  images: {
+    disableStaticImages: true,
+  },
 };
 
 module.exports = withPlugins(

@@ -9,9 +9,10 @@ export const HeaderStyled = styled.header`
   height: 100vh;
   display: flex;
   background-color: ${theme.colors.brown};
-  box-shadow: 0px 0px 13px 8px rgba(0, 0, 0, 0.9);
+  box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.75);
   position: fixed;
-  z-index: 1;
+  z-index: 999;
+  left: 0;
 `;
 
 export const Container = styled.div`
