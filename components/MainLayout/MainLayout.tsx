@@ -10,7 +10,7 @@ const MainLayout: FC = ({ children }) => {
       <Header />
       <LineDecoration />
       {children}
-      <Footer></Footer>
+      <Footer />
     </>
   );
 };

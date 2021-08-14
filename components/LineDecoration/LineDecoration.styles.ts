@@ -29,7 +29,9 @@ const stroke = keyframes`
 export const LineBox = styled.div`
   width: 100vw;
   height: 100vh;
-  position: relative;
+  position: fixed;
+  z-index: 998;
+  pointer-events: none;
 `;
 
 export const VerticalLine = styled.span`
@@ -52,7 +54,7 @@ export const HorizontalLine = styled.span`
   background-color: white;
   opacity: 0.5;
   position: absolute;
-  right: 8.33vw;
+  right: 13vw;
   bottom: 100%;
   animation: ${horizontalLineAnimation} 0.5s both;
   animation-delay: 0.5s;
@@ -65,7 +67,7 @@ export const Circle = styled.svg`
   opacity: 0.5;
   position: absolute;
   top: 13.33vh;
-  right: 8.33vw;
+  right: 13vw;
   transform: translateX(50%) rotate(-90deg);
   .circle {
     stroke-dasharray: 2230;
