@@ -1,12 +1,12 @@
 import { createGlobalStyle } from 'styled-components';
 
-import BloggerSansLightOtf from '@public/fonts/Blogger_Sans/Blogger_Sans_Light.otf';
-import BloggerSansLightWoff from '@public/fonts/Blogger_Sans/Blogger_Sans_Light.woff';
-import BloggerSansLightWoff2 from '@public/fonts/Blogger_Sans/Blogger_Sans_Light.woff2';
+import BloggerSansLightOtf from '@public/fonts/Blogger_Sans/Bloggersanslight.ttf';
+import BloggerSansLightWoff from '@public/fonts/Blogger_Sans/Bloggersanslight.woff';
+import BloggerSansLightWoff2 from '@public/fonts/Blogger_Sans/Bloggersanslight.woff2';
 
-import BloggerSansRegularOtf from '@public/fonts/Blogger_Sans/Blogger_Sans_Regular.otf';
-import BloggerSansRegularWoff from '@public/fonts/Blogger_Sans/Blogger_Sans_Regular.woff';
-import BloggerSansRegularWoff2 from '@public/fonts/Blogger_Sans/Blogger_Sans_Regular.woff2';
+import BloggerSansRegularOtf from '@public/fonts/Blogger_Sans/Bloggersans.ttf';
+import BloggerSansRegularWoff from '@public/fonts/Blogger_Sans/Bloggersans.woff';
+import BloggerSansRegularWoff2 from '@public/fonts/Blogger_Sans/Bloggersans.woff2';
 
 import QuicksandLightOtf from '@public/fonts/Quicksand/Quicksand-Light.otf';
 import QuicksandLightTtf from '@public/fonts/Quicksand/Quicksand-Light.ttf';
