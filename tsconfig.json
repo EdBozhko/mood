@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "target": "es5",
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "lib": ["dom", "dom.iterable", "esnext", "es6"],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": false,
@@ -15,15 +15,7 @@
     "isolatedModules": true,
     "noEmitOnError": true,
     "jsx": "preserve",
-    "types": [
-      "node",
-      "jest",
-      "jasmine",
-      "react",
-      "styled-components",
-      "styled-theming",
-      "prop-types"
-    ],
+    "types": ["node", "jest", "jasmine", "react", "styled-components", "styled-theming", "prop-types"],
     "baseUrl": ".",
     "paths": {
       "@comp/*": ["components/*"],

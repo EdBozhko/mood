@@ -2,6 +2,7 @@ export default {
   colors: {
     brown: '#323030',
     golden: '#c29545',
+    beige: '#cdbea7',
     // primary: {
     //   black: '#181716',
     //   white: '#FFFFFF',

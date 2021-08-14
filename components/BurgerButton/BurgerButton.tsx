@@ -3,14 +3,13 @@ import { BurgerButtonStyled, LineOne, LineTwo, LineThree, LineFour, LineFive } f
 
 interface LineProps {
   children?: string;
+  isMenuOpen?: boolean;
+  onClickHandler?: () => void;
 }
 
-const BurgerButton: FC<LineProps> = ({ children }) => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  console.log(isMenuOpen);
-
+const BurgerButton: FC<LineProps> = ({ children, isMenuOpen, onClickHandler }) => {
   return (
-    <BurgerButtonStyled onClick={() => setIsMenuOpen(!isMenuOpen)} isMenuOpen={isMenuOpen}>
+    <BurgerButtonStyled onClick={onClickHandler} isMenuOpen={isMenuOpen}>
       <LineFour />
       <LineFive />
       <LineOne />
