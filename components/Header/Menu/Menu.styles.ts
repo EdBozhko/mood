@@ -47,6 +47,7 @@ export const MenuList = styled.ul`
   display: flex;
   flex-direction: column;
   padding-left: 17px;
+  overflow: hidden;
 `;
 
 export const Phone = styled.a<MenuStyledProps>`

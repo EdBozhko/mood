@@ -18,6 +18,7 @@ body {
     position: relative;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
+    overflow-x: hidden;
 }
 
 a {
