@@ -26,6 +26,9 @@ export const FooterStyled = styled.footer`
     z-index: 0;
     opacity: 0.7;
   }
+  #map {
+    height: 100%;
+  }
 `;
 
 export const MapBox = styled.div`
