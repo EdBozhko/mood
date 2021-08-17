@@ -15,7 +15,7 @@
     "isolatedModules": true,
     "noEmitOnError": true,
     "jsx": "preserve",
-    "types": ["node", "jest", "jasmine", "react", "styled-components", "styled-theming", "prop-types"],
+    "types": ["node", "jest", "react", "styled-components", "styled-theming", "prop-types"],
     "baseUrl": ".",
     "paths": {
       "@comp/*": ["components/*"],
@@ -26,6 +26,6 @@
       "@img/*": ["public/static/images/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "next-sitemap.js"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "next-sitemap.js", "additional.d.ts", "**/*.d.ts", "**/*.spec.ts"],
   "exclude": ["node_modules"]
 }

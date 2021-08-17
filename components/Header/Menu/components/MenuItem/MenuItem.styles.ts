@@ -4,6 +4,7 @@ import { screen } from '@themeConfigs/media';
 
 interface ItemProps {
   transitionDelay: string;
+  isMenuOpen: boolean;
 }
 
 export const ListItem = styled.li`
