@@ -13,7 +13,6 @@ export const Form = styled.form`
   display: flex;
   flex-grow: 1;
   flex-shrink: 0;
-  z-index: 1;
 `;
 
 export const InputBox = styled.div`
