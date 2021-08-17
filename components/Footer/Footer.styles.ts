@@ -6,7 +6,7 @@ import FooterBG from './assets/static/footerBG.jpg';
 export const FooterStyled = styled.footer`
   width: 100%;
   height: 100vh;
-  background: url(${FooterBG});
+  background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url(${FooterBG});
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -17,15 +17,6 @@ export const FooterStyled = styled.footer`
   align-items: center;
   justify-content: center;
   position: relative;
-  ::before {
-    content: '';
-    width: 100%;
-    height: 100%;
-    background-color: black;
-    position: absolute;
-    z-index: 0;
-    opacity: 0.7;
-  }
   #map {
     height: 100%;
   }
@@ -35,5 +26,4 @@ export const MapBox = styled.div`
   width: 100%;
   height: 40%;
   box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.75);
-  z-index: 1;
 `;
