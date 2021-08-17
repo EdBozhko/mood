@@ -1,11 +1,2 @@
-import React from 'react';
-
-const index = () => {
-  return (
-    <>
-      <div>index</div>
-    </>
-  );
-};
-
-export default index;
+import redirect from 'nextjs-redirect';
+export default redirect('/mood');

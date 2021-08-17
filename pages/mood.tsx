@@ -1,7 +1,8 @@
 import React, { FC } from 'react';
+import MoodPage from 'pagesLayout/Mood';
 
-const MoodPage: FC = () => {
-  return <div>mood</div>;
+const Mood: FC = () => {
+  return <MoodPage />;
 };
 
-export default MoodPage;
+export default Mood;
