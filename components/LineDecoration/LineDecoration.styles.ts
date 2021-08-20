@@ -70,8 +70,10 @@ export const Circle = styled.svg`
   right: 13vw;
   transform: translateX(50%) rotate(-90deg);
   .circle {
-    stroke-dasharray: 2230;
-    stroke-dashoffset: 2230;
+    stroke-dasharray:  2250;
+    /* stroke-dasharray: height*3.14; */
+
+    stroke-dashoffset: 2250;
     animation: ${stroke} 2s ease-out forwards;
   }
 `;
