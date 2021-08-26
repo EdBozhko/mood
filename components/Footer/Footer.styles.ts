@@ -6,7 +6,7 @@ import FooterBG from './assets/static/footerBG.jpg';
 export const FooterStyled = styled.footer`
   width: 100%;
   height: 100vh;
-  background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url(${FooterBG});
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(${FooterBG});
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;

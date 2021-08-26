@@ -6,13 +6,24 @@ export const Title = styled.span``;
 
 export const Subtitle = styled.span``;
 
-export const Heading = styled.h2``;
+export const Heading = styled.h2`
+  font-family: ${theme.fontsFamily.bloggerSans};
+  font-size: 72px;
+  font-weight: 300;
+  line-height: 86px;
+  color: ${theme.colors.orange};
+  text-shadow: 4.83px 1.294px 11.7px rgba(0, 0, 0, 0.7);
+`;
 
 export const Form = styled.form`
   width: 100%;
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
   flex-grow: 1;
   flex-shrink: 0;
+  padding-bottom: 50px;
 `;
 
 export const InputBox = styled.div`
@@ -22,9 +33,8 @@ export const InputBox = styled.div`
   box-sizing: border-box;
   padding: 20px 50px;
   display: flex;
-  margin: 0 auto;
   justify-content: space-between;
-
+  margin-top: 100px;
   > * {
     width: 30%;
   }
@@ -45,7 +55,7 @@ export const Name = styled.input`
   box-sizing: border-box;
   ::placeholder {
     color: ${theme.colors.beige};
-    opacity: 0.5;
+    opacity: 0.7;
   }
 `;
 
