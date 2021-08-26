@@ -5,6 +5,7 @@ import SocialButton from '@comp/SocialButton';
 
 interface MenuProps {
   isMenuOpen: boolean;
+  onClickHandler?: () => void;
 }
 
 const data = [
@@ -30,9 +31,9 @@ const data = [
   },
 ];
 
-const Menu: FC<MenuProps> = ({ isMenuOpen }) => {
+const Menu: FC<MenuProps> = ({ isMenuOpen, onClickHandler }) => {
   const MenuItemList = data.map((item, index) => {
-    return <MenuItem href={item.link} key={index} children={item.value} isMenuOpen={isMenuOpen} transitionDelay={`0.${index + 1}s`} />;
+    return <MenuItem href={item.link} key={index} children={item.value} isMenuOpen={isMenuOpen} transitionDelay={`0.${index + 1}s`} onClickHandler={onClickHandler} />;
   });
   return (
     <>
