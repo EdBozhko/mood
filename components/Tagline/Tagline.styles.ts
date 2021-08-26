@@ -22,6 +22,6 @@ export const TaglineSpan = styled.span`
   font-family: ${theme.fontsFamily.quicksand};
   font-weight: 300;
   font-size: 30px;
-  color: ${theme.colors.golden};
+  color: ${theme.colors.orange};
   text-transform: uppercase;
 `;
