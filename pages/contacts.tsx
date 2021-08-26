@@ -1,7 +1,8 @@
 import React, { FC } from 'react';
+import ContactsPage from 'pagesLayout/Contacts';
 
-const ContactPage: FC = () => {
-  return <div>contacts</div>;
+const Contacts: FC = () => {
+  return <ContactsPage />;
 };
 
-export default ContactPage;
+export default Contacts;
