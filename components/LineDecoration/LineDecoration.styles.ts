@@ -36,19 +36,6 @@ export const LineBox = styled.div`
 
 export const VerticalLine = styled.span`
   display: block;
-  width: 100vw;
-  height: 1px;
-  background-color: white;
-  opacity: 0.5;
-  position: absolute;
-  top: 13.33vh;
-  left: 100%;
-  animation: ${verticalLineAnimation} 0.5s both;
-  animation-delay: 0.7s;
-`;
-
-export const HorizontalLine = styled.span`
-  display: block;
   width: 1px;
   height: 100vh;
   background-color: white;
@@ -58,6 +45,19 @@ export const HorizontalLine = styled.span`
   bottom: 100%;
   animation: ${horizontalLineAnimation} 0.5s both;
   animation-delay: 0.5s;
+`;
+
+export const HorizontalLine = styled.span`
+  display: block;
+  width: 100vw;
+  height: 1px;
+  background-color: white;
+  opacity: 0.5;
+  position: absolute;
+  top: 13.33vh;
+  left: 100%;
+  animation: ${verticalLineAnimation} 0.5s both;
+  animation-delay: 0.7s;
 `;
 
 export const Circle = styled.svg`
@@ -70,10 +70,8 @@ export const Circle = styled.svg`
   right: 13vw;
   transform: translateX(50%) rotate(-90deg);
   .circle {
-    stroke-dasharray:  2250;
-    /* stroke-dasharray: height*3.14; */
-
-    stroke-dashoffset: 2250;
+    stroke-dasharray: calc(73.34vh * 3.14);
+    stroke-dashoffset: calc(73.34vh * 3.14);
     animation: ${stroke} 2s ease-out forwards;
   }
 `;
