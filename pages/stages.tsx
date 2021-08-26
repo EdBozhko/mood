@@ -1,7 +1,8 @@
 import React, { FC } from 'react';
+import StagesPage from 'pagesLayout/Stages';
 
-const StagesPage: FC = () => {
-  return <div>stages</div>;
+const Stages: FC = () => {
+  return <StagesPage />;
 };
 
-export default StagesPage;
+export default Stages;
