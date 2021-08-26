@@ -1,7 +1,8 @@
 import React, { FC } from 'react';
+import PortfolioPage from 'pagesLayout/Portfolio';
 
-const PortfolioPage: FC = () => {
-  return <div>portfolio</div>;
+const Portfolio: FC = () => {
+  return <PortfolioPage />;
 };
 
-export default PortfolioPage;
+export default Portfolio;

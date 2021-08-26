@@ -21,6 +21,9 @@ const Footer: FC<FooterProps> = ({ title, subtitle }) => {
       map = new google.maps.Map(googlemap.current, {
         center: { lat: 48.6189163, lng: 22.2980622 },
         zoom: 16,
+        streetViewControl: false,
+        fullscreenControl: false,
+        mapTypeControl: false,
         styles: [
           { elementType: 'geometry', stylers: [{ color: '#242f3e' }] },
           { elementType: 'labels.text.stroke', stylers: [{ color: '#242f3e' }] },

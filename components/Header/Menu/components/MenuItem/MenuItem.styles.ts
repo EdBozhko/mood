@@ -29,7 +29,7 @@ export const Item = styled.a<ItemProps>`
       left: 0;
       opacity: 1;
       text-decoration: none;
-      color: ${theme.colors.golden};
+      color: ${theme.colors.orange};
       font-family: ${theme.fontsFamily.bloggerSans};
       font-size: 30px;
       font-weight: 300;

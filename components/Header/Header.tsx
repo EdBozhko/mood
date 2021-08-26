@@ -8,11 +8,15 @@ import Menu from './Menu';
 
 const Header: FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const menuOpenHandler = () => {
+    setIsMenuOpen((prev) => !prev);
+    console.log(isMenuOpen);
+  };
   return (
     <>
       <HeaderStyled>
         <Container>
-          <BurgerButton onClickHandler={() => setIsMenuOpen((prev) => !prev)} isMenuOpen={isMenuOpen}>
+          <BurgerButton onClickHandler={menuOpenHandler} isMenuOpen={isMenuOpen}>
             MENU
           </BurgerButton>
           <Link href="mood" prefetch={false} passHref>
@@ -22,7 +26,7 @@ const Header: FC = () => {
           </Link>
           <Tagline firstLine="we will design" secondLine="your mood" />
         </Container>
-        <Menu isMenuOpen={isMenuOpen} />
+        <Menu isMenuOpen={isMenuOpen} onClickHandler={menuOpenHandler} />
       </HeaderStyled>
     </>
   );

@@ -3,6 +3,9 @@ export default {
     brown: '#323030',
     golden: '#c29545',
     beige: '#cdbea7',
+    grey: '#444c5c',
+    orange: '#e1b16a',
+    azure: '#78a5a3',
     // primary: {
     //   black: '#181716',
     //   white: '#FFFFFF',
