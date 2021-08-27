@@ -116,7 +116,8 @@ export const SliderContainer = styled.div`
 `;
 
 export const SliderItem = styled.div`
-  position: relative;
+  /* position: relative;
   height: 500px;
-  width: 100%;
+  width: 100%; */
+  /* margin-right: 20px; */
 `;
