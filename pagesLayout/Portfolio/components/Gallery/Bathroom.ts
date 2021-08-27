@@ -13,30 +13,44 @@ const Bathroom = {
     {
       src: Bathroom_1,
       alt: '',
+      width: 1200,
+      height: 1600, 
     },
     {
       src: Bathroom_2,
       alt: '',
+      width: 2000,
+      height: 1000, 
     },
     {
       src: Bathroom_3,
       alt: '',
+      width: 1200,
+      height: 1600, 
     },
     {
       src: Bathroom_4,
       alt: '',
+      width: 1200,
+      height: 1600, 
     },
     {
       src: Bathroom_5,
       alt: '',
+      width: 1200,
+      height: 1600, 
     },
     {
       src: Bathroom_6,
       alt: '',
+      width: 1200,
+      height: 1600, 
     },
     {
       src: Bathroom_7,
       alt: '',
+      width: 1200,
+      height: 1600, 
     },
   ],
 };
