@@ -16,7 +16,7 @@ const ContactForm: FC<ContactFormProps> = ({ title, subtitle }) => {
       </Heading>
       <InputContainer>
         <InputBox>
-          <Name type="text" placeholder={`Ваше ім'я`} required></Name>
+          <Name type="text" placeholder="Ваше ім’я" required></Name>
           <svg width="100%" height="100%">
             <rect width="100%" height="100%"></rect>
           </svg>
