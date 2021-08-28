@@ -10,7 +10,6 @@ const Header: FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const menuOpenHandler = () => {
     setIsMenuOpen((prev) => !prev);
-    console.log(isMenuOpen);
   };
   return (
     <>
@@ -21,7 +20,7 @@ const Header: FC = () => {
           </BurgerButton>
           <Link href="mood" prefetch={false} passHref>
             <a>
-              <Logo />
+              <Logo onClickHandler={() => setIsMenuOpen(false)} />
             </a>
           </Link>
           <Tagline firstLine="we will design" secondLine="your mood" />
