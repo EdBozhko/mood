@@ -5,14 +5,19 @@ import Footer from '@comp/Footer';
 import LineDecoration from '@comp/LineDecoration';
 import Preloader from '@comp/Preloader';
 
+const data = {
+  title: 'Готові розпочати проект?',
+  subtitle: 'Замовте безкоштовну консультацію',
+};
+
 const MainLayout: FC = ({ children }) => {
   return (
     <>
-              <Preloader/>
+      <Preloader />
       <LineDecoration />
       <Header />
       {children}
-      <Footer />
+      <Footer title={data.title} subtitle={data.subtitle} />
     </>
   );
 };
