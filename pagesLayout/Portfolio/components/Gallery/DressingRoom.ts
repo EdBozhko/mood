@@ -9,14 +9,20 @@ const DressingRoom = {
     {
       src: DressingRoom_1,
       alt: '',
+      width: 2000,
+      height: 1000,
     },
     {
       src: DressingRoom_2,
       alt: '',
+      width: 1113,
+      height: 1408,
     },
     {
       src: DressingRoom_3,
       alt: '',
+      width: 1113,
+      height: 1408,
     },
   ],
 };

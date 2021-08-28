@@ -12,26 +12,38 @@ const Hallway = {
     {
       src: Hallway_1,
       alt: '',
+      width: 2000,
+      height: 1000,
     },
     {
       src: Hallway_2,
       alt: '',
+      width: 2000,
+      height: 1000,
     },
     {
       src: Hallway_3,
       alt: '',
+      width: 2000,
+      height: 1000,
     },
     {
       src: Hallway_4,
       alt: '',
+      width: 1200,
+      height: 1600,
     },
     {
       src: Hallway_5,
       alt: '',
+      width: 1200,
+      height: 1600,
     },
     {
       src: Hallway_6,
       alt: '',
+      width: 1200,
+      height: 1600,
     },
   ],
 };
