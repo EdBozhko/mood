@@ -7,6 +7,10 @@ import Column_3 from './assets/static/column_3.png';
 import Column_4 from './assets/static/column_4.png';
 import GalleriesBg from './assets/static/galleries_bg.jpg';
 
+interface SliderWrapperProps {
+  isSliderOpen?: boolean;
+}
+
 const flexSlide = css`
   -webkit-flex: 1;
   /* Safari 6.1+ */
@@ -103,21 +107,72 @@ export const GalleriesItem = styled.li`
   user-select: none;
 `;
 
-export const SliderWrapper = styled.div`
-  width: 100%;
+export const SliderWrapper = styled.div<SliderWrapperProps>`
+  width: calc(100% - 100px);
   height: 100vh;
-  padding: 120px;
+  padding: 100px;
   box-sizing: border-box;
+  background: url(${GalleriesBg}) center/cover no-repeat;
+  position: fixed;
+  z-index: 1;
+  top: -100%;
+  transition: top 0.5s ease;
+  ${({ isSliderOpen }) =>
+    isSliderOpen &&
+    css`
+      top: 0;
+    `};
 `;
 
 export const SliderContainer = styled.div`
   width: 100%;
-  height: 500px;
+  height: 80%;
+  .slick-cloned {
+    display: none;
+  }
+  .slick-list {
+    overflow: visible;
+  }
+  .slick-arrow {
+    top: unset;
+    bottom: -7%;
+  }
+  .slick-prev:before,
+  .slick-next:before {
+    color: black;
+  }
+  .slick-slide {
+    position: relative;
+    img {
+      filter: grayscale(100%);
+    }
+  }
+  .slick-current {
+    img {
+      filter: grayscale(0%);
+    }
+  }
 `;
 
 export const SliderItem = styled.div`
-  /* position: relative;
-  height: 500px;
-  width: 100%; */
-  /* margin-right: 20px; */
+  margin-right: 20px;
+  img {
+    box-shadow: 4.83px 1.294px 11.7px 1.3px rgba(0, 0, 0, 0.47);
+  }
+`;
+
+export const CloseButton = styled.div`
+  width: 56px;
+  height: 56px;
+  cursor: pointer;
+  position: absolute;
+  right: 5%;
+  top: 3%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+export const Line = styled.span`
+  font-family: ${theme.fontsFamily.quicksand};
+  font-size: 20px;
 `;

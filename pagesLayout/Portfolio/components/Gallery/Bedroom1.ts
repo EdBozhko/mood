@@ -10,18 +10,26 @@ const Bedroom1 = {
     {
       src: Bedroom_1,
       alt: '',
+      width: 2000,
+      height: 1000,
     },
     {
       src: Bedroom_2,
       alt: '',
+      width: 1113,
+      height: 1408,
     },
     {
       src: Bedroom_3,
       alt: '',
+      width: 2000,
+      height: 1000,
     },
     {
       src: Bedroom_4,
       alt: '',
+      width: 1113,
+      height: 1408,
     },
   ],
 };

@@ -15,38 +15,56 @@ const Guest1 = {
     {
       src: Guest_1,
       alt: '',
+      width: 2000,
+      height: 1000,
     },
     {
       src: Guest_2,
       alt: '',
+      width: 2000,
+      height: 1000,
     },
     {
       src: Guest_3,
       alt: '',
+      width: 2000,
+      height: 1000,
     },
     {
       src: Guest_4,
       alt: '',
+      width: 2000,
+      height: 1000,
     },
     {
       src: Guest_5,
       alt: '',
+      width: 2000,
+      height: 1000,
     },
     {
       src: Guest_6,
       alt: '',
+      width: 1200,
+      height: 1600,
     },
     {
       src: Guest_7,
       alt: '',
+      width: 1200,
+      height: 1600,
     },
     {
       src: Guest_8,
       alt: '',
+      width: 1200,
+      height: 1600,
     },
     {
       src: Guest_9,
       alt: '',
+      width: 1200,
+      height: 1600,
     },
   ],
 };

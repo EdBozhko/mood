@@ -15,38 +15,56 @@ const Facade = {
     {
       src: Facade_1,
       alt: '',
+      width: 2000,
+      height: 1000,
     },
     {
       src: Facade_2,
       alt: '',
+      width: 1113,
+      height: 1408,
     },
     {
       src: Facade_3,
       alt: '',
+      width: 1113,
+      height: 1408,
     },
     {
       src: Facade_4,
       alt: '',
+      width: 1113,
+      height: 1408,
     },
     {
       src: Facade_5,
       alt: '',
+      width: 1113,
+      height: 1408,
     },
     {
       src: Facade_6,
       alt: '',
+      width: 1113,
+      height: 1408,
     },
     {
       src: Facade_7,
       alt: '',
+      width: 2000,
+      height: 1000,
     },
     {
       src: Facade_8,
       alt: '',
+      width: 1113,
+      height: 1408,
     },
     {
       src: Facade_9,
       alt: '',
+      width: 1113,
+      height: 1408,
     },
   ],
 };

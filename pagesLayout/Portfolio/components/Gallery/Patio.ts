@@ -8,10 +8,14 @@ const Patio = {
     {
       src: Patio_1,
       alt: '',
+      width: 2000,
+      height: 1000,
     },
     {
       src: Patio_2,
       alt: '',
+      width: 1113,
+      height: 1408,
     },
   ],
 };

@@ -8,10 +8,14 @@ const Guest2 = {
     {
       src: Guest_1,
       alt: '',
+      width: 2000,
+      height: 1000,
     },
     {
       src: Guest_2,
       alt: '',
+      width: 1976,
+      height: 955,
     },
   ],
 };

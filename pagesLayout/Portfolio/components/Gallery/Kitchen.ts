@@ -12,26 +12,38 @@ const Kitchen = {
     {
       src: Kitchen_1,
       alt: '',
+      width: 2000,
+      height: 1000,
     },
     {
       src: Kitchen_2,
       alt: '',
+      width: 2000,
+      height: 1000,
     },
     {
       src: Kitchen_3,
       alt: '',
+      width: 2000,
+      height: 1000,
     },
     {
       src: Kitchen_4,
       alt: '',
+      width: 1200,
+      height: 1600,
     },
     {
       src: Kitchen_5,
       alt: '',
+      width: 1200,
+      height: 1600,
     },
     {
       src: Kitchen_6,
       alt: '',
+      width: 1200,
+      height: 1600,
     },
   ],
 };
