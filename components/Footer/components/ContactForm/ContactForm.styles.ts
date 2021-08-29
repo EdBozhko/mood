@@ -3,6 +3,10 @@ import theme from '@themeConfigs/theme';
 import { screen } from '@themeConfigs/media';
 import InputMask from 'react-input-mask';
 
+interface InputBoxProps {
+  inputPerimeter?: {};
+}
+
 const InputStyle = css`
   background-color: transparent;
   border-radius: 0;
@@ -91,7 +95,7 @@ export const Name = styled.input`
 export const Phone = styled(InputMask)`
   ${InputStyle}
 `;
-export const InputBox = styled.div`
+export const InputBox = styled.div<InputBoxProps>`
   position: relative;
   svg {
     position: absolute;
@@ -106,10 +110,12 @@ export const InputBox = styled.div`
     stroke: ${theme.colors.golden};
     stroke-width: 4;
     transition: 1s;
-    stroke-dasharray: 705;
-    stroke-dashoffset: 705;
-  }
-  svg rect {
+    ${({ inputPerimeter }) =>
+      inputPerimeter &&
+      css`
+        stroke-dasharray: ${inputPerimeter};
+        stroke-dashoffset: ${inputPerimeter};
+      `}
   }
 `;
 export const Submit = styled.button`

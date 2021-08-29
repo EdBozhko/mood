@@ -4,11 +4,12 @@ import ContactForm from './components/ContactForm';
 import { Loader } from '@googlemaps/js-api-loader';
 
 interface FooterProps {
+  page?: boolean;
   title?: string;
   subtitle?: string;
 }
 
-const Footer: FC<FooterProps> = ({ title, subtitle }) => {
+const Footer: FC<FooterProps> = ({ page, title, subtitle }) => {
   const googlemap = useRef(null);
   useEffect(() => {
     const loader = new Loader({
@@ -107,9 +108,10 @@ const Footer: FC<FooterProps> = ({ title, subtitle }) => {
       });
     });
   }, []);
+
   return (
     <>
-      <FooterStyled>
+      <FooterStyled page={page}>
         <ContactForm title={title} subtitle={subtitle} />
         <MapBox>
           <div id="map" ref={googlemap}></div>

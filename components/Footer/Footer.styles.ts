@@ -1,9 +1,13 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import theme from '@themeConfigs/theme';
 import { screen } from '@themeConfigs/media';
 import FooterBG from './assets/static/footerBG.jpg';
 
-export const FooterStyled = styled.footer`
+interface FooterStyledProps {
+  page?: boolean;
+}
+
+export const FooterStyled = styled.footer<FooterStyledProps>`
   width: 100%;
   height: 100vh;
   background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(${FooterBG});
@@ -17,6 +21,11 @@ export const FooterStyled = styled.footer`
   align-items: center;
   justify-content: center;
   position: relative;
+  ${({ page }) =>
+    page &&
+    css`
+      display: none;
+    `}
   #map {
     height: 100%;
   }
