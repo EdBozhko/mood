@@ -1,3 +1,4 @@
+import React, { useState } from 'react';
 import type { AppProps } from 'next/app';
 import { ThemeProvider } from 'styled-components';
 import { Fonts } from '@themeConfigs/fonts.style';
@@ -6,13 +7,19 @@ import { GlobalStyle } from '@themeConfigs/global.style';
 import MainLayout from '@comp/MainLayout';
 
 function MyApp({ Component, pageProps }: AppProps) {
+  const [isScroll, setIsScroll] = useState(false);
+  const scrollHandler = () => {
+    setIsScroll(true);
+  };
+  console.log(isScroll);
+
   return (
     <>
       <Fonts />
       <GlobalStyle />
       <ThemeProvider theme={theme}>
-        <MainLayout>
-          <main>
+        <MainLayout isScroll={isScroll}>
+          <main onWheel={scrollHandler}>
             <Component {...pageProps} />
           </main>
         </MainLayout>
