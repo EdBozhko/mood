@@ -2,48 +2,47 @@ import styled, { createGlobalStyle, css, keyframes } from 'styled-components';
 import theme from '@themeConfigs/theme';
 import { screen } from '@themeConfigs/media';
 
-interface IconScrolProps {
+interface IconContainerProps {
   isScroll?: boolean;
 }
 
 const Mouse = keyframes`
         0% {
-          transform: translateY(0);
+          transform: translateY(0) translateX(-50%) ;
         }
         40% {
-          transform: translateY(-50%);
+          transform: translateY(-50%) translateX(-50%);
         }
         100% {
-          transform: translateY(0);
+          transform: translateY(0) translateX(-50%);
         }
 
 `;
 const Scroll = keyframes`
         0% {
           opacity: 1;
+          transform: translateX(-50%);
+
         }
         100% {
           opacity: 0;
-          transform: translateY(46px);
+          transform: translateY(46px)  translateX(-50%);
         }
 
 `;
 
-export const IconScroll = styled.div<IconScrolProps>`
-  position: fixed;
-  left: 50%;
-  /* transform: translateX(-50%); */
+export const IconScroll = styled.div`
+  position: absolute;
+  right: 50%;
   width: 40px;
   height: 70px;
-  margin-left: -20px;
   bottom: 3%;
-  margin-top: -35px;
   box-shadow: inset 0 0 0 1px #fff;
   border-radius: 25px;
-  display: ${({ isScroll }) => (isScroll ? 'none' : 'flex')};
+  display: flex;
   align-items: flex-end;
   justify-content: center;
-  z-index: 2;
+
   animation-duration: 1.5s;
   animation-iteration-count: infinite;
   animation-name: ${Mouse};
@@ -54,7 +53,6 @@ export const IconScroll = styled.div<IconScrolProps>`
     width: 8px;
     height: 8px;
     background: #fff;
-    margin-left: -4px;
     top: 8px;
     border-radius: 4px;
     animation-duration: 1.5s;
@@ -68,4 +66,13 @@ export const IconText = styled.span`
   color: white;
   font-family: ${theme.fontsFamily.quicksand};
   font-size: 15px;
+`;
+export const IconContainer = styled.div<IconContainerProps>`
+  width: 100%;
+  position: fixed;
+  z-index: 2;
+  bottom: 0;
+  padding-left: 100px;
+  box-sizing: border-box;
+  display: ${({ isScroll }) => (isScroll ? 'none' : 'flex')};
 `;

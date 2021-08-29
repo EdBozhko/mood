@@ -94,4 +94,20 @@ export const Subtitle = styled.span`
 `;
 export const TitleContainer = styled.div`
   text-align: center;
+  /* effect-shine */
+  :hover {
+    -webkit-mask-image: linear-gradient(-75deg, rgba(0, 0, 0, 0.6) 30%, #fff 50%, rgba(0, 0, 0, 0.6) 70%);
+    -webkit-mask-size: 200%;
+    animation: shine 1.2s infinite;
+  }
+
+  @keyframes shine {
+    from {
+      -webkit-mask-position: 150%;
+    }
+
+    to {
+      -webkit-mask-position: -50%;
+    }
+  }
 `;

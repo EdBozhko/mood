@@ -11,7 +11,6 @@ function MyApp({ Component, pageProps }: AppProps) {
   const scrollHandler = () => {
     setIsScroll(true);
   };
-  console.log(isScroll);
 
   return (
     <>

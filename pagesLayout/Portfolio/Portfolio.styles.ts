@@ -112,7 +112,8 @@ export const SliderWrapper = styled.div<SliderWrapperProps>`
   height: 100vh;
   padding: 100px;
   box-sizing: border-box;
-  background: url(${GalleriesBg}) center/cover no-repeat;
+  background-color: ${theme.colors.brown};
+  /* background: url(${GalleriesBg}) center/cover no-repeat; */
   position: fixed;
   z-index: 1;
   top: -100%;
@@ -139,7 +140,9 @@ export const SliderContainer = styled.div`
   }
   .slick-prev:before,
   .slick-next:before {
-    color: black;
+    color: ${theme.colors.orange};
+    opacity: 1;
+    font-size: 40px;
   }
   .slick-slide {
     position: relative;
@@ -150,6 +153,21 @@ export const SliderContainer = styled.div`
   .slick-current {
     img {
       filter: grayscale(0%);
+    }
+  }
+  .slick-dots {
+    bottom: -35px;
+    li.slick-active button:before {
+      color: ${theme.colors.orange};
+    }
+    button::before {
+      font-size: 18px;
+      color: ${theme.colors.orange};
+    }
+  }
+  .slick-:active {
+    button::before {
+      color: ${theme.colors.orange};
     }
   }
 `;
@@ -171,8 +189,9 @@ export const CloseButton = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  color: ${theme.colors.orange};
 `;
 export const Line = styled.span`
   font-family: ${theme.fontsFamily.quicksand};
-  font-size: 20px;
+  font-size: 22px;
 `;

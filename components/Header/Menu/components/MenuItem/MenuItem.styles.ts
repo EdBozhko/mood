@@ -34,5 +34,8 @@ export const Item = styled.a<ItemProps>`
       font-size: 30px;
       font-weight: 300;
       text-transform: uppercase;
+      :hover {
+        color: ${theme.colors.beige};
+      }
     `}
 `;
