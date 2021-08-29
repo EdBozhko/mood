@@ -4,13 +4,18 @@ import Header from '@comp/Header';
 import Footer from '@comp/Footer';
 import LineDecoration from '@comp/LineDecoration';
 import Preloader from '@comp/Preloader';
+import ScrollIcon from '@comp/ScrollIcon';
 
 const data = {
   title: 'Готові розпочати проект?',
   subtitle: 'Замовте безкоштовну консультацію',
 };
 
-const MainLayout: FC = ({ children }) => {
+interface MainLayoutProps {
+  isScroll?: boolean;
+}
+
+const MainLayout: FC<MainLayoutProps> = ({ children, isScroll }) => {
   const [page, setPage] = useState(null);
   useEffect(() => {
     setPage(window.location.pathname);
@@ -20,6 +25,7 @@ const MainLayout: FC = ({ children }) => {
       <Preloader />
       <LineDecoration />
       <Header />
+      <ScrollIcon isScroll={isScroll} />
       {children}
       <Footer page={page === '/mood'} title={data.title} subtitle={data.subtitle} />
     </>
