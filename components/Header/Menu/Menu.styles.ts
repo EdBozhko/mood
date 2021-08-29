@@ -62,6 +62,9 @@ export const Phone = styled.a<MenuStyledProps>`
       font-size: 36px;
       font-family: ${theme.fontsFamily.bloggerSans};
       color: ${theme.colors.beige};
+      :hover {
+        color: ${theme.colors.orange};
+      }
     `}
 `;
 

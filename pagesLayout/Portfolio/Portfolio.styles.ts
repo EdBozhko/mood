@@ -157,7 +157,11 @@ export const SliderContainer = styled.div`
   }
   .slick-dots {
     bottom: -35px;
+    li.slick-active button:before {
+      color: ${theme.colors.orange};
+    }
     button::before {
+      font-size: 18px;
       color: ${theme.colors.orange};
     }
   }
