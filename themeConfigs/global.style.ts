@@ -7,12 +7,33 @@ import { screen } from './media';
 export const GlobalStyle = createGlobalStyle`
 ${reset};
 
+* {
+  scrollbar-width: thin;
+}
+
+/* Works on Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 12px;
+}
+
+*::-webkit-scrollbar-track {
+  background: ${theme.colors.brown};
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: ${theme.colors.golden};
+  border-radius: 20px;
+  border: 1px solid ${theme.colors.brown};
+}
+
 html {
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: grayscale;
     -moz-font-smoothing: grayscale;
     scroll-behavior:smooth;
   }
+
+  
 
 body {
     position: relative;
