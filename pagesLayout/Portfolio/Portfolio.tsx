@@ -51,7 +51,6 @@ const PortfolioPage: FC = () => {
     height: 0,
   });
   useEffect(() => {
-    console.log(sliderRef);
     setSliderContainer({
       width: sliderContainerRef.current.clientWidth,
       height: sliderContainerRef.current.clientHeight,

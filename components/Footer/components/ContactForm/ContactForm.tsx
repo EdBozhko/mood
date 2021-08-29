@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { FC, useRef, useEffect, useState } from 'react';
 import { Form, Name, Phone, Submit, InputBox, Title, Subtitle, Heading, InputContainer } from './ContactForm.styles';
 import InputMask from 'react-input-mask';
 
@@ -8,6 +8,18 @@ interface ContactFormProps {
 }
 
 const ContactForm: FC<ContactFormProps> = ({ title, subtitle }) => {
+  const inputBoxRef = useRef(null);
+  const [inputBox, setInput] = useState({
+    width: 0,
+    height: 0,
+  });
+  useEffect(() => {
+    setInput({
+      width: inputBoxRef.current.clientWidth,
+      height: inputBoxRef.current.clientHeight,
+    });
+  }, []);
+  const inputPerimeter = (inputBox.height * 2 + inputBox.width * 2) * 1.01;
   return (
     <Form>
       <Heading>
@@ -15,13 +27,13 @@ const ContactForm: FC<ContactFormProps> = ({ title, subtitle }) => {
         <Subtitle>{subtitle}</Subtitle>
       </Heading>
       <InputContainer>
-        <InputBox>
+        <InputBox ref={inputBoxRef} inputPerimeter={inputPerimeter}>
           <Name type="text" placeholder="Ваше ім’я" required></Name>
           <svg width="100%" height="100%">
             <rect width="100%" height="100%"></rect>
           </svg>
         </InputBox>
-        <InputBox>
+        <InputBox inputPerimeter={inputPerimeter}>
           <Phone type="tel" placeholder="+38 (___) ___-__-__" mask="+38 (999) 999-99-99" required></Phone>
           <svg width="100%" height="100%">
             <rect width="100%" height="100%"></rect>
