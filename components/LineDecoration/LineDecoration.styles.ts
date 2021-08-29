@@ -39,7 +39,7 @@ export const VerticalLine = styled.span`
   width: 1px;
   height: 100vh;
   background-color: white;
-  opacity: 0.5;
+  opacity: 0.2;
   position: absolute;
   right: 13vw;
   bottom: 100%;
@@ -52,7 +52,7 @@ export const HorizontalLine = styled.span`
   width: 100vw;
   height: 1px;
   background-color: white;
-  opacity: 0.5;
+  opacity: 0.2;
   position: absolute;
   top: 13.33vh;
   left: 100%;
@@ -63,8 +63,7 @@ export const HorizontalLine = styled.span`
 export const Circle = styled.svg`
   width: 73.34vh;
   height: 73.34vh;
-
-  opacity: 0.5;
+  opacity: 0.2;
   position: absolute;
   top: 13.33vh;
   right: 13vw;

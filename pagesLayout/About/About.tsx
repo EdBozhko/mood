@@ -49,7 +49,6 @@ const AboutPage: FC = () => {
   return (
     <>
       <HeroBlock title={data.title} subtitle={data.subtitle} backgroundImg={data.backgroundImg} blackout={data.blackout} />
-      <CallToAction data={data.callToAction} />
       <TextBlockContainer backgroundImg={data.textBlocks.block_1.src} blackout={data.textBlocks.block_1.blackout}>
         <TextBlock blockAlign={data.textBlocks.block_1.blockAlign_1} textColor={data.textBlocks.block_1.textColor_1}>
           {data.textBlocks.block_1.text_1}
@@ -63,6 +62,7 @@ const AboutPage: FC = () => {
           {data.textBlocks.block_2.text_2}
         </TextBlock>
       </TextBlockContainer>
+      <CallToAction data={data.callToAction} />
     </>
   );
 };
