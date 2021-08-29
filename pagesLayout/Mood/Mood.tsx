@@ -1,7 +1,7 @@
 import React, { FC, useRef, useState } from 'react';
 import Image from 'next/image';
 import Carousel from 'react-elastic-carousel';
-import { H1, SliderBox, SliderItem, MoodGlobalStyle, HeadingContainer, Heading, Title, Subtitle, TitleContainer } from './Mood.styles';
+import { H1, SliderBox, SliderItem, HeadingContainer, Heading, Title, Subtitle, TitleContainer } from './Mood.styles';
 import Slide_1 from './assets/static/slide_1.png';
 import Slide_2 from './assets/static/slide_2.jpeg';
 import Slide_3 from './assets/static/slide_3.jpg';
@@ -33,7 +33,7 @@ const MoodPage: FC = () => {
     carousel.current.slideNext();
   };
   const handleScroll = (e) => {
-    e.preventDefault();
+    // e.preventDefault();
     const { deltaY } = e;
 
     if (deltaY < 0 && currentSlideIndex > 0) {
@@ -63,7 +63,6 @@ const MoodPage: FC = () => {
   });
   return (
     <>
-      <MoodGlobalStyle />
       <H1>{data.h1}</H1>
       <SliderBox onWheel={handleScroll}>
         <Carousel

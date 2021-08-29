@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { FC, useEffect, useState } from 'react';
 
 import Header from '@comp/Header';
 import Footer from '@comp/Footer';
@@ -11,13 +11,17 @@ const data = {
 };
 
 const MainLayout: FC = ({ children }) => {
+  const [page, setPage] = useState(null);
+  useEffect(() => {
+    setPage(window.location.pathname);
+  });
   return (
     <>
       <Preloader />
       <LineDecoration />
       <Header />
       {children}
-      <Footer title={data.title} subtitle={data.subtitle} />
+      <Footer page={page === '/mood'} title={data.title} subtitle={data.subtitle} />
     </>
   );
 };

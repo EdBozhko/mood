@@ -41,11 +41,7 @@ export const SliderItem = styled.a<SliderItemProps>`
       `}
   }
 `;
-export const MoodGlobalStyle = createGlobalStyle`
-html{
-    overflow: hidden;
-}
-`;
+
 export const HeadingContainer = styled.div`
   display: flex;
   justify-content: center;
