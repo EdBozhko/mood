@@ -88,7 +88,7 @@ export const ColumnFour = styled.div`
 
 export const Galleries = styled.section`
   width: 100%;
-  padding: 120px 130px 120px 150px;
+  padding: 120rem 130rem 120rem 150rem;
   box-sizing: border-box;
   background: url(${GalleriesBg}) center/cover no-repeat;
 `;
@@ -102,8 +102,8 @@ export const GalleriesList = styled.ul`
 export const GalleriesItem = styled.li`
   width: 300px;
   height: 187px;
-  margin-top: 50px;
-  margin-right: 50px;
+  margin-top: 50rem;
+  margin-right: 50rem;
   user-select: none;
 `;
 
@@ -156,7 +156,7 @@ export const SliderContainer = styled.div`
     }
   }
   .slick-dots {
-    bottom: -35px;
+    bottom: -7%;
     li.slick-active button:before {
       color: ${theme.colors.orange};
     }
@@ -175,7 +175,7 @@ export const SliderContainer = styled.div`
 export const SliderItem = styled.div`
   margin-right: 20px;
   img {
-    box-shadow: 4.83px 1.294px 11.7px 1.3px rgba(0, 0, 0, 0.47);
+    box-shadow: 4.83rem 1.294rem 11.7rem 1.3rem rgba(0, 0, 0, 0.47);
   }
 `;
 

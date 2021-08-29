@@ -31,6 +31,7 @@ html {
     -webkit-font-smoothing: grayscale;
     -moz-font-smoothing: grayscale;
     scroll-behavior:smooth;
+    font-size: 0.069vw;
   }
 
   
@@ -40,7 +41,11 @@ body {
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
     overflow-x: hidden;
-    margin-left: 100px;
+    padding-top: 80px;
+    @media ${screen.lp} {
+
+      margin-left: 100px;
+    }
 }
 
 a {

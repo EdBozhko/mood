@@ -16,9 +16,9 @@ const InputStyle = css`
   font-family: ${theme.fontsFamily.bloggerSans};
   color: ${theme.colors.beige};
   font-weight: 400;
-  font-size: 28px;
-  padding-left: 15px;
-  padding-right: 15px;
+  font-size: 28rem;
+  padding-left: 15rem;
+  padding-right: 15rem;
   box-sizing: border-box;
   width: 100%;
   height: 100%;
@@ -42,21 +42,21 @@ const InputStyle = css`
 `;
 
 export const Title = styled.span`
-  font-size: 72px;
-  line-height: 86px;
+  font-size: 72rem;
+  line-height: 86rem;
   color: ${theme.colors.orange};
 `;
 
 export const Subtitle = styled.span`
-  font-size: 60px;
-  line-height: 72px;
+  font-size: 60rem;
+  line-height: 72rem;
   color: ${theme.colors.beige};
 `;
 
 export const Heading = styled.h2`
   font-family: ${theme.fontsFamily.bloggerSans};
   font-weight: 300;
-  text-shadow: 4.83px 1.294px 11.7px rgba(0, 0, 0, 0.7);
+  text-shadow: 4.83rem 1.294rem 11.7rem rgba(0, 0, 0, 0.7);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -71,18 +71,18 @@ export const Form = styled.form`
   justify-content: flex-end;
   flex-grow: 1;
   flex-shrink: 0;
-  padding-bottom: 50px;
+  padding-bottom: 50rem;
 `;
 
 export const InputContainer = styled.div`
   width: 81%;
   height: fit-content;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  border-bottom: 1rem solid rgba(255, 255, 255, 0.5);
   box-sizing: border-box;
-  padding: 20px 50px;
+  padding: 20rem 50rem;
   display: flex;
   justify-content: space-between;
-  margin-top: 100px;
+  margin-top: 100rem;
   > * {
     width: 30%;
   }
@@ -124,9 +124,9 @@ export const Submit = styled.button`
   font-family: ${theme.fontsFamily.bloggerSans};
   color: ${theme.colors.beige};
   font-weight: 400;
-  font-size: 30px;
+  font-size: 30rem;
   border: 2px solid ${theme.colors.golden};
-  padding: 7px 15px;
+  padding: 7rem 15rem;
   box-sizing: border-box;
   transition: background-color 0.5s ease;
   user-select: none;

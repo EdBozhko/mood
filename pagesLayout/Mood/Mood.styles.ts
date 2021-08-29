@@ -67,30 +67,30 @@ export const Heading = styled.span`
   top: 20%;
   text-transform: uppercase;
   font-family: ${theme.fontsFamily.quicksand};
-  font-size: 100px;
+  font-size: 100rem;
   font-weight: 300;
-  line-height: 120px;
+  line-height: 120rem;
   color: ${theme.colors.orange};
-  text-shadow: 4.83px 1.294px 11.7px rgba(0, 0, 0, 0.7);
+  text-shadow: 4.83rem 1.294rem 11.7rem rgba(0, 0, 0, 0.7);
 `;
 export const Title = styled.h2`
   cursor: pointer;
   text-transform: uppercase;
   font-family: ${theme.fontsFamily.bloggerSans};
-  font-size: 72px;
+  font-size: 72rem;
   font-weight: 300;
-  line-height: 86px;
+  line-height: 86rem;
   color: ${theme.colors.orange};
-  text-shadow: 4.83px 1.294px 11.7px rgba(0, 0, 0, 0.7);
+  text-shadow: 4.83rem 1.294rem 11.7rem rgba(0, 0, 0, 0.7);
 `;
 export const Subtitle = styled.span`
   cursor: pointer;
   font-family: ${theme.fontsFamily.bloggerSans};
-  font-size: 36px;
+  font-size: 36rem;
   font-weight: 300;
-  line-height: 43px;
+  line-height: 43rem;
   color: ${theme.colors.beige};
-  text-shadow: 4.83px 1.294px 11.7px rgba(0, 0, 0, 0.7);
+  text-shadow: 4.83rem 1.294rem 11.7rem rgba(0, 0, 0, 0.7);
 `;
 export const TitleContainer = styled.div`
   text-align: center;

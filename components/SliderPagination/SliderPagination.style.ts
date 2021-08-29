@@ -27,7 +27,7 @@ export const PaginationDot = styled.div<PaginationDotProps>`
   background-color: ${theme.colors.beige};
   transition: height 0.8s ease 0s, width 0.8s ease 0s;
 
-  box-shadow: 4.83px 1.294px 11.7px 1.3px rgba(0, 0, 0, 0.004);
+  box-shadow: 4.83rem 1.294rem 11.7rem 1.3rem rgba(0, 0, 0, 0.004);
 
   :not(:last-child) {
     margin-bottom: 20px;
@@ -36,8 +36,7 @@ export const PaginationDot = styled.div<PaginationDotProps>`
     prop: 'active',
     variants: {
       true: {
-        width: '20px',
-        height: '20px',
+        transform: 'scale(135%)',
       },
     },
   })}

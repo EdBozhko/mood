@@ -26,7 +26,7 @@ export const HeroContainer = styled.div<HeroContainerProps>`
 export const H2 = styled.h2`
   display: flex;
   flex-direction: column;
-  padding-left: 100px;
+  padding-left: 100rem;
   box-sizing: border-box;
   z-index: 1;
   pointer-events: none;
@@ -34,17 +34,17 @@ export const H2 = styled.h2`
 export const Title = styled.span`
   text-transform: uppercase;
   font-family: ${theme.fontsFamily.bloggerSans};
-  font-size: 100px;
+  font-size: 100rem;
   font-weight: 300;
-  line-height: 120px;
+  line-height: 120rem;
   color: ${theme.colors.orange};
-  text-shadow: 4.83px 1.294px 11.7px rgba(0, 0, 0, 0.7);
+  text-shadow: 4.83rem 1.294rem 11.7rem rgba(0, 0, 0, 0.7);
 `;
 export const Subtitle = styled.span`
   font-family: ${theme.fontsFamily.bloggerSans};
-  font-size: 40px;
+  font-size: 40rem;
   font-weight: 300;
-  line-height: 48px;
+  line-height: 48rem;
   color: ${theme.colors.beige};
-  text-shadow: 4.83px 1.294px 11.7px rgba(0, 0, 0, 0.7);
+  text-shadow: 4.83rem 1.294rem 11.7rem rgba(0, 0, 0, 0.7);
 `;

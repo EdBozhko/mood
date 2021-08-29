@@ -8,7 +8,7 @@ interface LogoProps {
 const Logo: FC<LogoProps> = ({ onClickHandler }) => {
   return (
     <>
-      <LogoStyled onClick={onClickHandler} width="74" height="125" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 136.6 233" fill="#E1B16A">
+      <LogoStyled onClick={onClickHandler} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 136.6 233" fill="#E1B16A">
         <g id="mood">
           <path
             d="M135.4,1.5c0.7,0.8,1.1,1.8,1.1,2.9v143.2c0,1.2-0.5,2.3-1.4,3c-0.8,0.8-2,1.3-3.1,1.3

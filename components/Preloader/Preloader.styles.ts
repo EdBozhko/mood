@@ -2,7 +2,20 @@ import { screen } from '@themeConfigs/media';
 import theme from '@themeConfigs/theme';
 import styled, { css, keyframes } from 'styled-components';
 
-const PreloaderAnimation = keyframes`
+const PreloaderAnimationMobile = keyframes`
+    0% {
+      height: 100vh;
+    }
+    60%{
+      width: 100vw;
+
+    }
+    100% {
+      height: 0vh;
+      width: 0vw;
+    }
+`;
+const PreloaderAnimationDesktop = keyframes`
     0% {
         width: 100vw;
     }
@@ -15,20 +28,35 @@ export const PreloaderContainer = styled.div`
   width: 100vw;
   height: 100vh;
   position: fixed;
-  left: 0;
+  top: 0;
   background-color: ${theme.colors.brown};
   z-index: 997;
   display: flex;
-  padding-left: 100px;
+  padding-top: 80px;
   box-sizing: border-box;
   align-items: center;
-  animation: ${PreloaderAnimation} 1s both;
+  justify-content: center;
+  animation: ${PreloaderAnimationMobile} 1s both;
+
   animation-delay: 4s;
+  @media ${screen.lp} {
+    left: 0;
+    padding-top: unset;
+    justify-content: unset;
+    padding-left: 100px;
+    animation: ${PreloaderAnimationDesktop} 1s both;
+    animation-delay: 4s;
+  }
 `;
 export const LogoContainer = styled.div`
   width: 100%;
-  padding: 0 100px;
+
+  padding: 0 16px;
   box-sizing: border-box;
+  @media ${screen.lp} {
+    padding: 0 100px;
+  }
+
   svg {
     #eMGum8C5pt33_to {
       animation: eMGum8C5pt33_to__to 2000ms linear 1 normal forwards;

@@ -75,6 +75,7 @@ const MoodPage: FC = () => {
           showArrows={false}
           pagination={true}
           enableMouseSwipe={false}
+          enableTilt={false}
           renderPagination={({ pages, activePage, onClick }) => {
             return <SliderPagination className="slider-pagination" pages={pages} activePage={activePage} onClick={onClick} />;
           }}

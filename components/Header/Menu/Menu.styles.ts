@@ -7,38 +7,73 @@ interface MenuStyledProps {
 }
 
 export const MenuStyled = styled.div<MenuStyledProps>`
-  width: 0;
   visibility: hidden;
-  transition: width ease 0.4s;
+  width: 100vw;
+  height: 0;
+  transition: height ease 0.4s;
+  position: absolute;
+  z-index: -1;
+  padding: 100px 16px 50px 16px;
+  box-sizing: border-box;
   ::before {
     content: '';
     position: absolute;
     opacity: 0.5;
-    left: 0;
-    height: 0;
-    width: 2px;
-    top: 50%;
-    transform: translateY(-50%);
+    top: 90px;
+    left: 50%;
+    height: 2px;
+    width: 0;
+    transform: translateX(-50%);
     background-color: ${theme.colors.golden};
-    transition: height 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
     transition-delay: 0.2s;
   }
   ${({ isMenuOpen }) =>
     isMenuOpen &&
     css`
+      height: 100vh;
       visibility: visible;
-      position: relative;
+      background-color: ${theme.colors.brown};
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      width: 300px;
-      margin-left: 13px;
-      padding-left: 13px;
-      box-sizing: border-box;
       ::before {
-        height: 80%;
+        width: 80%;
       }
     `}
+  @media ${screen.lp} {
+    width: 0;
+    transition: width ease 0.4s;
+    ::before {
+      content: '';
+      position: absolute;
+      opacity: 0.5;
+      left: 0;
+      height: 0;
+      width: 2px;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: ${theme.colors.golden};
+      transition: height 0.4s ease-in-out;
+      transition-delay: 0.2s;
+    }
+    ${({ isMenuOpen }) =>
+      isMenuOpen &&
+      css`
+        position: relative;
+        visibility: visible;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 300px;
+        margin-left: 13px;
+        padding-left: 13px;
+        box-sizing: border-box;
+        ::before {
+          height: 80%;
+        }
+      `}
+  }
 `;
 
 export const Nav = styled.nav``;
