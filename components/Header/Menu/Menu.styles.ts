@@ -7,6 +7,44 @@ interface MenuStyledProps {
 }
 
 export const MenuStyled = styled.div<MenuStyledProps>`
+  height: 0;
+  visibility: hidden;
+  transition: height ease 0.4s;
+  ::before {
+    content: '';
+    position: absolute;
+    opacity: 0.5;
+    top: 0;
+    width: 0;
+    height: 2px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: ${theme.colors.golden};
+    transition: width 0.4s ease-in-out;
+    transition-delay: 0.2s;
+  }
+  ${({ isMenuOpen }) =>
+    isMenuOpen &&
+    css`
+      visibility: visible;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 100%;
+      height: calc( 100vh - 80px - 10px - 10px);
+      margin-top: 13px;
+      padding-top: 13px;
+      padding-bottom: 13px;
+
+      box-sizing: border-box;
+      ::before {
+        width: 80%;
+      }
+    `}
+@media ${screen.lp} {
+
+
   width: 0;
   visibility: hidden;
   transition: width ease 0.4s;
@@ -32,13 +70,19 @@ export const MenuStyled = styled.div<MenuStyledProps>`
       flex-direction: column;
       justify-content: space-between;
       width: 300px;
+      height: 100%;
+      margin-top: unset;
+      padding-top: unset;
       margin-left: 13px;
       padding-left: 13px;
+      padding-bottom: unset;
+
       box-sizing: border-box;
       ::before {
         height: 80%;
       }
     `}
+}
 `;
 
 export const Nav = styled.nav``;
@@ -58,6 +102,7 @@ export const Phone = styled.a<MenuStyledProps>`
     css`
       display: inline-flex;
       align-items: center;
+      justify-content: center;
       height: 56px;
       font-size: 36px;
       font-family: ${theme.fontsFamily.bloggerSans};

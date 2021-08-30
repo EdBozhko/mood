@@ -40,7 +40,10 @@ body {
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
     overflow-x: hidden;
-    margin-left: 100px;
+    @media ${screen.lp} {
+
+      margin-left: 100px;
+    }
 }
 
 a {
