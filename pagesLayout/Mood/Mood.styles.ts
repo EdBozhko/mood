@@ -44,12 +44,24 @@ export const SliderItem = styled.a<SliderItemProps>`
 
 export const HeadingContainer = styled.div`
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  position: relative;
   z-index: 2;
   height: 100%;
   width: 100%;
+  padding: 0 20px;
+  @media ${screen.lp} {
+    display: flex;
+    flex-direction: unset;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+    height: 100%;
+    width: 100%;
+    padding: unset;
+  }
 `;
 export const H1 = styled.h1`
   position: absolute;
@@ -62,35 +74,64 @@ export const H1 = styled.h1`
   overflow: hidden;
 `;
 export const Heading = styled.span`
-  cursor: pointer;
   position: absolute;
   top: 20%;
+  text-align: center;
   text-transform: uppercase;
   font-family: ${theme.fontsFamily.quicksand};
-  font-size: 100px;
+  font-size: 44px;
   font-weight: 300;
-  line-height: 120px;
+  line-height: 48px;
   color: ${theme.colors.orange};
   text-shadow: 4.83px 1.294px 11.7px rgba(0, 0, 0, 0.7);
+  @media ${screen.lp} {
+    cursor: pointer;
+    position: absolute;
+    top: 20%;
+    text-transform: uppercase;
+    font-family: ${theme.fontsFamily.quicksand};
+    font-size: 100px;
+    font-weight: 300;
+    line-height: 120px;
+    color: ${theme.colors.orange};
+    text-shadow: 4.83px 1.294px 11.7px rgba(0, 0, 0, 0.7);
+  }
 `;
 export const Title = styled.h2`
-  cursor: pointer;
   text-transform: uppercase;
   font-family: ${theme.fontsFamily.bloggerSans};
-  font-size: 72px;
-  font-weight: 300;
-  line-height: 86px;
-  color: ${theme.colors.orange};
-  text-shadow: 4.83px 1.294px 11.7px rgba(0, 0, 0, 0.7);
-`;
-export const Subtitle = styled.span`
-  cursor: pointer;
-  font-family: ${theme.fontsFamily.bloggerSans};
-  font-size: 36px;
+  font-size: 40px;
   font-weight: 300;
   line-height: 43px;
+  color: ${theme.colors.orange};
+  text-shadow: 4.83px 1.294px 11.7px rgba(0, 0, 0, 0.7);
+  @media ${screen.lp} {
+    cursor: pointer;
+    text-transform: uppercase;
+    font-family: ${theme.fontsFamily.bloggerSans};
+    font-size: 72px;
+    font-weight: 300;
+    line-height: 86px;
+    color: ${theme.colors.orange};
+    text-shadow: 4.83px 1.294px 11.7px rgba(0, 0, 0, 0.7);
+  }
+`;
+export const Subtitle = styled.span`
+  font-family: ${theme.fontsFamily.bloggerSans};
+  font-size: 30px;
+  font-weight: 300;
+  line-height: 36px;
   color: ${theme.colors.beige};
   text-shadow: 4.83px 1.294px 11.7px rgba(0, 0, 0, 0.7);
+  @media ${screen.lp} {
+    cursor: pointer;
+    font-family: ${theme.fontsFamily.bloggerSans};
+    font-size: 36px;
+    font-weight: 300;
+    line-height: 43px;
+    color: ${theme.colors.beige};
+    text-shadow: 4.83px 1.294px 11.7px rgba(0, 0, 0, 0.7);
+  }
 `;
 export const TitleContainer = styled.div`
   text-align: center;

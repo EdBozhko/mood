@@ -88,23 +88,46 @@ export const ColumnFour = styled.div`
 
 export const Galleries = styled.section`
   width: 100%;
-  padding: 120px 130px 120px 150px;
+  padding: 20px 16px;
   box-sizing: border-box;
   background: url(${GalleriesBg}) center/cover no-repeat;
+  @media ${screen.lp} {
+    width: 100%;
+    padding: 120px 130px 120px 150px;
+    box-sizing: border-box;
+    background: url(${GalleriesBg}) center/cover no-repeat;
+  }
 `;
 
 export const GalleriesList = styled.ul`
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
+  flex-direction: column;
+  align-items: center;
+  @media ${screen.lp} {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
 `;
 
 export const GalleriesItem = styled.li`
   width: 300px;
   height: 187px;
-  margin-top: 50px;
-  margin-right: 50px;
+  margin-top: 20px;
   user-select: none;
+  :last-child {
+    margin-bottom: 20px;
+  }
+  @media ${screen.lp} {
+    width: 300px;
+    height: 187px;
+    margin-top: 50px;
+    margin-right: 50px;
+    user-select: none;
+    :last-child {
+      margin-bottom: unset;
+    }
+  }
 `;
 
 export const SliderWrapper = styled.div<SliderWrapperProps>`

@@ -32,32 +32,35 @@ const Scroll = keyframes`
 `;
 
 export const IconScroll = styled.div`
-  position: absolute;
-  right: 50%;
-  width: 40px;
-  height: 70px;
-  bottom: 3%;
-  box-shadow: inset 0 0 0 1px #fff;
-  border-radius: 25px;
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-
-  animation-duration: 1.5s;
-  animation-iteration-count: infinite;
-  animation-name: ${Mouse};
-  ::before {
+  display: none;
+  @media ${screen.lp} {
     position: absolute;
-    left: 50%;
-    content: '';
-    width: 8px;
-    height: 8px;
-    background: #fff;
-    top: 8px;
-    border-radius: 4px;
+    right: 50%;
+    width: 40px;
+    height: 70px;
+    bottom: 3%;
+    box-shadow: inset 0 0 0 1px #fff;
+    border-radius: 25px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+
     animation-duration: 1.5s;
     animation-iteration-count: infinite;
-    animation-name: ${Scroll};
+    animation-name: ${Mouse};
+    ::before {
+      position: absolute;
+      left: 50%;
+      content: '';
+      width: 8px;
+      height: 8px;
+      background: #fff;
+      top: 8px;
+      border-radius: 4px;
+      animation-duration: 1.5s;
+      animation-iteration-count: infinite;
+      animation-name: ${Scroll};
+    }
   }
 `;
 export const IconText = styled.span`
