@@ -42,15 +42,25 @@ const InputStyle = css`
 `;
 
 export const Title = styled.span`
-  font-size: 72px;
-  line-height: 86px;
+  font-size: 40px;
+  line-height: 43px;
   color: ${theme.colors.orange};
+  @media ${screen.lp} {
+    font-size: 72px;
+    line-height: 86px;
+    color: ${theme.colors.orange};
+  }
 `;
 
 export const Subtitle = styled.span`
-  font-size: 60px;
-  line-height: 72px;
+  font-size: 36px;
+  line-height: 40px;
   color: ${theme.colors.beige};
+  @media ${screen.lp} {
+    font-size: 60px;
+    line-height: 72px;
+    color: ${theme.colors.beige};
+  }
 `;
 
 export const Heading = styled.h2`
@@ -79,12 +89,27 @@ export const InputContainer = styled.div`
   height: fit-content;
   border-bottom: 1px solid rgba(255, 255, 255, 0.5);
   box-sizing: border-box;
-  padding: 20px 50px;
+  padding: 20px 0px;
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
-  margin-top: 100px;
+  margin-top: 0;
   > * {
-    width: 30%;
+    width: 100%;
+  }
+  @media ${screen.lp} {
+    width: 81%;
+    height: fit-content;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+    box-sizing: border-box;
+    padding: 20px 50px;
+    display: flex;
+    flex-direction: unset;
+    justify-content: space-between;
+    margin-top: 100px;
+    > * {
+      width: 30%;
+    }
   }
 `;
 

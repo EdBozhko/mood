@@ -108,12 +108,13 @@ const Footer: FC<FooterProps> = ({ page, title, subtitle }) => {
       });
     });
   }, []);
+  console.log(page);
 
   return (
     <>
       <FooterStyled page={page}>
         <ContactForm title={title} subtitle={subtitle} />
-        <MapBox>
+        <MapBox page={page}>
           <div id="map" ref={googlemap}></div>
         </MapBox>
       </FooterStyled>

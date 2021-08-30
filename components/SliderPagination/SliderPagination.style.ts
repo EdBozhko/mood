@@ -20,8 +20,8 @@ interface PaginationDotProps {
 }
 
 export const PaginationDot = styled.div<PaginationDotProps>`
-  width: 15px;
-  height: 15px;
+  width: 10px;
+  height: 10px;
   border-radius: 50%;
   cursor: pointer;
   background-color: ${theme.colors.beige};
@@ -36,9 +36,12 @@ export const PaginationDot = styled.div<PaginationDotProps>`
     prop: 'active',
     variants: {
       true: {
-        width: '20px',
-        height: '20px',
+        transform: 'scale(135%)',
       },
     },
   })}
+  @media ${screen.lp} {
+    width: 15px;
+    height: 15px;
+  }
 `;

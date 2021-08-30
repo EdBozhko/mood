@@ -45,34 +45,40 @@ const MoodPage: FC = () => {
       nextSlide();
     }
   };
-  const [touchStartPosition, setTouchStartPosition] = useState(null)
-  const [touchEndPosition, setTouchEndPosition] = useState(null)
+  const [touchStartPosition, setTouchStartPosition] = useState(null);
+  const [touchEndPosition, setTouchEndPosition] = useState(null);
 
-  const handleTouchStart = (e)=>{
-  console.log(`start ${e.changedTouches[0].clientY}`); 
-  setTouchStartPosition(e.changedTouches[0].clientY)
-  }
-const handleTouchEnd = (e)=>{
-  console.log(`end ${e.changedTouches[0].clientY}`);
-  console.log(`currentSlideIndex ${currentSlideIndex}`);
-  setTouchEndPosition(e.changedTouches[0].clientY)
-  changeSlide()
-}
-const changeSlide = ()=>{
-// if(currentSlideIndex === 0 || currentSlideIndex === data.slides.length) {
-//   setTouchStartPosition(0)
-//   setTouchEndPosition(0)
+  const handleTouchStart = (e) => {
+    e.preventDefault();
+    console.log(`start ${e.changedTouches[0].clientY}`);
+    setTouchStartPosition(e.changedTouches[0].clientY);
+  };
+  const handleTouchEnd = (e) => {
+    e.preventDefault();
+    console.log(`end ${e.changedTouches[0].clientY}`);
+    console.log(`currentSlideIndex ${currentSlideIndex}`);
+    setTouchEndPosition(e.changedTouches[0].clientY);
+    changeSlide();
+  };
+  const handleTouchMove = (e) => {
+    e.preventDefault();
+  };
+  const changeSlide = () => {
+    // if(currentSlideIndex === 0 || currentSlideIndex === data.slides.length) {
+    //   setTouchStartPosition(0)
+    //   setTouchEndPosition(0)
 
-// }
-  if(touchStartPosition<touchEndPosition  && currentSlideIndex > 0)       {
-    // setCurrentSlideIndex((prev) => prev - 1);
-    prewSlide();
-  }
-  if(touchStartPosition>touchEndPosition && currentSlideIndex < data.slides.length)       {
-    // setCurrentSlideIndex((prev) => prev + 1);
-    nextSlide();}
+    // }
+    if (touchStartPosition < touchEndPosition && currentSlideIndex > 0) {
+      // setCurrentSlideIndex((prev) => prev - 1);
 
-}
+      prewSlide();
+    }
+    if (touchStartPosition > touchEndPosition && currentSlideIndex < data.slides.length) {
+      // setCurrentSlideIndex((prev) => prev + 1);
+      nextSlide();
+    }
+  };
   const Slides = data.slides.map((slide, index) => {
     return (
       <Link href={slide.link}>
@@ -92,7 +98,7 @@ const changeSlide = ()=>{
   return (
     <>
       <H1>{data.h1}</H1>
-      <SliderBox onWheel={handleScroll} onTouchStart={handleTouchStart} onTouchEnd={handleTouchEnd}>
+      <SliderBox onWheel={handleScroll} onTouchMove={handleTouchMove} onTouchStart={handleTouchStart} onTouchEnd={handleTouchEnd}>
         <Carousel
           ref={carousel}
           className="slider"
@@ -103,20 +109,17 @@ const changeSlide = ()=>{
           showArrows={false}
           pagination={true}
           enableMouseSwipe={false}
-enableSwipe={false}
-onNextEnd={(currentItem, nextItem) =>{ console.log(currentItem)
-  console.log(nextItem)
-  setCurrentSlideIndex(nextItem)
-}
-  
-}
-onPrevEnd={(currentItem, nextItem) =>{ console.log(currentItem)
-  console.log(nextItem)
-  setCurrentSlideIndex(nextItem)
-
-}
-  
-}
+          // enableSwipe={false}
+          // onNextEnd={(currentItem, nextItem) => {
+          //   console.log(currentItem);
+          //   console.log(nextItem);
+          //   setCurrentSlideIndex(nextItem);
+          // }}
+          // onPrevEnd={(currentItem, nextItem) => {
+          //   console.log(currentItem);
+          //   console.log(nextItem);
+          //   setCurrentSlideIndex(nextItem);
+          // }}
           renderPagination={({ pages, activePage, onClick }) => {
             return <SliderPagination className="slider-pagination" pages={pages} activePage={activePage} onClick={onClick} />;
           }}

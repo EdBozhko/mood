@@ -32,7 +32,7 @@ export const MenuStyled = styled.div<MenuStyledProps>`
       flex-direction: column;
       justify-content: space-between;
       width: 100%;
-      height: calc( 100vh - 80px - 10px - 10px);
+      height: calc(100vh - 80px - 13px);
       margin-top: 13px;
       padding-top: 13px;
       padding-bottom: 13px;
@@ -42,47 +42,45 @@ export const MenuStyled = styled.div<MenuStyledProps>`
         width: 80%;
       }
     `}
-@media ${screen.lp} {
+  @media ${screen.lp} {
+    width: 0;
+    visibility: hidden;
+    transition: width ease 0.4s;
+    ::before {
+      content: '';
+      position: absolute;
+      opacity: 0.5;
+      left: 0;
+      height: 0;
+      width: 2px;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: ${theme.colors.golden};
+      transition: height 0.4s ease-in-out;
+      transition-delay: 0.2s;
+    }
+    ${({ isMenuOpen }) =>
+      isMenuOpen &&
+      css`
+        visibility: visible;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 300px;
+        height: 100%;
+        margin-top: unset;
+        padding-top: unset;
+        margin-left: 13px;
+        padding-left: 13px;
+        padding-bottom: unset;
 
-
-  width: 0;
-  visibility: hidden;
-  transition: width ease 0.4s;
-  ::before {
-    content: '';
-    position: absolute;
-    opacity: 0.5;
-    left: 0;
-    height: 0;
-    width: 2px;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: ${theme.colors.golden};
-    transition: height 0.4s ease-in-out;
-    transition-delay: 0.2s;
+        box-sizing: border-box;
+        ::before {
+          height: 80%;
+        }
+      `}
   }
-  ${({ isMenuOpen }) =>
-    isMenuOpen &&
-    css`
-      visibility: visible;
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      width: 300px;
-      height: 100%;
-      margin-top: unset;
-      padding-top: unset;
-      margin-left: 13px;
-      padding-left: 13px;
-      padding-bottom: unset;
-
-      box-sizing: border-box;
-      ::before {
-        height: 80%;
-      }
-    `}
-}
 `;
 
 export const Nav = styled.nav``;
