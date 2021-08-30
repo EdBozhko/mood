@@ -2,7 +2,16 @@ import { screen } from '@themeConfigs/media';
 import theme from '@themeConfigs/theme';
 import styled, { css, keyframes } from 'styled-components';
 
-const PreloaderAnimation = keyframes`
+const PreloaderAnimationMobile = keyframes`
+    0% {
+        height: 100vh;
+    }
+    100% {
+        height: 0vw;
+    }
+`;
+
+const PreloaderAnimationDesktop = keyframes`
     0% {
         width: 100vw;
     }
@@ -10,8 +19,34 @@ const PreloaderAnimation = keyframes`
         width: 0vw;
     }
 `;
+const LogoAnimation = keyframes`
+    0% {
+        width: 100%;
+    }
+    100% {
+        width: 0;
+    }
+`;
 
 export const PreloaderContainer = styled.div`
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  background-color: ${theme.colors.brown};
+  z-index: 997;
+  display: flex;
+  padding-top: 80px;
+  box-sizing: border-box;
+  align-items: center;
+justify-content: center;
+animation: ${PreloaderAnimationMobile} 1s both;
+  animation-delay: 4s;
+
+
+
+@media ${screen.lp} {
+
   width: 100vw;
   height: 100vh;
   position: fixed;
@@ -22,13 +57,20 @@ export const PreloaderContainer = styled.div`
   padding-left: 100px;
   box-sizing: border-box;
   align-items: center;
-  animation: ${PreloaderAnimation} 1s both;
+  animation: ${PreloaderAnimationDesktop} 1s both;
   animation-delay: 4s;
+}
 `;
 export const LogoContainer = styled.div`
   width: 100%;
-  padding: 0 100px;
+  padding: 0 16px;
   box-sizing: border-box;
+  animation: ${LogoAnimation} 1s both;
+  animation-delay: 4s;
+@media ${screen.lp} {
+  padding: 0 100px;
+  animation: unset;
+}
   svg {
     #eMGum8C5pt33_to {
       animation: eMGum8C5pt33_to__to 2000ms linear 1 normal forwards;

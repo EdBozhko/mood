@@ -3,6 +3,13 @@ import theme from '@themeConfigs/theme';
 import { screen } from '@themeConfigs/media';
 
 export const TaglineStyled = styled.div`
+  display: flex;
+  flex-direction: column;
+align-items: center;
+@media ${screen.lp} {
+
+
+
   writing-mode: tb-rl;
   transform: rotate(180deg);
   width: 100%;
@@ -17,11 +24,16 @@ export const TaglineStyled = styled.div`
       align-self: flex-end;
     }
   }
+}
 `;
 export const TaglineSpan = styled.span`
   font-family: ${theme.fontsFamily.quicksand};
   font-weight: 300;
-  font-size: 30px;
+  font-size: 18px;
   color: ${theme.colors.orange};
   text-transform: uppercase;
+@media ${screen.lp}{
+  font-size: 30px;
+
+}
 `;

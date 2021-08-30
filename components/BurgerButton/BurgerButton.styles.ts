@@ -1,12 +1,14 @@
 import theme from '@themeConfigs/theme';
 import styled, { css } from 'styled-components';
+import {screen} from '@themeConfigs/media'
 
 interface BurgerButtonStyledProps {
   isMenuOpen?: boolean;
 }
 export const BurgerButtonStyled = styled.div<BurgerButtonStyledProps>`
-  margin: 0 auto;
+order: 1;
 
+  margin: 0 ;
   position: relative;
   display: flex;
   overflow: hidden;
@@ -67,6 +69,12 @@ export const BurgerButtonStyled = styled.div<BurgerButtonStyledProps>`
         }
       }
     `}
+
+    @media ${screen.lp} {
+      order: unset;
+  margin: 0 auto;
+
+    }
 `;
 
 export const LineOne = styled.span`
