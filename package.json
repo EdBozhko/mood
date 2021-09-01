@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@fuelrats/next-named-routes": "^3.1.1",
+    "@fullpage/react-fullpage": "^0.1.19",
     "@googlemaps/js-api-loader": "^1.12.2",
     "@svgr/webpack": "^5.5.0",
     "@types/google.maps": "^3.45.6",
