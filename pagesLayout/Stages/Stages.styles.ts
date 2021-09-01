@@ -48,6 +48,7 @@ export const DescriptionContainer = styled.div<DescriptionProps>`
   @media ${screen.lp} {
     padding: 60px;
     width: 40%;
+    box-sizing: unset;
     display: flex;
     flex-direction: column;
     font-family: ${theme.fontsFamily.bloggerSans};
@@ -72,6 +73,7 @@ export const ImageContainer = styled.div`
   @media ${screen.lp} {
     position: relative;
     width: 60%;
+    height: unset;
   }
 `;
 export const NumberBox = styled.span`

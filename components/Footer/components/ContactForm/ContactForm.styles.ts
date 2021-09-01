@@ -8,6 +8,8 @@ interface InputBoxProps {
 }
 
 const InputStyle = css`
+  padding: 9.5px 15px;
+
   background-color: transparent;
   border-radius: 0;
   box-shadow: none;
@@ -39,27 +41,70 @@ const InputStyle = css`
   }
   :hover {
   }
+  @media ${screen.lp} {
+    padding: unset;
+
+    background-color: transparent;
+    border-radius: 0;
+    box-shadow: none;
+    border: none;
+    border-bottom: 2px solid ${theme.colors.golden};
+    font-family: ${theme.fontsFamily.bloggerSans};
+    color: ${theme.colors.beige};
+    font-weight: 400;
+    font-size: 28px;
+    padding-left: 15px;
+    padding-right: 15px;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    :focus + svg rect {
+      stroke-dashoffset: 0;
+    }
+    :active,
+    :focus {
+      outline: none;
+    }
+    ::-moz-focus-inner {
+      border: 0;
+    }
+    ::placeholder {
+      user-select: none;
+      color: ${theme.colors.beige};
+      opacity: 0.7;
+    }
+    :hover {
+    }
+  }
 `;
 
 export const Title = styled.span`
-  font-size: 40px;
-  line-height: 43px;
+  font-size: 36px;
+  line-height: 40px;
   color: ${theme.colors.orange};
+  padding: 20px;
+  box-sizing: border-box;
   @media ${screen.lp} {
     font-size: 72px;
     line-height: 86px;
     color: ${theme.colors.orange};
+    padding: unset;
+    box-sizing: unset;
   }
 `;
 
 export const Subtitle = styled.span`
-  font-size: 36px;
-  line-height: 40px;
+  font-size: 30px;
+  line-height: 36px;
   color: ${theme.colors.beige};
+  padding: 0 20px;
+  box-sizing: border-box;
   @media ${screen.lp} {
     font-size: 60px;
     line-height: 72px;
     color: ${theme.colors.beige};
+    padding: unset;
+    box-sizing: unset;
   }
 `;
 
@@ -71,6 +116,15 @@ export const Heading = styled.h2`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  @media ${screen.lp} {
+    font-family: ${theme.fontsFamily.bloggerSans};
+    font-weight: 300;
+    text-shadow: 4.83px 1.294px 11.7px rgba(0, 0, 0, 0.7);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 `;
 
 export const Form = styled.form`
@@ -121,6 +175,7 @@ export const Phone = styled(InputMask)`
   ${InputStyle}
 `;
 export const InputBox = styled.div<InputBoxProps>`
+  margin-bottom: 20px;
   position: relative;
   svg {
     position: absolute;
@@ -141,6 +196,30 @@ export const InputBox = styled.div<InputBoxProps>`
         stroke-dasharray: ${inputPerimeter};
         stroke-dashoffset: ${inputPerimeter};
       `}
+  }
+  @media ${screen.lp} {
+    margin-bottom: unset;
+    position: relative;
+    svg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      fill: transparent;
+      pointer-events: none;
+      transform: scale(1, -1);
+    }
+    svg rect {
+      position: absolute;
+      stroke: ${theme.colors.golden};
+      stroke-width: 4;
+      transition: 1s;
+      ${({ inputPerimeter }) =>
+        inputPerimeter &&
+        css`
+          stroke-dasharray: ${inputPerimeter};
+          stroke-dashoffset: ${inputPerimeter};
+        `}
+    }
   }
 `;
 export const Submit = styled.button`

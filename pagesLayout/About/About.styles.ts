@@ -64,9 +64,9 @@ export const TextBlock = styled.p<TextBlockProps>`
   width: 100%;
   text-transform: uppercase;
   font-family: ${theme.fontsFamily.bloggerSans};
-  font-size: 30px;
+  font-size: 24px;
   font-weight: 300;
-  line-height: 36px;
+  line-height: 28px;
   text-shadow: 4.83px 1.294px 11.7px rgba(0, 0, 0, 0.7);
   @media ${screen.lp} {
     ${variant({
