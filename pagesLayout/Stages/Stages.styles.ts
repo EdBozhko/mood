@@ -27,8 +27,9 @@ export const StagesItem = styled.li`
   }
 `;
 export const DescriptionContainer = styled.div<DescriptionProps>`
-  padding: 60px;
-  width: 40%;
+  padding: 20px;
+  width: 100%;
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
   font-family: ${theme.fontsFamily.bloggerSans};
@@ -44,10 +45,34 @@ export const DescriptionContainer = styled.div<DescriptionProps>`
       margin-bottom: 30px;
     }
   }
+  @media ${screen.lp} {
+    padding: 60px;
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    font-family: ${theme.fontsFamily.bloggerSans};
+    ${({ textColor, backgroundColor }) =>
+      textColor &&
+      backgroundColor &&
+      css`
+        color: ${textColor};
+        background-color: ${backgroundColor};
+      `}
+    > * {
+      :not(:last-child) {
+        margin-bottom: 30px;
+      }
+    }
+  }
 `;
 export const ImageContainer = styled.div`
   position: relative;
-  width: 60%;
+  width: 100%;
+  height: 80vh;
+  @media ${screen.lp} {
+    position: relative;
+    width: 60%;
+  }
 `;
 export const NumberBox = styled.span`
   text-transform: uppercase;
