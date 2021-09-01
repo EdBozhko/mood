@@ -5,11 +5,13 @@ import { screen } from '@themeConfigs/media';
 interface HeroContainerProps {
   backgroundImg?: string;
   blackout?: number;
+  vh?: string;
 }
 
 export const HeroContainer = styled.div<HeroContainerProps>`
+  height: ${({ vh }) => vh};
+  margin-top: 80px;
   width: 100%;
-  height: 100vh;
   display: flex;
   align-items: center;
   position: relative;
@@ -22,6 +24,23 @@ export const HeroContainer = styled.div<HeroContainerProps>`
       background-position: center center;
       background-attachment: fixed;
     `}
+  @media ${screen.lp} {
+    margin-top: unset;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    ${({ backgroundImg, blackout }) =>
+      backgroundImg &&
+      blackout &&
+      css`
+        background: linear-gradient(rgba(0, 0, 0, ${blackout}), rgba(0, 0, 0, ${blackout})), url(${backgroundImg});
+        background-size: cover;
+        background-position: center center;
+        background-attachment: fixed;
+      `}
+  }
 `;
 export const H2 = styled.h2`
   display: flex;
