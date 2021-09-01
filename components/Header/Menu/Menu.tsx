@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { FC, useEffect, useState } from 'react';
 import { MenuStyled, Nav, MenuList, Socials, Phone, SVG } from './Menu.styles';
 import MenuItem from './components/MenuItem';
 import SocialButton from '@comp/SocialButton';
@@ -32,12 +32,18 @@ const data = [
 ];
 
 const Menu: FC<MenuProps> = ({ isMenuOpen, onClickHandler }) => {
+  const [vh, setVh] = useState('');
+  useEffect(() => {
+    setVh(`${window.innerHeight - 96}px`);
+  }, []);
+  console.log(vh);
+
   const MenuItemList = data.map((item, index) => {
     return <MenuItem href={item.link} key={index} children={item.value} isMenuOpen={isMenuOpen} transitionDelay={`0.${index + 1}s`} onClickHandler={onClickHandler} />;
   });
   return (
     <>
-      <MenuStyled isMenuOpen={isMenuOpen}>
+      <MenuStyled isMenuOpen={isMenuOpen} vh={vh}>
         <Phone href="tel:+380506114689" isMenuOpen={isMenuOpen}>
           +38 050 611 46 89
         </Phone>

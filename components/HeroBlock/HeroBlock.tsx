@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { FC, useEffect, useState } from 'react';
 import Image from 'next/image';
 import { HeroContainer, H2, Title, Subtitle } from './HeroBlock.styles';
 
@@ -10,8 +10,12 @@ interface HeroProps {
 }
 
 const HeroBlock: FC<HeroProps> = ({ title, subtitle, backgroundImg, blackout = 0, children }) => {
+  const [vh, setVh] = useState('');
+  useEffect(() => {
+    setVh(`${window.innerHeight - 80}px`);
+  }, []);
   return (
-    <HeroContainer backgroundImg={backgroundImg} blackout={blackout}>
+    <HeroContainer backgroundImg={backgroundImg} blackout={blackout} vh={vh}>
       <H2>
         <Title>{title}</Title>
         <Subtitle>{subtitle}</Subtitle>

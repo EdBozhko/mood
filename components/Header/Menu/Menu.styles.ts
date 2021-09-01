@@ -4,6 +4,7 @@ import { screen } from '@themeConfigs/media';
 
 interface MenuStyledProps {
   isMenuOpen: boolean;
+  vh?: string;
 }
 
 export const MenuStyled = styled.div<MenuStyledProps>`
@@ -23,8 +24,9 @@ export const MenuStyled = styled.div<MenuStyledProps>`
     transition: width 0.4s ease-in-out;
     transition-delay: 0.2s;
   }
-  ${({ isMenuOpen }) =>
+  ${({ isMenuOpen, vh }) =>
     isMenuOpen &&
+    vh &&
     css`
       visibility: visible;
       position: relative;
@@ -32,7 +34,7 @@ export const MenuStyled = styled.div<MenuStyledProps>`
       flex-direction: column;
       justify-content: space-between;
       width: 100%;
-      height: calc(100vh - 80px - 13px);
+      height: ${vh};
       margin-top: 13px;
       padding-top: 13px;
       padding-bottom: 13px;
