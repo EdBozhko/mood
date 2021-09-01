@@ -11,6 +11,8 @@ import Slide_6 from './assets/static/slide_6.png';
 import Footer from '@comp/Footer';
 import Link from 'next/link';
 import SliderPagination from '@comp/SliderPagination';
+import ReactFullpage from '@fullpage/react-fullpage';
+
 const data = {
   h1: 'Mood - студія дизайну, яка допоможе створити не тільки зовнішню красу, але і Ваш внутрішній настрій. Наша спеціалізація - дизайн інтер’єрів, архітектурне проектування, ландшафтний та технічний дизайн, а також ми надаємо комплекс послуг.',
   slides: [
@@ -79,26 +81,80 @@ const MoodPage: FC = () => {
       nextSlide();
     }
   };
+
+  if (!data.slides.length) {
+    return null;
+  }
+
   const Slides = data.slides.map((slide, index) => {
     return (
-      <Link href={slide.link}>
-        <SliderItem blackout={slide.blackout}>
-          <HeadingContainer>
-            <Heading>{slide.heading}</Heading>
-            <TitleContainer>
-              <Title>{slide.title}</Title>
-              <Subtitle>{slide.subtitle}</Subtitle>
-            </TitleContainer>
-          </HeadingContainer>
-          <Image objectFit="cover" objectPosition="center" layout="fill" key={index} src={slide.src} alt={slide.alt} />
-        </SliderItem>
-      </Link>
+      // <Link href={slide.link}>
+      //   <SliderItem blackout={slide.blackout}>
+      //     <HeadingContainer>
+      //       <Heading>{slide.heading}</Heading>
+      //       <TitleContainer>
+      //         <Title>{slide.title}</Title>
+      //         <Subtitle>{slide.subtitle}</Subtitle>
+      //       </TitleContainer>
+      //     </HeadingContainer>
+      //     <Image objectFit="cover" objectPosition="center" layout="fill" key={index} src={slide.src} alt={slide.alt} />
+      //   </SliderItem>
+      // </Link>
+
+      <div className="section">
+        <Image objectFit="cover" objectPosition="center" layout="fill" key={index} src={slide.src} alt={slide.alt} />
+      </div>
     );
   });
+  // Slides.push(
+  //   <div className="section">
+  //     <Footer title="Замовити безкоштовну консультацію" />
+  //   </div>
+  // );
   return (
     <>
       <H1>{data.h1}</H1>
-      <SliderBox onWheel={handleScroll} onTouchMove={handleTouchMove} onTouchStart={handleTouchStart} onTouchEnd={handleTouchEnd}>
+      <ReactFullpage
+        navigation
+        // pluginWrapper={pluginWrapper}
+        // onLeave={this.onLeave.bind(this)}
+        // scrollHorizontally = {true}
+        // sectionsColor={this.state.sectionsColor}
+        render={(comp) => (
+          <ReactFullpage.Wrapper>
+            {/* {fullpages.map(({ text }) => (
+                  <div key={text} className="section">
+                    <h1>{text}</h1>
+                  </div>
+                ))} */}
+            {/* 
+            {data.slides.map((slide, index) => (
+              <div className="section">
+                <Image objectFit="cover" objectPosition="center" layout="fill" key={index} src={slide.src} alt={slide.alt} />
+              </div>
+
+
+              <Link href={slide.link}>
+                <SliderItem blackout={slide.blackout}>
+                   <HeadingContainer>
+                    <Heading>{slide.heading}</Heading>
+                    <TitleContainer>
+                      <Title>{slide.title}</Title>
+                      <Subtitle>{slide.subtitle}</Subtitle>
+                    </TitleContainer>
+                  </HeadingContainer>
+                  <Image objectFit="cover" objectPosition="center" layout="fill" key={index} src={slide.src} alt={slide.alt} />
+                </SliderItem>
+              </Link>
+            ))} */}
+            {Slides}
+            <div className="section">
+              <Footer title="Замовити безкоштовну консультацію" />
+            </div>
+          </ReactFullpage.Wrapper>
+        )}
+      />
+      {/* <SliderBox onWheel={handleScroll} onTouchMove={handleTouchMove} onTouchStart={handleTouchStart} onTouchEnd={handleTouchEnd}>
         <Carousel
           ref={carousel}
           className="slider"
@@ -127,7 +183,7 @@ const MoodPage: FC = () => {
           {Slides}
           <Footer title="Замовити безкоштовну консультацію" />
         </Carousel>
-      </SliderBox>
+      </SliderBox> */}
     </>
   );
 };
