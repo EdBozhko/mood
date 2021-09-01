@@ -17,9 +17,13 @@ export const StagesList = styled.ul`
 `;
 export const StagesItem = styled.li`
   display: flex;
-  flex-direction: row;
-  :nth-child(even) {
-    flex-direction: row-reverse;
+  flex-direction: column;
+  @media ${screen.lp} {
+    display: flex;
+    flex-direction: row;
+    :nth-child(even) {
+      flex-direction: row-reverse;
+    }
   }
 `;
 export const DescriptionContainer = styled.div<DescriptionProps>`
