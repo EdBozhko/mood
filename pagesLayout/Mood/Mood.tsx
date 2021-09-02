@@ -1,6 +1,5 @@
 import React, { FC, useRef, useState } from 'react';
 import Image from 'next/image';
-import Carousel from 'react-elastic-carousel';
 import { H1, SliderBox, SliderItem, HeadingContainer, Heading, Title, Subtitle, TitleContainer } from './Mood.styles';
 import Slide_1 from './assets/static/slide_1.png';
 import Slide_2 from './assets/static/slide_2.jpeg';
@@ -25,29 +24,25 @@ const data = {
   ],
 };
 const MoodPage: FC = () => {
- 
-
   if (!data.slides.length) {
     return null;
   }
 
   const Slides = data.slides.map((slide, index) => {
     return (
-
-
       <div className="section">
-      <Link href={slide.link}>
-        <SliderItem blackout={slide.blackout}>
-          <HeadingContainer>
-            <Heading>{slide.heading}</Heading>
-            <TitleContainer>
-              <Title>{slide.title}</Title>
-              <Subtitle>{slide.subtitle}</Subtitle>
-            </TitleContainer>
-          </HeadingContainer>
-          <Image objectFit="cover" objectPosition="center" layout="fill" key={index} src={slide.src} alt={slide.alt} />
-        </SliderItem>
-      </Link>
+        <Link href={slide.link}>
+          <SliderItem blackout={slide.blackout}>
+            <HeadingContainer>
+              <Heading>{slide.heading}</Heading>
+              <TitleContainer>
+                <Title>{slide.title}</Title>
+                <Subtitle>{slide.subtitle}</Subtitle>
+              </TitleContainer>
+            </HeadingContainer>
+            <Image objectFit="cover" objectPosition="center" layout="fill" key={index} src={slide.src} alt={slide.alt} />
+          </SliderItem>
+        </Link>
       </div>
     );
   });
@@ -56,23 +51,18 @@ const MoodPage: FC = () => {
     <>
       <H1>{data.h1}</H1>
       <SliderBox>
-      <ReactFullpage
-
-        navigation
-       
-        render={(comp) => (
-          <ReactFullpage.Wrapper>
-      
-            {Slides}
-            <div className="section">
-              <Footer title="Замовити безкоштовну консультацію" />
-            </div>
-            
-          </ReactFullpage.Wrapper>
-        )}
-      />
+        <ReactFullpage
+          navigation
+          render={(comp) => (
+            <ReactFullpage.Wrapper>
+              {Slides}
+              <div className="section">
+                <Footer title="Замовити безкоштовну консультацію" />
+              </div>
+            </ReactFullpage.Wrapper>
+          )}
+        />
       </SliderBox>
-   
     </>
   );
 };
