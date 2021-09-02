@@ -9,17 +9,22 @@ interface SliderItemProps {
 export const SliderBox = styled.section`
   height: 100%;
   width: 100%;
-  .rec-slider-container {
-    margin: 0;
-  }
-  .rec-carousel-item {
+
+
+  .fullpage-wrapper{
     width: 100%;
-    height: 100vh;
-    position: relative;
   }
-  .slider {
-    position: relative;
+@media ${screen.lp}{
+  height: 100%;
+  width: 100%;
+  padding-left: 100px;
+  box-sizing: border-box;
+  .fullpage-wrapper{
+    width: 100%;
   }
+}
+
+  
 `;
 export const SliderItem = styled.a<SliderItemProps>`
   display: flex;
