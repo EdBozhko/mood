@@ -25,62 +25,7 @@ const data = {
   ],
 };
 const MoodPage: FC = () => {
-  const carousel = useRef(null);
-  const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
-
-  const prewSlide = () => {
-    carousel.current.slidePrev();
-  };
-  const nextSlide = () => {
-    carousel.current.slideNext();
-  };
-  const handleScroll = (e) => {
-    // e.preventDefault();
-    const { deltaY } = e;
-
-    if (deltaY < 0 && currentSlideIndex > 0) {
-      setCurrentSlideIndex((prev) => prev - 1);
-      prewSlide();
-    }
-    if (deltaY > 0 && currentSlideIndex < data.slides.length) {
-      setCurrentSlideIndex((prev) => prev + 1);
-      nextSlide();
-    }
-  };
-  const [touchStartPosition, setTouchStartPosition] = useState(null);
-  const [touchEndPosition, setTouchEndPosition] = useState(null);
-
-  const handleTouchStart = (e) => {
-    e.preventDefault();
-    console.log(`start ${e.changedTouches[0].clientY}`);
-    setTouchStartPosition(e.changedTouches[0].clientY);
-  };
-  const handleTouchEnd = (e) => {
-    e.preventDefault();
-    console.log(`end ${e.changedTouches[0].clientY}`);
-    console.log(`currentSlideIndex ${currentSlideIndex}`);
-    setTouchEndPosition(e.changedTouches[0].clientY);
-    changeSlide();
-  };
-  const handleTouchMove = (e) => {
-    e.preventDefault();
-  };
-  const changeSlide = () => {
-    // if(currentSlideIndex === 0 || currentSlideIndex === data.slides.length) {
-    //   setTouchStartPosition(0)
-    //   setTouchEndPosition(0)
-
-    // }
-    if (touchStartPosition < touchEndPosition && currentSlideIndex > 0) {
-      // setCurrentSlideIndex((prev) => prev - 1);
-
-      prewSlide();
-    }
-    if (touchStartPosition > touchEndPosition && currentSlideIndex < data.slides.length) {
-      // setCurrentSlideIndex((prev) => prev + 1);
-      nextSlide();
-    }
-  };
+ 
 
   if (!data.slides.length) {
     return null;
@@ -88,102 +33,46 @@ const MoodPage: FC = () => {
 
   const Slides = data.slides.map((slide, index) => {
     return (
-      // <Link href={slide.link}>
-      //   <SliderItem blackout={slide.blackout}>
-      //     <HeadingContainer>
-      //       <Heading>{slide.heading}</Heading>
-      //       <TitleContainer>
-      //         <Title>{slide.title}</Title>
-      //         <Subtitle>{slide.subtitle}</Subtitle>
-      //       </TitleContainer>
-      //     </HeadingContainer>
-      //     <Image objectFit="cover" objectPosition="center" layout="fill" key={index} src={slide.src} alt={slide.alt} />
-      //   </SliderItem>
-      // </Link>
+
 
       <div className="section">
-        <Image objectFit="cover" objectPosition="center" layout="fill" key={index} src={slide.src} alt={slide.alt} />
+      <Link href={slide.link}>
+        <SliderItem blackout={slide.blackout}>
+          <HeadingContainer>
+            <Heading>{slide.heading}</Heading>
+            <TitleContainer>
+              <Title>{slide.title}</Title>
+              <Subtitle>{slide.subtitle}</Subtitle>
+            </TitleContainer>
+          </HeadingContainer>
+          <Image objectFit="cover" objectPosition="center" layout="fill" key={index} src={slide.src} alt={slide.alt} />
+        </SliderItem>
+      </Link>
       </div>
     );
   });
-  // Slides.push(
-  //   <div className="section">
-  //     <Footer title="Замовити безкоштовну консультацію" />
-  //   </div>
-  // );
+
   return (
     <>
       <H1>{data.h1}</H1>
+      <SliderBox>
       <ReactFullpage
+
         navigation
-        // pluginWrapper={pluginWrapper}
-        // onLeave={this.onLeave.bind(this)}
-        // scrollHorizontally = {true}
-        // sectionsColor={this.state.sectionsColor}
+       
         render={(comp) => (
           <ReactFullpage.Wrapper>
-            {/* {fullpages.map(({ text }) => (
-                  <div key={text} className="section">
-                    <h1>{text}</h1>
-                  </div>
-                ))} */}
-            {/* 
-            {data.slides.map((slide, index) => (
-              <div className="section">
-                <Image objectFit="cover" objectPosition="center" layout="fill" key={index} src={slide.src} alt={slide.alt} />
-              </div>
-
-
-              <Link href={slide.link}>
-                <SliderItem blackout={slide.blackout}>
-                   <HeadingContainer>
-                    <Heading>{slide.heading}</Heading>
-                    <TitleContainer>
-                      <Title>{slide.title}</Title>
-                      <Subtitle>{slide.subtitle}</Subtitle>
-                    </TitleContainer>
-                  </HeadingContainer>
-                  <Image objectFit="cover" objectPosition="center" layout="fill" key={index} src={slide.src} alt={slide.alt} />
-                </SliderItem>
-              </Link>
-            ))} */}
+      
             {Slides}
             <div className="section">
               <Footer title="Замовити безкоштовну консультацію" />
             </div>
+            
           </ReactFullpage.Wrapper>
         )}
       />
-      {/* <SliderBox onWheel={handleScroll} onTouchMove={handleTouchMove} onTouchStart={handleTouchStart} onTouchEnd={handleTouchEnd}>
-        <Carousel
-          ref={carousel}
-          className="slider"
-          itemsToShow={1}
-          verticalMode={true}
-          itemsToScroll={1}
-          isRTL={false}
-          showArrows={false}
-          pagination={true}
-          enableMouseSwipe={false}
-          // enableSwipe={false}
-          // onNextEnd={(currentItem, nextItem) => {
-          //   console.log(currentItem);
-          //   console.log(nextItem);
-          //   setCurrentSlideIndex(nextItem);
-          // }}
-          // onPrevEnd={(currentItem, nextItem) => {
-          //   console.log(currentItem);
-          //   console.log(nextItem);
-          //   setCurrentSlideIndex(nextItem);
-          // }}
-          renderPagination={({ pages, activePage, onClick }) => {
-            return <SliderPagination className="slider-pagination" pages={pages} activePage={activePage} onClick={onClick} />;
-          }}
-        >
-          {Slides}
-          <Footer title="Замовити безкоштовну консультацію" />
-        </Carousel>
-      </SliderBox> */}
+      </SliderBox>
+   
     </>
   );
 };
