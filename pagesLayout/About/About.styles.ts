@@ -13,7 +13,7 @@ interface TextBlockProps {
   textColor?: string;
 }
 
-export const TextBlockContainer = styled.div<TextBlockContainerProps>`
+export const TextBlockContainer = styled.section<TextBlockContainerProps>`
   width: 100%;
   /* min-height: 700px; */
   /* padding: 20px; */

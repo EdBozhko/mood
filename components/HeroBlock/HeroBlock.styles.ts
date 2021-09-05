@@ -8,7 +8,7 @@ interface HeroContainerProps {
   vh?: string;
 }
 
-export const HeroContainer = styled.div<HeroContainerProps>`
+export const HeroContainer = styled.section<HeroContainerProps>`
   height: ${({ vh }) => vh};
   margin-top: 80px;
   width: 100%;

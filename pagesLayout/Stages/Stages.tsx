@@ -3,7 +3,7 @@ import theme from '@themeConfigs/theme';
 import HeroBlock from '@comp/HeroBlock';
 import backgroundImg from './assets/static/stages.jpg';
 import Image from 'next/image';
-import { StagesList, StagesItem, DescriptionContainer, ImageContainer, NumberBox, TitleBox, DescriptionBox, Separator } from './Stages.styles';
+import { StagesSection, StagesList, StagesItem, DescriptionContainer, ImageContainer, NumberBox, TitleBox, DescriptionBox, Separator } from './Stages.styles';
 import Stage_1 from './assets/static/stage_1.png';
 import Stage_2 from './assets/static/stage_2.jpg';
 import Stage_3 from './assets/static/stage_3.jpeg';
@@ -98,7 +98,9 @@ const StagesPage: FC = () => {
   return (
     <>
       <HeroBlock title={data.title} subtitle={data.subtitle} backgroundImg={data.backgroundImg} blackout={data.blackout} />
-      <StagesList>{List}</StagesList>
+      <StagesSection>
+        <StagesList>{List}</StagesList>
+      </StagesSection>
       <CallToAction data={data.callToAction} />
     </>
   );
