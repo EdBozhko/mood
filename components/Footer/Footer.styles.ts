@@ -12,7 +12,7 @@ interface MapBoxProps {
 
 export const FooterStyled = styled.footer<FooterStyledProps>`
   width: 100%;
-  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(${FooterBG});
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(${FooterBG}), ${theme.colors.brown};
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -34,7 +34,7 @@ export const FooterStyled = styled.footer<FooterStyledProps>`
   @media ${screen.lp} {
     width: 100%;
     height: 100vh;
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(${FooterBG});
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(${FooterBG}), ${theme.colors.brown};
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
