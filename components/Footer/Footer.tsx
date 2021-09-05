@@ -108,7 +108,6 @@ const Footer: FC<FooterProps> = ({ page, title, subtitle }) => {
       });
     });
   }, []);
-  console.log(page);
 
   return (
     <>

@@ -10,7 +10,7 @@ interface DescriptionProps {
 interface SeparatorProps {
   textColor: string;
 }
-
+export const StagesSection = styled.section``;
 export const StagesList = styled.ul`
   display: flex;
   flex-direction: column;

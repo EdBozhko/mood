@@ -6,6 +6,10 @@ interface CallToActionContainerProps {
   blackout?: number;
 }
 
+export const CallToActionSection = styled.section`
+  width: 100%;
+`;
+
 export const CallToActionContainer = styled.a<CallToActionContainerProps>`
   display: flex;
   justify-content: center;

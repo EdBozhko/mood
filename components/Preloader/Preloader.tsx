@@ -1,9 +1,15 @@
-import React, { FC } from 'react';
+import React, { FC, useState } from 'react';
 import { PreloaderContainer, LogoContainer } from './Preloader.styles';
 
 const Preloader: FC = () => {
+  const [animationEnd, setAnimationEnd] = useState(false);
+  const handleAnimationEnd = () => {
+    setTimeout(() => {
+      setAnimationEnd(true);
+    }, 3000);
+  };
   return (
-    <PreloaderContainer>
+    <PreloaderContainer onAnimationEnd={handleAnimationEnd} animationEnd={animationEnd}>
       <LogoContainer>
         <svg id="eMGum8C5pt31" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 650.290000 232.970000" shape-rendering="geometricPrecision" text-rendering="geometricPrecision">
           <g id="eMGum8C5pt32">

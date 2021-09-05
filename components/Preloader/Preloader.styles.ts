@@ -2,6 +2,10 @@ import { screen } from '@themeConfigs/media';
 import theme from '@themeConfigs/theme';
 import styled, { css, keyframes } from 'styled-components';
 
+interface PreloaderContainerProps {
+  animationEnd?: boolean;
+}
+
 const PreloaderAnimationMobile = keyframes`
     0% {
         height: 100vh;
@@ -28,7 +32,7 @@ const LogoAnimation = keyframes`
     }
 `;
 
-export const PreloaderContainer = styled.div`
+export const PreloaderContainer = styled.div<PreloaderContainerProps>`
   width: 100vw;
   height: 100vh;
   position: fixed;
@@ -39,27 +43,34 @@ export const PreloaderContainer = styled.div`
   padding-top: 80px;
   box-sizing: border-box;
   align-items: center;
-justify-content: center;
-animation: ${PreloaderAnimationMobile} 1s both;
+  justify-content: center;
+  animation: ${PreloaderAnimationMobile} 1s both;
   animation-delay: 4s;
+  ${({ animationEnd }) =>
+    animationEnd &&
+    css`
+      display: none;
+    `}
 
-
-
-@media ${screen.lp} {
-
-  width: 100vw;
-  height: 100vh;
-  position: fixed;
-  left: 0;
-  background-color: ${theme.colors.brown};
-  z-index: 997;
-  display: flex;
-  padding-left: 100px;
-  box-sizing: border-box;
-  align-items: center;
-  animation: ${PreloaderAnimationDesktop} 1s both;
-  animation-delay: 4s;
-}
+  @media ${screen.lp} {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    background-color: ${theme.colors.brown};
+    z-index: 997;
+    display: flex;
+    padding-left: 100px;
+    box-sizing: border-box;
+    align-items: center;
+    animation: ${PreloaderAnimationDesktop} 1s both;
+    animation-delay: 4s;
+    ${({ animationEnd }) =>
+      animationEnd &&
+      css`
+        display: none;
+      `}
+  }
 `;
 export const LogoContainer = styled.div`
   width: 100%;
@@ -67,10 +78,10 @@ export const LogoContainer = styled.div`
   box-sizing: border-box;
   animation: ${LogoAnimation} 1s both;
   animation-delay: 4s;
-@media ${screen.lp} {
-  padding: 0 100px;
-  animation: unset;
-}
+  @media ${screen.lp} {
+    padding: 0 100px;
+    animation: unset;
+  }
   svg {
     #eMGum8C5pt33_to {
       animation: eMGum8C5pt33_to__to 2000ms linear 1 normal forwards;
