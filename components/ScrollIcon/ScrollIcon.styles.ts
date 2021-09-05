@@ -8,13 +8,13 @@ interface IconContainerProps {
 
 const Mouse = keyframes`
         0% {
-          transform: translateY(0) translateX(-50%) ;
+          transform: translateY(0) translateX(50%) ;
         }
         40% {
-          transform: translateY(-50%) translateX(-50%);
+          transform: translateY(-50%) translateX(50%);
         }
         100% {
-          transform: translateY(0) translateX(-50%);
+          transform: translateY(0) translateX(50%);
         }
 
 `;
@@ -44,7 +44,6 @@ export const IconScroll = styled.div`
     display: flex;
     align-items: flex-end;
     justify-content: center;
-
     animation-duration: 1.5s;
     animation-iteration-count: infinite;
     animation-name: ${Mouse};
@@ -72,10 +71,11 @@ export const IconText = styled.span`
 `;
 export const IconContainer = styled.div<IconContainerProps>`
   width: 100%;
+  height: 50px;
   position: fixed;
   z-index: 2;
   bottom: 0;
   padding-left: 100px;
-  box-sizing: border-box;
+  /* box-sizing: border-box; */
   display: ${({ isScroll }) => (isScroll ? 'none' : 'flex')};
 `;
