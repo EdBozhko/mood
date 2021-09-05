@@ -33,20 +33,6 @@ filter.appendChild(feComposite);
 navigation.appendChild(slider);
 navigation.appendChild(svg);
 
-// buttons.forEach((button) => {
-//   button.addEventListener('click', clickHandler);
-// });
-
-// function clickHandler(e) {
-//   const target = e;
-//   const position = {
-//     top: target.currentTarget.offsetTop,
-//     left: target.currentTarget.offsetLeft,
-//   };
-//   slider.style.marginTop = '0px';
-//   slider.style.top = `${position.top}px`;
-// }
-
 const links = document.querySelectorAll(' #fp-nav ul li a');
 
 function callback(mutationsList) {
