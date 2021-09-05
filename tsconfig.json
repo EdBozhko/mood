@@ -26,6 +26,6 @@
       "@img/*": ["public/static/images/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "next-sitemap.js", "additional.d.ts", "**/*.d.ts", "**/*.spec.ts"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "next-sitemap.js", "additional.d.ts", "**/*.d.ts", "**/*.spec.ts", "pagesLayout/Mood/assets/static/navDots.js"],
   "exclude": ["node_modules"]
 }

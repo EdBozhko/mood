@@ -40,7 +40,7 @@ body {
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
     overflow-x: hidden;
-    #fp-nav ul li a span,
+    /* #fp-nav ul li a span,
 .fp-slidesNav ul li a span {
 
     height: 10px;
@@ -77,7 +77,9 @@ box-shadow: 4.83px 1.294px 11.7px 1.3px rgba(0, 0, 0, 0.004);
 
      right: 17px;
    }
-}
+} */
+
+
     @media ${screen.lp} {
 
       margin-left: 100px;
@@ -128,5 +130,124 @@ select:-webkit-autofill:focus {
   -webkit-box-shadow: 0 0 0px 1000px #ffffff inset !important;
 }
 
+/* carousel navigation dots styles */
+
+
+#fp-nav {
+    position: fixed !important;
+    z-index: 100 !important;
+    top: 50% !important;
+    opacity: 1 !important;
+    transform: translateY(-50%) !important;
+    -ms-transform: translateY(-50%) !important;
+    -webkit-transform: translate3d(0,-50%,0) !important;
+}
+#fp-nav.fp-right {
+    right: 17px !important;
+}
+#fp-nav.fp-left {
+    left: 17px !important;
+}
+#fp-nav ul,
+.fp-slidesNav ul {
+  margin: 0 !important;
+  padding: 0 !important;
+  filter: url(#fancy-goo);
+  #slider {
+        width: 12px;
+        height: 12px;
+        /* margin: 8px 0; */
+
+        border-radius: 50%;
+        background: ${theme.colors.golden};
+        z-index: 1;
+        position: absolute;
+        top: 0;
+        left: 0;
+        transition: 1.5s;
+      }
+      svg {
+        display: none;
+      }
+}
+#fp-nav ul li,
+.fp-slidesNav ul li {
+    display: block !important;
+    width: 12px !important;
+    height: 12px !important;
+    margin: 8px 0 !important;
+    position:relative !important;
+    transition: 1.5s;
+}
+#fp-nav ul li a,
+.fp-slidesNav ul li a {
+    display: block !important;
+    position: relative !important;
+    z-index: 1 !important;
+    width: 100% !important;
+    height: 100% !important;
+    cursor: pointer !important;
+    text-decoration: none !important;
+    transition: 1.5s;
+}
+#fp-nav ul li a.active span,
+.fp-slidesNav ul li a.active span,
+#fp-nav ul li:hover a.active span,
+.fp-slidesNav ul li:hover a.active span{
+    height: 12px !important;
+    width: 12px !important;
+    margin: 0 !important;
+    border-radius: 50% !important;
+ }
+#fp-nav ul li a span,
+.fp-slidesNav ul li a span {
+    border-radius: 50% !important;
+    position: absolute !important;
+    z-index: 1 !important;
+    height: 12px !important;
+    width: 12px !important;
+    border: 0 !important;
+    background: ${theme.colors.beige} !important;
+    left: 0 !important;
+    top: 0 !important;
+    margin: 0 !important;
+    -webkit-transition: all 1.5s ease-in-out !important;
+    -moz-transition: all 1.5s ease-in-out !important;
+    -o-transition: all 1.5s ease-in-out !important;
+    transition: all 1.5s ease-in-out !important;
+}
+#fp-nav ul li:hover a span,
+.fp-slidesNav ul li:hover a span{
+    width: 12px !important;
+    height: 12px !important;
+    margin: 0px !important;
+}
+#fp-nav ul li .fp-tooltip {
+    position: absolute !important;
+    top: -2px !important;
+    color: #fff !important;
+    font-size: 14px !important;
+    font-family: arial, helvetica, sans-serif !important;
+    white-space: nowrap !important;
+    max-width: 220px !important;
+    overflow: hidden !important;
+    display: block !important;
+    opacity: 0 !important;
+    width: 0 !important;
+    cursor: pointer !important;
+}
+#fp-nav ul li:hover .fp-tooltip,
+#fp-nav.fp-show-active a.active + .fp-tooltip {
+    -webkit-transition: opacity 0.2s ease-in !important;
+    transition: opacity 0.2s ease-in !important;
+    width: auto !important;
+    opacity: 1 !important;
+}
+#fp-nav ul li .fp-tooltip.fp-right {
+    right: 20px !important;
+}
+#fp-nav ul li .fp-tooltip.fp-left {
+    left: 20px !important;
+}
 
 `;
