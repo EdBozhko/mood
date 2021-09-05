@@ -13,11 +13,19 @@ const ContactForm: FC<ContactFormProps> = ({ title, subtitle }) => {
     width: 0,
     height: 0,
   });
+  const handleResize = () => {
+    setInput({
+      width: inputBoxRef.current.clientWidth,
+      height: inputBoxRef.current.clientHeight,
+    });
+  };
   useEffect(() => {
     setInput({
       width: inputBoxRef.current.clientWidth,
       height: inputBoxRef.current.clientHeight,
     });
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
   }, []);
   const inputPerimeter = (inputBox.height * 2 + inputBox.width * 2) * 1.01;
   return (
