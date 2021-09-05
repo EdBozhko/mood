@@ -11,6 +11,7 @@ import Footer from '@comp/Footer';
 import Link from 'next/link';
 import SliderPagination from '@comp/SliderPagination';
 import ReactFullpage from '@fullpage/react-fullpage';
+import Script from 'next/script';
 
 const data = {
   h1: 'Mood - студія дизайну, яка допоможе створити не тільки зовнішню красу, але і Ваш внутрішній настрій. Наша спеціалізація - дизайн інтер’єрів, архітектурне проектування, ландшафтний та технічний дизайн, а також ми надаємо комплекс послуг.',
@@ -63,6 +64,7 @@ const MoodPage: FC = () => {
           )}
         />
       </SliderBox>
+      <Script src="./static/navDots.js" />
     </>
   );
 };
