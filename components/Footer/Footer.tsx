@@ -2,6 +2,7 @@ import React, { FC, useEffect, useRef } from 'react';
 import { FooterStyled, MapBox } from './Footer.styles';
 import ContactForm from './components/ContactForm';
 import { Loader } from '@googlemaps/js-api-loader';
+import Marker from '../../public/MarkerS.png';
 
 interface FooterProps {
   page?: boolean;
@@ -25,6 +26,7 @@ const Footer: FC<FooterProps> = ({ title, subtitle }) => {
         streetViewControl: false,
         fullscreenControl: false,
         mapTypeControl: false,
+
         styles: [
           { elementType: 'geometry', stylers: [{ color: '#242f3e' }] },
           { elementType: 'labels.text.stroke', stylers: [{ color: '#242f3e' }] },
@@ -37,7 +39,7 @@ const Footer: FC<FooterProps> = ({ title, subtitle }) => {
           {
             featureType: 'poi',
             elementType: 'labels.text.fill',
-            stylers: [{ color: '#d59563' }],
+            stylers: [{ color: '#706760' }],
           },
           {
             featureType: 'poi.park',
@@ -105,6 +107,13 @@ const Footer: FC<FooterProps> = ({ title, subtitle }) => {
             stylers: [{ color: '#17263c' }],
           },
         ],
+      });
+
+      const iconBase = 'https://maps.google.com/mapfiles/kml/shapes/';
+      const marker = new google.maps.Marker({
+        position: { lat: 48.6190173, lng: 22.2988042 },
+        map: map,
+        icon: Marker,
       });
     });
   }, []);
