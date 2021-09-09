@@ -6,9 +6,9 @@ export default {
     grey: '#444c5c',
     orange: '#e1b16a',
     azure: '#78a5a3',
+    white: '#ffffff',
     // primary: {
     //   black: '#181716',
-    //   white: '#FFFFFF',
     //   darkBlue: '#092240',
     // },
     // secondary: {
