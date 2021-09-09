@@ -3,12 +3,21 @@ import { FooterStyled, MapBox } from './Footer.styles';
 import ContactForm from './components/ContactForm';
 import { Loader } from '@googlemaps/js-api-loader';
 import Marker from '../../public/MarkerS.png';
+import InfoBox from './components/InfoBox';
 
 interface FooterProps {
   page?: boolean;
   title?: string;
   subtitle?: string;
 }
+
+const data = {
+  infoBox: {
+    address: `м.Ужгород,</br>пл.Петефі 999,</br>2 поверх`,
+    addressHref: 'https://goo.gl/maps/TJFAXFpw2t9zpTgh7',
+    workingHours: `Пн-Пт: 9.00-18.00</br>Сб: 10.00-15.00</br>Нд - вихідний`,
+  },
+};
 
 const Footer: FC<FooterProps> = ({ title, subtitle }) => {
   const googlemap = useRef(null);
@@ -123,6 +132,7 @@ const Footer: FC<FooterProps> = ({ title, subtitle }) => {
       <FooterStyled>
         <ContactForm title={title} subtitle={subtitle} />
         <MapBox>
+          <InfoBox address={data.infoBox.address} addressHref={data.infoBox.addressHref} workingHours={data.infoBox.workingHours} />
           <div id="map" ref={googlemap}></div>
         </MapBox>
       </FooterStyled>

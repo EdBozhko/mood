@@ -59,6 +59,7 @@ export const FooterStyled = styled.footer<FooterStyledProps>`
 export const MapBox = styled.div<MapBoxProps>`
   width: 100%;
   height: 50vh;
+  position: relative;
   box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.75);
   ${({ page }) =>
     page &&
