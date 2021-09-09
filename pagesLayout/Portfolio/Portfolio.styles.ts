@@ -97,12 +97,14 @@ export const Galleries = styled.section`
   width: 100%;
   padding: 20px 16px;
   box-sizing: border-box;
-  background: url(${GalleriesBg}) center/cover no-repeat;
+  /* background: url(${GalleriesBg}) center/cover no-repeat; */
+  background: ${theme.colors.brown};
   @media ${screen.lp} {
     width: 100%;
-    padding: 120px 130px 120px 150px;
+    padding: 40px 60px 120px;
     box-sizing: border-box;
-    background: url(${GalleriesBg}) center/cover no-repeat;
+    /* background: url(${GalleriesBg}) center/cover no-repeat; */
+    background: ${theme.colors.brown};
   }
 `;
 
@@ -120,18 +122,19 @@ export const GalleriesList = styled.ul`
 `;
 
 export const GalleriesItem = styled.li`
-  width: 300px;
-  height: 187px;
+  width: 100%;
+  height: 700rem;
   margin-top: 20px;
   user-select: none;
   :last-child {
     margin-bottom: 20px;
   }
   @media ${screen.lp} {
-    width: 300px;
-    height: 187px;
+    width: 380rem;
+    height: 250rem;
     margin-top: 50px;
-    margin-right: 50px;
+    margin-right: 10px;
+    /* margin-right: 50px; */
     user-select: none;
     :last-child {
       margin-bottom: unset;
@@ -148,7 +151,7 @@ export const SliderWrapper = styled.div<SliderWrapperProps>`
   /* background: url(${GalleriesBg}) center/cover no-repeat; */
   position: fixed;
   z-index: 1;
-  top: -100%;
+  top: -1000%;
   transition: top 0.5s ease;
   ${({ isSliderOpen }) =>
     isSliderOpen &&

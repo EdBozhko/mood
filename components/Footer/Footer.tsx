@@ -2,6 +2,8 @@ import React, { FC, useEffect, useRef } from 'react';
 import { FooterStyled, MapBox } from './Footer.styles';
 import ContactForm from './components/ContactForm';
 import { Loader } from '@googlemaps/js-api-loader';
+import Marker from '../../public/MarkerS.png';
+import InfoBox from './components/InfoBox';
 
 interface FooterProps {
   page?: boolean;
@@ -9,7 +11,15 @@ interface FooterProps {
   subtitle?: string;
 }
 
-const Footer: FC<FooterProps> = ({ page, title, subtitle }) => {
+const data = {
+  infoBox: {
+    address: `м.Ужгород,</br>пл.Петефі 999,</br>2 поверх`,
+    addressHref: 'https://goo.gl/maps/TJFAXFpw2t9zpTgh7',
+    workingHours: `Пн-Пт: 9.00-18.00</br>Сб: 10.00-15.00</br>Нд - вихідний`,
+  },
+};
+
+const Footer: FC<FooterProps> = ({ title, subtitle }) => {
   const googlemap = useRef(null);
   useEffect(() => {
     const loader = new Loader({
@@ -25,6 +35,7 @@ const Footer: FC<FooterProps> = ({ page, title, subtitle }) => {
         streetViewControl: false,
         fullscreenControl: false,
         mapTypeControl: false,
+
         styles: [
           { elementType: 'geometry', stylers: [{ color: '#242f3e' }] },
           { elementType: 'labels.text.stroke', stylers: [{ color: '#242f3e' }] },
@@ -37,7 +48,7 @@ const Footer: FC<FooterProps> = ({ page, title, subtitle }) => {
           {
             featureType: 'poi',
             elementType: 'labels.text.fill',
-            stylers: [{ color: '#d59563' }],
+            stylers: [{ color: '#706760' }],
           },
           {
             featureType: 'poi.park',
@@ -106,14 +117,22 @@ const Footer: FC<FooterProps> = ({ page, title, subtitle }) => {
           },
         ],
       });
+
+      const iconBase = 'https://maps.google.com/mapfiles/kml/shapes/';
+      const marker = new google.maps.Marker({
+        position: { lat: 48.6190173, lng: 22.2988042 },
+        map: map,
+        icon: Marker,
+      });
     });
   }, []);
 
   return (
     <>
-      <FooterStyled page={page}>
+      <FooterStyled>
         <ContactForm title={title} subtitle={subtitle} />
-        <MapBox page={page}>
+        <MapBox>
+          <InfoBox address={data.infoBox.address} addressHref={data.infoBox.addressHref} workingHours={data.infoBox.workingHours} />
           <div id="map" ref={googlemap}></div>
         </MapBox>
       </FooterStyled>

@@ -13,7 +13,7 @@ interface MenuItemProps {
 const MenuItem: FC<MenuItemProps> = ({ href, children, isMenuOpen, transitionDelay, onClickHandler }) => {
   return (
     <ListItem onClick={onClickHandler}>
-      <Link href={href} prefetch={false} passHref>
+      <Link href={href} prefetch={false} passHref scroll={true}>
         <Item isMenuOpen={isMenuOpen} transitionDelay={transitionDelay}>
           {children}
         </Item>

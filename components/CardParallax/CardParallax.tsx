@@ -40,6 +40,7 @@ const CardParallax: FC<CardParallaxProps> = ({ cardImg, cardTitle, cardDescripti
     cardRef.current.style.transform = `rotateY(0deg) rotateX(0deg) `;
     cardBackgroundRef.current.style.transform = `translateX(0px) translateY(0px)`;
   };
+
   return (
     <CardWrap ref={cardWrapRef} onMouseMove={onMouseMoveHandler} onMouseOut={onMouseOutHandler}>
       <Card ref={cardRef}>
