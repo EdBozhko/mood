@@ -9,7 +9,7 @@ interface FooterProps {
   subtitle?: string;
 }
 
-const Footer: FC<FooterProps> = ({ page, title, subtitle }) => {
+const Footer: FC<FooterProps> = ({ title, subtitle }) => {
   const googlemap = useRef(null);
   useEffect(() => {
     const loader = new Loader({
@@ -111,9 +111,9 @@ const Footer: FC<FooterProps> = ({ page, title, subtitle }) => {
 
   return (
     <>
-      <FooterStyled page={page}>
+      <FooterStyled>
         <ContactForm title={title} subtitle={subtitle} />
-        <MapBox page={page}>
+        <MapBox>
           <div id="map" ref={googlemap}></div>
         </MapBox>
       </FooterStyled>

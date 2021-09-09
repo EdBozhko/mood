@@ -16,18 +16,14 @@ interface MainLayoutProps {
 }
 
 const MainLayout: FC<MainLayoutProps> = ({ children, isScroll }) => {
-  const [page, setPage] = useState(null);
-  useEffect(() => {
-    setPage(window.location.pathname);
-  });
   return (
     <>
       <Preloader />
       <LineDecoration />
-      <Header />
       <ScrollIcon isScroll={isScroll} />
+      <Header />
       {children}
-      <Footer page={page === '/mood'} title={data.title} subtitle={data.subtitle} />
+      <Footer title={data.title} subtitle={data.subtitle} />
     </>
   );
 };
