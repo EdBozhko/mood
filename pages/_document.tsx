@@ -34,8 +34,8 @@ export default class MyDocument extends Document {
     return (
       <Html lang="uk">
         <Head>
-          <link rel="preload" href="/fonts/Blogger_Sans/Blogger_Sans_Light.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
-          <link rel="preload" href="/fonts/Blogger_Sans/Blogger_Sans_Regular.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
+          <link rel="preload" href="/fonts/Blogger_Sans/Bloggersanslight.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
+          <link rel="preload" href="/fonts/Blogger_Sans/Bloggersans.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
           <link rel="preload" href="/fonts/Quicksand/Quicksand-Light.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
           <link rel="preload" href="/fonts/Quicksand/Quicksand-Light.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
         </Head>
