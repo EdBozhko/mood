@@ -37,7 +37,7 @@ export const IconScroll = styled.div`
   display: none;
   @media ${screen.lp} {
     position: absolute;
-    right: 50%;
+    /* right: 50%; */
     width: 40px;
     height: 70px;
     bottom: 3%;
@@ -75,7 +75,7 @@ export const IconContainer = styled.div<IconContainerProps>`
   width: 40px;
   height: 70px;
   position: absolute;
-  z-index: 2000;
+  z-index: 2;
   right: 45%;
   top: 90vh;
   display: ${({ isScroll }) => (isScroll ? 'none' : 'flex')};
