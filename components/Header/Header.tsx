@@ -18,7 +18,7 @@ const Header: FC = () => {
           <BurgerButton onClickHandler={menuOpenHandler} isMenuOpen={isMenuOpen}>
             MENU
           </BurgerButton>
-          <Link href="mood" prefetch={false} passHref>
+          <Link href="/mood" prefetch={false} passHref>
             <a>
               <Logo onClickHandler={() => setIsMenuOpen(false)} />
             </a>
