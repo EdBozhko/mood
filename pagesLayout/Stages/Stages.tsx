@@ -3,7 +3,7 @@ import theme from '@themeConfigs/theme';
 import HeroBlock from '@comp/HeroBlock';
 import backgroundImg from './assets/static/stages.jpg';
 import Image from 'next/image';
-import { StagesSection, StagesList, StagesItem, DescriptionContainer, ImageContainer, NumberBox, TitleBox, DescriptionBox, Separator } from './Stages.styles';
+import { StagesSection, StagesList, StagesItem, DescriptionContainer, ImageContainer, NumberBox, TitleBox, DescriptionBox, Separator, H1 } from './Stages.styles';
 import Stage_1 from './assets/static/stage_1.png';
 import Stage_2 from './assets/static/stage_2.jpg';
 import Stage_3 from './assets/static/stage_3.jpeg';
@@ -13,6 +13,7 @@ import CallToAction from '@comp/CallToAction';
 import CallToActionImg from './assets/static/callToAction.png';
 
 const data = {
+  h1: 'Mood - кожен етап нашої співпраці ретельно зважений та продуманих, щоб реалізувати Ваші найсміливіші фантазії.',
   title: 'етапи роботи',
   subtitle: 'інтивідуальний підхід від концепції до реалізації',
   blackout: 0.45,
@@ -97,6 +98,7 @@ const StagesPage: FC = () => {
   });
   return (
     <>
+      <H1>{data.h1}</H1>
       <HeroBlock title={data.title} subtitle={data.subtitle} backgroundImg={data.backgroundImg} blackout={data.blackout} />
       <StagesSection>
         <StagesList>{List}</StagesList>

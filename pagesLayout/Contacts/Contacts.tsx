@@ -1,13 +1,14 @@
 import React, { FC } from 'react';
 import HeroBlock from '@comp/HeroBlock';
 import backgroundImg from './assets/static/contacts.jpg';
-import { TeamBlock, TeamList, TeamItem } from './Contacts.styles';
+import { TeamBlock, TeamList, TeamItem, H1 } from './Contacts.styles';
 import TeamMember from './components';
 import TeamMember_1 from './assets/static/manager.jpg';
 import TeamMember_2 from './assets/static/manager2.jpeg';
 import TeamMember_3 from './assets/static/manager3.jpeg';
 
 const data = {
+  h1: 'Mood - наші дизайнери з готовністю дадуть відповіді на всі Ваші питання.',
   title: 'контакти',
   subtitle: 'давайте обговоримо Ваш дизайн',
   blackout: 0.1,
@@ -29,6 +30,7 @@ const ContactsPage: FC = () => {
   });
   return (
     <>
+      <H1>{data.h1}</H1>
       <HeroBlock title={data.title} subtitle={data.subtitle} backgroundImg={data.backgroundImg} blackout={data.blackout} />
       <TeamBlock>
         <TeamList>{Team}</TeamList>

@@ -2,7 +2,7 @@ import React, { FC } from 'react';
 import HeroBlock from '@comp/HeroBlock';
 import theme from '@themeConfigs/theme';
 import backgroundImg from './assets/static/about.png';
-import { TextBlock, TextBlockContainer } from './About.styles';
+import { TextBlock, TextBlockContainer, H1 } from './About.styles';
 import CallToAction from '@comp/CallToAction';
 import CallToActionImg from './assets/static/callToAction.png';
 import Image from 'next/image';
@@ -10,6 +10,7 @@ import Block_1 from './assets/static/block_1.png';
 import Block_2 from './assets/static/block_2.jpg';
 
 const data = {
+  h1: 'Mood - наш дизайн створить Ваш настрій.',
   title: 'про нас',
   subtitle: 'розробляємо дизайн, який створює настрій',
   backgroundImg: backgroundImg,
@@ -48,6 +49,7 @@ const data = {
 const AboutPage: FC = () => {
   return (
     <>
+      <H1>{data.h1}</H1>
       <HeroBlock title={data.title} subtitle={data.subtitle} backgroundImg={data.backgroundImg} blackout={data.blackout} />
       <TextBlockContainer backgroundImg={data.textBlocks.block_1.src} blackout={data.textBlocks.block_1.blackout}>
         <TextBlock blockAlign={data.textBlocks.block_1.blockAlign_1} textColor={data.textBlocks.block_1.textColor_1}>

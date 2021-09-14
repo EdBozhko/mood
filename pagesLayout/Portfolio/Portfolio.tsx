@@ -15,6 +15,7 @@ import {
   SliderItem,
   CloseButton,
   Line,
+  H1,
 } from './Portfolio.styles';
 import { Bathroom, Bedroom1, Bedroom2, DressingRoom, Facade, Guest1, Guest2, Hallway, Kitchen, Office, Patio } from './components/Gallery';
 import CardParallax from '@comp/CardParallax';
@@ -24,6 +25,7 @@ import 'slick-carousel/slick/slick-theme.css';
 import Slider from 'react-slick';
 
 const data = {
+  h1: 'Mood - наше портфоліо. Знайдіть своє натхнення поміж наших робіт.',
   title: 'портфоліо',
   subtitle: 'знайдіть своє надхнення',
   galleries: [Bathroom, Bedroom1, Bedroom2, DressingRoom, Facade, Guest1, Guest2, Hallway, Kitchen, Office, Patio],
@@ -79,6 +81,7 @@ const PortfolioPage: FC = () => {
   };
   return (
     <>
+      <H1>{data.h1}</H1>
       <HeroBlock title={data.title} subtitle={data.subtitle}>
         <FlexContainer>
           <ColumnOne />

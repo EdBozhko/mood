@@ -102,3 +102,14 @@ export const Separator = styled.span<SeparatorProps>`
       background-color: ${textColor};
     `}
 `;
+
+export const H1 = styled.h1`
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0px;
+  padding: 0px;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+`;

@@ -97,3 +97,14 @@ export const TextBlock = styled.p<TextBlockProps>`
     text-shadow: 4.83px 1.294px 11.7px rgba(0, 0, 0, 0.7);
   }
 `;
+
+export const H1 = styled.h1`
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0px;
+  padding: 0px;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+`;
