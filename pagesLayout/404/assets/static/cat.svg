@@ -7,7 +7,7 @@
 	.st1{display:inline;}
 	.st2{fill:#FEEBCD;}
 	.st3{opacity:0.2;}
-	.st4{fill:#000072;}
+	.st4{fill:#16164d;}
 	.st5{fill:#9CA9B9;}
 	.st6{opacity:0.3;}
 	.st7{fill:#FFFFFF;}
@@ -16,16 +16,16 @@
 	.st10{fill:#A5A5A5;}
 	.st11{fill:#FF7673;}
 	.st12{fill:#FF66A4;}
-	.st13{fill:#9CA9B9;stroke:#000072;stroke-width:13;stroke-miterlimit:10;}
+	.st13{fill:#9CA9B9;stroke:#16164d;stroke-width:13;stroke-miterlimit:10;}
 	.st14{fill:#FF9A3E;}
 	.st15{display:none;opacity:0.35;}
 	.st16{display:none;opacity:0.3;}
 	.st17{display:none;opacity:0.5;}
 	.st18{opacity:0.7;}
 	.st19{fill:#FC7E81;}
-	.st20{fill:#9CA9B9;stroke:#000072;stroke-width:10;stroke-miterlimit:10;}
-	.st21{fill:#808285;stroke:#000072;stroke-width:10;stroke-miterlimit:10;}
-	.st22{fill:#58595B;stroke:#000072;stroke-width:10;stroke-miterlimit:10;}
+	.st20{fill:#9CA9B9;stroke:#16164d;stroke-width:10;stroke-miterlimit:10;}
+	.st21{fill:#808285;stroke:#16164d;stroke-width:10;stroke-miterlimit:10;}
+	.st22{fill:#58595B;stroke:#16164d;stroke-width:10;stroke-miterlimit:10;}
 </style>
 <g class="st0">
 	<g class="st1">
