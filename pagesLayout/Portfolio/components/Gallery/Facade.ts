@@ -9,8 +9,8 @@ import Facade_8 from '../../assets/static/facade/facade_8.png';
 import Facade_9 from '../../assets/static/facade/facade_9.png';
 
 const Facade = {
-  title: 'Ванна кімната',
-  description: 'Шикарна ванна кімната у шикарному домі Шикарна ванна у шикарному домі',
+  title: 'Фасад',
+  description: '',
   gallery: [
     {
       src: Facade_1,

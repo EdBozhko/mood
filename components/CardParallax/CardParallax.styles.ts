@@ -18,8 +18,10 @@ export const CardDescription = styled.p`
 `;
 export const CardInfo = styled.div`
   padding: 20px;
+  box-sizing: border-box;
   position: absolute;
-  bottom: 0;
+  bottom: 5%;
+  width: 100%;
   color: #fff;
   -webkit-transform: translateY(40%);
   transform: translateY(40%);
@@ -32,7 +34,7 @@ export const CardInfo = styled.div`
     left: 0;
     z-index: 0;
     width: 100%;
-    height: 100%;
+    height: 120%;
     background-image: -webkit-gradient(linear, left top, left bottom, from(transparent), to(rgba(0, 0, 0, 0.6)));
     background-image: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.6) 100%);
     background-blend-mode: overlay;

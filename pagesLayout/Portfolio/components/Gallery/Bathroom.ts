@@ -8,49 +8,49 @@ import Bathroom_7 from '../../assets/static/bathroom/bathroom_7.png';
 
 const Bathroom = {
   title: 'Ванна кімната',
-  description: 'Шикарна ванна кімната у шикарному домі Шикарна ванна у шикарному домі',
+  description: '',
   gallery: [
     {
       src: Bathroom_1,
       alt: '',
       width: 1200,
-      height: 1600, 
+      height: 1600,
     },
     {
       src: Bathroom_2,
       alt: '',
       width: 2000,
-      height: 1000, 
+      height: 1000,
     },
     {
       src: Bathroom_3,
       alt: '',
       width: 1200,
-      height: 1600, 
+      height: 1600,
     },
     {
       src: Bathroom_4,
       alt: '',
       width: 1200,
-      height: 1600, 
+      height: 1600,
     },
     {
       src: Bathroom_5,
       alt: '',
       width: 1200,
-      height: 1600, 
+      height: 1600,
     },
     {
       src: Bathroom_6,
       alt: '',
       width: 1200,
-      height: 1600, 
+      height: 1600,
     },
     {
       src: Bathroom_7,
       alt: '',
       width: 1200,
-      height: 1600, 
+      height: 1600,
     },
   ],
 };
