@@ -9,7 +9,7 @@ export const TeamBlock = styled.section`
   background-color: ${theme.colors.grey};
   @media ${screen.lp} {
     width: 100%;
-    padding: 100px;
+    padding: 100rem;
     box-sizing: border-box;
     background-color: ${theme.colors.grey};
   }

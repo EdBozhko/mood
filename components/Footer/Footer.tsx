@@ -13,7 +13,7 @@ interface FooterProps {
 
 const data = {
   infoBox: {
-    address: `м.Ужгород,</br>пл.Петефі 999,</br>2 поверх`,
+    address: `м.Ужгород,</br>пл.Петефі 29,</br>2 поверх`,
     addressHref: 'https://goo.gl/maps/TJFAXFpw2t9zpTgh7',
     workingHours: `Пн-Пт: 9.00-18.00</br>Сб: 10.00-15.00</br>Нд - вихідний`,
   },

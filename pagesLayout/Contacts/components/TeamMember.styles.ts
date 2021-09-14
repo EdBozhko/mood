@@ -44,18 +44,27 @@ export const TeamMemberInfo = styled.div`
       margin-top: 10px;
     }
   }
+  @media ${screen.lp} {
+    padding: 20rem;
+  }
 `;
 export const Name = styled.span`
   font-family: ${theme.fontsFamily.bloggerSans};
   font-weight: 600;
   font-size: 36px;
   color: ${theme.colors.white};
+  @media ${screen.lp} {
+    font-size: 36rem;
+  }
 `;
 export const Position = styled.span`
   font-family: ${theme.fontsFamily.bloggerSans};
   font-weight: 300;
   font-size: 22px;
   color: ${theme.colors.white};
+  @media ${screen.lp} {
+    font-size: 22rem;
+  }
 `;
 export const Telephone = styled.a`
   font-family: ${theme.fontsFamily.bloggerSans};
@@ -64,5 +73,8 @@ export const Telephone = styled.a`
   color: ${theme.colors.beige};
   :hover {
     color: ${theme.colors.azure};
+  }
+  @media ${screen.lp} {
+    font-size: 30rem;
   }
 `;

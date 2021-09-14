@@ -52,9 +52,9 @@ const InputStyle = css`
     font-family: ${theme.fontsFamily.bloggerSans};
     color: ${theme.colors.beige};
     font-weight: 400;
-    font-size: 28px;
-    padding-left: 15px;
-    padding-right: 15px;
+    font-size: 28rem;
+    padding-left: 15rem;
+    padding-right: 15rem;
     box-sizing: border-box;
     width: 100%;
     height: 100%;
@@ -85,8 +85,8 @@ export const Title = styled.span`
   padding: 20px;
   box-sizing: border-box;
   @media ${screen.lp} {
-    font-size: 72px;
-    line-height: 86px;
+    font-size: 72rem;
+    line-height: 86rem;
     color: ${theme.colors.orange};
     padding: unset;
     box-sizing: unset;
@@ -100,8 +100,8 @@ export const Subtitle = styled.span`
   padding: 0 20px;
   box-sizing: border-box;
   @media ${screen.lp} {
-    font-size: 60px;
-    line-height: 72px;
+    font-size: 60rem;
+    line-height: 72rem;
     color: ${theme.colors.beige};
     padding: unset;
     box-sizing: unset;
@@ -136,6 +136,16 @@ export const Form = styled.form`
   flex-grow: 1;
   flex-shrink: 0;
   padding-bottom: 50px;
+  @media ${screen.lp} {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    flex-grow: 1;
+    flex-shrink: 0;
+    padding-bottom: 50rem;
+  }
 `;
 
 export const InputContainer = styled.div`
@@ -156,11 +166,11 @@ export const InputContainer = styled.div`
     height: fit-content;
     border-bottom: 1px solid rgba(255, 255, 255, 0.5);
     box-sizing: border-box;
-    padding: 20px 50px;
+    padding: 20rem 50rem;
     display: flex;
     flex-direction: unset;
     justify-content: space-between;
-    margin-top: 100px;
+    margin-top: 100rem;
     > * {
       width: 30%;
     }
@@ -241,5 +251,26 @@ export const Submit = styled.button`
   :active {
     background-color: transparent;
     color: ${theme.colors.golden};
+  }
+  @media ${screen.lp} {
+    background-color: transparent;
+    text-transform: uppercase;
+    font-family: ${theme.fontsFamily.bloggerSans};
+    color: ${theme.colors.beige};
+    font-weight: 400;
+    font-size: 30rem;
+    border: 2px solid ${theme.colors.golden};
+    padding: 7rem 15rem;
+    box-sizing: border-box;
+    transition: background-color 0.5s ease;
+    user-select: none;
+    :hover {
+      background-color: ${theme.colors.beige};
+      color: ${theme.colors.golden};
+    }
+    :active {
+      background-color: transparent;
+      color: ${theme.colors.golden};
+    }
   }
 `;

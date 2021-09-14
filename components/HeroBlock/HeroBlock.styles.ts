@@ -50,12 +50,15 @@ export const H2 = styled.h2`
   z-index: 1;
   pointer-events: none;
   text-align: center;
+  padding: 16px;
+  box-sizing: border-box;
   @media ${screen.lp} {
     text-align: unset;
     width: unset;
     display: flex;
     flex-direction: column;
-    padding-left: 100px;
+    padding: unset;
+    padding-left: 100rem;
     box-sizing: border-box;
     z-index: 1;
     pointer-events: none;
@@ -70,8 +73,8 @@ export const Title = styled.span`
   color: ${theme.colors.orange};
   text-shadow: 4.83px 1.294px 11.7px rgba(0, 0, 0, 0.7);
   @media ${screen.lp} {
-    font-size: 100px;
-    line-height: 120px;
+    font-size: 100rem;
+    line-height: 120rem;
   }
 `;
 export const Subtitle = styled.span`
@@ -82,7 +85,7 @@ export const Subtitle = styled.span`
   color: ${theme.colors.beige};
   text-shadow: 4.83px 1.294px 11.7px rgba(0, 0, 0, 0.7);
   @media ${screen.lp} {
-    font-size: 40px;
-    line-height: 48px;
+    font-size: 40rem;
+    line-height: 48rem;
   }
 `;

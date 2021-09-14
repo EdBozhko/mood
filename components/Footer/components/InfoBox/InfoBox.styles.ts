@@ -69,6 +69,25 @@ export const Address = styled.a`
     transform: translateX(-100%);
     background: url(${AddressIcon}) center/cover no-repeat;
   }
+  @media ${screen.lp} {
+    display: flex;
+    flex-direction: column;
+    margin-left: 40px;
+    padding-left: 10px;
+    padding-right: 50px;
+    position: relative;
+    cursor: pointer;
+
+    ::before {
+      content: '';
+      position: absolute;
+      width: 40px;
+      height: 40px;
+      left: 0;
+      transform: translateX(-100%);
+      background: url(${AddressIcon}) center/cover no-repeat;
+    }
+  }
 `;
 export const WorkingHours = styled.div`
   display: flex;
@@ -90,23 +109,57 @@ export const WorkingHours = styled.div`
     background: url(${WorkingHoursIcon}) center/cover no-repeat;
   }
   @media ${screen.lp} {
-    margin-top: unset;
+    display: flex;
+    flex-direction: column;
+    margin-left: 40px;
+    padding-left: 10px;
+    padding-right: 50px;
+    position: relative;
+    user-select: none;
+    pointer-events: none;
+    margin-top: 26px;
+    ::before {
+      content: '';
+      position: absolute;
+      width: 40px;
+      height: 40px;
+      left: 0;
+      transform: translateX(-100%);
+      background: url(${WorkingHoursIcon}) center/cover no-repeat;
+    }
   }
 `;
 export const Title = styled.span`
   font-family: ${theme.fontsFamily.bloggerSans};
   font-size: 20px;
   font-weight: 300;
-  color: ${theme.colors.white};
+  color: white;
+  @media ${screen.lp} {
+    font-family: ${theme.fontsFamily.bloggerSans};
+    font-size: 16px;
+    font-weight: 300;
+    color: white;
+  }
 `;
 export const Subtitle = styled.span`
   font-family: ${theme.fontsFamily.bloggerSans};
   font-size: 22px;
   font-weight: 400;
   line-height: 130%;
-  color: ${theme.colors.white};
+  color: white;
   margin-top: 15px;
   :hover {
     color: ${theme.colors.orange};
+  }
+  @media ${screen.lp} {
+    font-family: ${theme.fontsFamily.bloggerSans};
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 130%;
+    color: white;
+    margin-top: 15px;
+    :hover {
+      color: ${theme.colors.orange};
+    }
   }
 `;
