@@ -27,7 +27,7 @@ import Slider from 'react-slick';
 const data = {
   h1: 'Mood - наше портфоліо. Знайдіть своє натхнення поміж наших робіт.',
   title: 'портфоліо',
-  subtitle: 'знайдіть своє надхнення',
+  subtitle: 'знайдіть своє натхнення',
   galleries: [Bathroom, Bedroom1, Bedroom2, DressingRoom, Facade, Guest1, Guest2, Hallway, Kitchen, Office, Patio],
 };
 
