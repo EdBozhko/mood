@@ -7,7 +7,7 @@ import Slide_3 from './assets/static/slide_3.jpg';
 import Slide_4 from './assets/static/slide_4.jpg';
 import Slide_5 from './assets/static/slide_5.png';
 import Slide_6 from './assets/static/slide_6.png';
-import Footer from '@comp/Footer';
+import Footer from './components/Footer/Footer';
 import Link from 'next/link';
 import SliderPagination from '@comp/SliderPagination';
 import ReactFullpage from '@fullpage/react-fullpage';
