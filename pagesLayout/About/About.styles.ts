@@ -45,7 +45,7 @@ export const TextBlock = styled.p`
     padding: unset;
     box-sizing: unset;
     display: block;
-    width: 55%;
+    width: 70%;
     text-transform: uppercase;
     font-family: ${theme.fontsFamily.bloggerSans};
     font-size: 30px;

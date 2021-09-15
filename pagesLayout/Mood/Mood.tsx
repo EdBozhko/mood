@@ -70,7 +70,6 @@ const MoodPage: FC = () => {
             top: target.target.offsetParent.offsetTop,
             left: target.target.offsetParent.offsetLeft,
           };
-          console.log(target.target.offsetParent.offsetTop);
           slider.style.marginTop = '0px';
           slider.style.top = `${position.top}px`;
         }
@@ -89,7 +88,7 @@ const MoodPage: FC = () => {
 
   const Slides = data.slides.map((slide, index) => {
     return (
-      <div className="section">
+      <div key={index} className="section">
         <Link href={slide.link}>
           <SliderItem blackout={slide.blackout}>
             <HeadingContainer>
@@ -99,7 +98,7 @@ const MoodPage: FC = () => {
                 <Subtitle>{slide.subtitle}</Subtitle>
               </TitleContainer>
             </HeadingContainer>
-            <Image objectFit="cover" objectPosition="center" layout="fill" key={index} src={slide.src} alt={slide.alt} />
+            <Image objectFit="cover" objectPosition="center" layout="fill" src={slide.src} alt={slide.alt} />
           </SliderItem>
         </Link>
       </div>

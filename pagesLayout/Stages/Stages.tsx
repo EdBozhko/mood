@@ -80,9 +80,9 @@ const data = {
 const StagesPage: FC = () => {
   const List = data.stages.map((item, index) => {
     return (
-      <StagesItem>
+      <StagesItem key={index}>
         <ImageContainer>
-          <Image objectFit="cover" objectPosition="center" layout="fill" key={index} src={item.src} alt={item.alt} />
+          <Image objectFit="cover" objectPosition="center" layout="fill" src={item.src} alt={item.alt} />
         </ImageContainer>
         <DescriptionContainer textColor={item.textColor} backgroundColor={item.backgroundColor}>
           <NumberBox>{item.number}</NumberBox>

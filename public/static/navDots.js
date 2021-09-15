@@ -43,7 +43,6 @@ function callback(mutationsList) {
         top: target.target.offsetParent.offsetTop,
         left: target.target.offsetParent.offsetLeft,
       };
-      console.log(target.target.offsetParent.offsetTop);
       slider.style.marginTop = '0px';
       slider.style.top = `${position.top}px`;
     }
