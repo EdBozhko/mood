@@ -9,6 +9,7 @@ interface InputBoxProps {
 
 const InputStyle = css`
   padding: 9.5px 15px;
+
   background-color: transparent;
   border-radius: 0;
   box-shadow: none;

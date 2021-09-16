@@ -27,26 +27,83 @@ const ContactForm: FC<ContactFormProps> = ({ title, subtitle }) => {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
   const inputPerimeter = (inputBox.height * 2 + inputBox.width * 2) * 1.01;
+
+  const [name, setName] = useState('');
+  const [phone, setPhone] = useState('');
+  const [disabled, setDisabled] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setDisabled(true);
+    console.log('Sending');
+
+    let data = {
+      name,
+      phone,
+    };
+
+    fetch('./api/contact', {
+      method: 'POST',
+      headers: {
+        Accept: 'application/json, text/plain, */*',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    }).then((res) => {
+      console.log('Response received');
+      if (res.status === 200) {
+        console.log('Response succeeded!');
+        setSubmitted(true);
+        setName('');
+        setPhone('');
+      }
+      setDisabled(false);
+    });
+  };
   return (
-    <Form>
+    <Form
+      onSubmit={(e) => {
+        handleSubmit(e);
+      }}
+    >
       <Heading>
         <Title>{title}</Title>
         <Subtitle>{subtitle}</Subtitle>
       </Heading>
-      <InputContainer>
+      <InputContainer style={disabled ? { opacity: '0.3' } : null}>
         <InputBox ref={inputBoxRef} inputPerimeter={inputPerimeter}>
-          <Name type="text" placeholder="Ваше ім’я" required></Name>
+          <Name
+            value={name}
+            type="text"
+            placeholder="Ваше ім’я"
+            onChange={(e) => {
+              setName(e.target.value);
+            }}
+            required
+          ></Name>
           <svg width="100%" height="100%">
             <rect width="100%" height="100%"></rect>
           </svg>
         </InputBox>
         <InputBox inputPerimeter={inputPerimeter}>
-          <Phone type="tel" placeholder="+38 (___) ___-__-__" mask="+38 (999) 999-99-99" required></Phone>
+          <Phone
+            value={phone}
+            type="tel"
+            placeholder="+38 (___) ___-__-__"
+            mask="+38 (999) 999-99-99"
+            onChange={(e) => {
+              setPhone(e.target.value);
+            }}
+            required
+          ></Phone>
           <svg width="100%" height="100%">
             <rect width="100%" height="100%"></rect>
           </svg>
         </InputBox>
-        <Submit>Замовити</Submit>
+        <Submit disabled={disabled} type="submit">
+          Замовити
+        </Submit>
       </InputContainer>
     </Form>
   );
