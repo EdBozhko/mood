@@ -53,23 +53,10 @@ export const PreloaderContainer = styled.div<PreloaderContainerProps>`
     `}
 
   @media ${screen.lp} {
-    width: 100vw;
-    height: 100vh;
-    position: fixed;
     left: 0;
-    background-color: ${theme.colors.brown};
-    z-index: 997;
-    display: flex;
     padding-left: 100px;
-    box-sizing: border-box;
-    align-items: center;
     animation: ${PreloaderAnimationDesktop} 1s both;
     animation-delay: 4s;
-    ${({ animationEnd }) =>
-      animationEnd &&
-      css`
-        display: none;
-      `}
   }
 `;
 export const LogoContainer = styled.div`

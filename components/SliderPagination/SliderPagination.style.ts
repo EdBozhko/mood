@@ -1,7 +1,7 @@
 import { screen } from '@themeConfigs/media';
 import theme from '@themeConfigs/theme';
 import styled from 'styled-components';
-import { style, variant } from 'styled-system';
+import { variant } from 'styled-system';
 
 export const PaginationWrap = styled.div`
   position: absolute;

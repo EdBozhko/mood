@@ -1,5 +1,4 @@
 import React, { FC, useEffect, useState } from 'react';
-import Image from 'next/image';
 import { HeroContainer, H2, Title, Subtitle } from './HeroBlock.styles';
 
 interface HeroProps {

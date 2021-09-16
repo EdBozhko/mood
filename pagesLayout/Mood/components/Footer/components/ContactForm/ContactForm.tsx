@@ -1,6 +1,5 @@
 import React, { FC, useRef, useEffect, useState } from 'react';
 import { Form, Name, Phone, Submit, InputBox, Title, Subtitle, Heading, InputContainer } from './ContactForm.styles';
-import InputMask from 'react-input-mask';
 
 interface ContactFormProps {
   title?: string;

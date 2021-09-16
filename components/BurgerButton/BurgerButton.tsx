@@ -1,4 +1,4 @@
-import React, { FC, useState } from 'react';
+import React, { FC } from 'react';
 import { BurgerButtonStyled, LineOne, LineTwo, LineThree, LineFour, LineFive } from './BurgerButton.styles';
 
 interface LineProps {

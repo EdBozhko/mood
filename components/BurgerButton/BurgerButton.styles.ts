@@ -7,7 +7,6 @@ interface BurgerButtonStyledProps {
 }
 export const BurgerButtonStyled = styled.div<BurgerButtonStyledProps>`
   order: 1;
-
   margin: 0;
   position: relative;
   display: flex;

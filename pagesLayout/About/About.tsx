@@ -1,13 +1,9 @@
 import React, { FC } from 'react';
 import HeroBlock from '@comp/HeroBlock';
-import theme from '@themeConfigs/theme';
 import backgroundImg from './assets/static/about.png';
 import { TextBlock, TextBlockContainer, H1 } from './About.styles';
 import CallToAction from '@comp/CallToAction';
 import CallToActionImg from './assets/static/callToAction.jpg';
-import Image from 'next/image';
-import Block_1 from './assets/static/block_1.png';
-import Block_2 from './assets/static/block_2.jpg';
 
 const data = {
   h1: 'Mood - наш дизайн створить Ваш настрій.',

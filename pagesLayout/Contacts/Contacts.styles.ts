@@ -1,4 +1,4 @@
-import styled, { css, keyframes } from 'styled-components';
+import styled from 'styled-components';
 import theme from '@themeConfigs/theme';
 import { screen } from '@themeConfigs/media';
 
@@ -8,10 +8,7 @@ export const TeamBlock = styled.section`
   box-sizing: border-box;
   background-color: ${theme.colors.grey};
   @media ${screen.lp} {
-    width: 100%;
     padding: 100rem;
-    box-sizing: border-box;
-    background-color: ${theme.colors.grey};
   }
 `;
 export const TeamList = styled.ul`
@@ -19,10 +16,8 @@ export const TeamList = styled.ul`
   height: 100%;
   display: flex;
   flex-direction: column;
-
   align-items: center;
   @media ${screen.lp} {
-    display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
     flex-direction: unset;
@@ -37,7 +32,6 @@ export const TeamItem = styled.li`
     width: 27%;
     height: 500rem;
     margin-right: 10px;
-    margin-top: 25px;
   }
 `;
 

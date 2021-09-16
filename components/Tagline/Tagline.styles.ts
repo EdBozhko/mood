@@ -11,8 +11,6 @@ export const TaglineStyled = styled.div`
     transform: rotate(180deg);
     width: 100%;
     height: 40%;
-    display: flex;
-    flex-direction: column;
     flex-wrap: wrap;
     justify-content: space-between;
     user-select: none;

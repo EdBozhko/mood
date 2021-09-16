@@ -1,4 +1,4 @@
-import styled, { css, keyframes } from 'styled-components';
+import styled from 'styled-components';
 import theme from '@themeConfigs/theme';
 import { screen } from '@themeConfigs/media';
 
@@ -10,7 +10,6 @@ export const TeamMemberBackground = styled.div<TeamMemberBackgroundProps>`
   width: 100%;
   height: 100%;
   background: url(${({ photoSrc }) => photoSrc}) center/cover no-repeat;
-
   box-shadow: rgba(255, 255, 255, 0.2) 0 0 40px 5px, white 0 0 0 1px, rgba(0, 0, 0, 0.66) 0 30px 60px 0;
   position: relative;
 `;
@@ -22,9 +21,7 @@ export const TeamMemberInfo = styled.div`
   bottom: 0;
   padding: 20px;
   box-sizing: border-box;
-
   text-shadow: black 0 2px 3px;
-
   ::after {
     content: '';
     position: absolute;
@@ -37,7 +34,6 @@ export const TeamMemberInfo = styled.div`
     background-image: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.6) 100%);
     background-blend-mode: overlay;
   }
-
   > * {
     z-index: 1;
     :not(:first-child) {

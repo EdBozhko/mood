@@ -1,4 +1,4 @@
-import styled, { createGlobalStyle, css } from 'styled-components';
+import styled, { css } from 'styled-components';
 import theme from '@themeConfigs/theme';
 import { screen } from '@themeConfigs/media';
 
@@ -9,19 +9,12 @@ interface SliderItemProps {
 export const SliderBox = styled.section`
   height: 100%;
   width: 100%;
-
   .fullpage-wrapper {
     width: 100%;
   }
   @media ${screen.lp} {
-    height: 100%;
-    width: 100%;
     padding-left: 100px;
     box-sizing: border-box;
-
-    .fullpage-wrapper {
-      width: 100%;
-    }
   }
 `;
 export const SliderItem = styled.a<SliderItemProps>`
@@ -55,14 +48,8 @@ export const HeadingContainer = styled.div`
   width: 100%;
   padding: 0 20px;
   @media ${screen.lp} {
-    display: flex;
     flex-direction: unset;
-    justify-content: center;
-    align-items: center;
     position: relative;
-    z-index: 2;
-    height: 100%;
-    width: 100%;
     padding: unset;
   }
 `;
@@ -89,15 +76,8 @@ export const Heading = styled.span`
   text-shadow: 4.83px 1.294px 11.7px rgba(0, 0, 0, 0.7);
   @media ${screen.lp} {
     cursor: pointer;
-    position: absolute;
-    top: 20%;
-    text-transform: uppercase;
-    font-family: ${theme.fontsFamily.quicksand};
     font-size: 100rem;
-    font-weight: 300;
     line-height: 120rem;
-    color: ${theme.colors.orange};
-    text-shadow: 4.83px 1.294px 11.7px rgba(0, 0, 0, 0.7);
   }
 `;
 export const Title = styled.h2`
@@ -110,13 +90,8 @@ export const Title = styled.h2`
   text-shadow: 4.83px 1.294px 11.7px rgba(0, 0, 0, 0.7);
   @media ${screen.lp} {
     cursor: pointer;
-    text-transform: uppercase;
-    font-family: ${theme.fontsFamily.bloggerSans};
     font-size: 72rem;
-    font-weight: 300;
     line-height: 86rem;
-    color: ${theme.colors.orange};
-    text-shadow: 4.83px 1.294px 11.7px rgba(0, 0, 0, 0.7);
   }
 `;
 export const Subtitle = styled.span`
@@ -128,12 +103,8 @@ export const Subtitle = styled.span`
   text-shadow: 4.83px 1.294px 11.7px rgba(0, 0, 0, 0.7);
   @media ${screen.lp} {
     cursor: pointer;
-    font-family: ${theme.fontsFamily.bloggerSans};
     font-size: 36rem;
-    font-weight: 300;
     line-height: 43rem;
-    color: ${theme.colors.beige};
-    text-shadow: 4.83px 1.294px 11.7px rgba(0, 0, 0, 0.7);
   }
 `;
 export const TitleContainer = styled.div`

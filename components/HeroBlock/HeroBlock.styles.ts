@@ -26,20 +26,7 @@ export const HeroContainer = styled.section<HeroContainerProps>`
     `}
   @media ${screen.lp} {
     margin-top: unset;
-    width: 100%;
     height: 100vh;
-    display: flex;
-    align-items: center;
-    position: relative;
-    ${({ backgroundImg, blackout }) =>
-      backgroundImg &&
-      blackout &&
-      css`
-        background: linear-gradient(rgba(0, 0, 0, ${blackout}), rgba(0, 0, 0, ${blackout})), url(${backgroundImg});
-        background-size: cover;
-        background-position: center center;
-        background-attachment: fixed;
-      `}
   }
 `;
 export const H2 = styled.h2`
@@ -55,13 +42,8 @@ export const H2 = styled.h2`
   @media ${screen.lp} {
     text-align: unset;
     width: unset;
-    display: flex;
-    flex-direction: column;
     padding: unset;
     padding-left: 100rem;
-    box-sizing: border-box;
-    z-index: 1;
-    pointer-events: none;
   }
 `;
 export const Title = styled.span`

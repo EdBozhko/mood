@@ -1,4 +1,4 @@
-import React, { FC, useRef, useState, useEffect } from 'react';
+import React, { FC, useEffect } from 'react';
 import Image from 'next/image';
 import { H1, SliderBox, SliderItem, HeadingContainer, Heading, Title, Subtitle, TitleContainer } from './Mood.styles';
 import Slide_1 from './assets/static/slide_1.jpg';
@@ -9,9 +9,7 @@ import Slide_5 from './assets/static/slide_5.png';
 import Slide_6 from './assets/static/slide_6.png';
 import Footer from './components/Footer/Footer';
 import Link from 'next/link';
-import SliderPagination from '@comp/SliderPagination';
 import ReactFullpage from '@fullpage/react-fullpage';
-import Script from 'next/script';
 
 const data = {
   h1: 'Mood - студія дизайну, яка допоможе створити не тільки зовнішню красу, але і Ваш внутрішній настрій. Наша спеціалізація - дизайн інтер’єрів, архітектурне проектування, ландшафтний та технічний дизайн, а також ми надаємо комплекс послуг.',
