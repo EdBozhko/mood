@@ -28,6 +28,10 @@ export const TeamItem = styled.li`
   width: 100%;
   height: 80vh;
   margin-top: 25px;
+  @media ${screen.tb} {
+    width: 70%;
+    height: 80vh;
+  }
   @media ${screen.lp} {
     width: 27%;
     height: 500rem;

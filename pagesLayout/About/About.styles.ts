@@ -2,6 +2,10 @@ import styled from 'styled-components';
 import theme from '@themeConfigs/theme';
 import { screen } from '@themeConfigs/media';
 
+interface PhotoBlockProps {
+  photo?: string;
+}
+
 export const TextBlockContainer = styled.section`
   width: 100%;
   display: flex;
@@ -34,6 +38,12 @@ export const TextBlock = styled.p`
     font-size: 30px;
     line-height: 140%;
   }
+`;
+
+export const PhotoBlock = styled.div<PhotoBlockProps>`
+  width: 100vw;
+  height: 60vw;
+  background: url(${({ photo }) => photo}) center/cover no-repeat;
 `;
 
 export const H1 = styled.h1`
