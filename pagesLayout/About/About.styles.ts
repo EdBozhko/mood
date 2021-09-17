@@ -1,99 +1,58 @@
-import styled, { css, keyframes } from 'styled-components';
-import { variant } from 'styled-system';
+import styled from 'styled-components';
 import theme from '@themeConfigs/theme';
 import { screen } from '@themeConfigs/media';
 
-interface TextBlockContainerProps {
-  blackout?: number;
-  backgroundImg?: string;
+interface PhotoBlockProps {
+  photo?: string;
 }
 
-interface TextBlockProps {
-  blockAlign?: string;
-  textColor?: string;
-}
-
-export const TextBlockContainer = styled.section<TextBlockContainerProps>`
+export const TextBlockContainer = styled.section`
   width: 100%;
-  /* min-height: 700px; */
-  /* padding: 20px; */
-  box-sizing: border-box;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   position: relative;
-  ${({ backgroundImg, blackout }) =>
-    backgroundImg &&
-    blackout &&
-    css`
-      background: linear-gradient(rgba(0, 0, 0, ${blackout}), rgba(0, 0, 0, ${blackout})), url(${backgroundImg});
-      background-size: cover;
-      background-position: center center;
-      /* background-attachment: fixed; */
-    `}
+  background-color: ${theme.colors.brown};
   @media ${screen.lp} {
-    width: 100%;
-    min-height: 700px;
     padding: 150px 100px;
     box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    position: relative;
-    ${({ backgroundImg, blackout }) =>
-      backgroundImg &&
-      blackout &&
-      css`
-        background: linear-gradient(rgba(0, 0, 0, ${blackout}), rgba(0, 0, 0, ${blackout})), url(${backgroundImg});
-        background-size: cover;
-        background-position: center center;
-        /* background-attachment: fixed; */
-      `}
   }
 `;
 
-export const TextBlock = styled.p<TextBlockProps>`
+export const TextBlock = styled.p`
   padding: 20px;
   box-sizing: border-box;
-  ${({ textColor }) =>
-    textColor &&
-    css`
-      color: ${textColor};
-    `}
+  color: ${theme.colors.beige};
   display: block;
   width: 100%;
   text-transform: uppercase;
   font-family: ${theme.fontsFamily.bloggerSans};
   font-size: 24px;
   font-weight: 300;
-  line-height: 28px;
+  line-height: 130%;
   text-shadow: 4.83px 1.294px 11.7px rgba(0, 0, 0, 0.7);
   @media ${screen.lp} {
-    ${variant({
-      prop: 'blockAlign',
-      variants: {
-        right: {
-          marginLeft: 'auto',
-        },
-        left: {
-          marginRight: 'auto',
-        },
-      },
-    })}
-    ${({ textColor }) =>
-      textColor &&
-      css`
-        color: ${textColor};
-      `}
-      padding: unset;
+    padding: unset;
     box-sizing: unset;
-    display: block;
-    width: 55%;
-    text-transform: uppercase;
-    font-family: ${theme.fontsFamily.bloggerSans};
+    width: 70%;
     font-size: 30px;
-    font-weight: 300;
-    line-height: 36px;
-    text-shadow: 4.83px 1.294px 11.7px rgba(0, 0, 0, 0.7);
+    line-height: 140%;
   }
+`;
+
+export const PhotoBlock = styled.div<PhotoBlockProps>`
+  width: 100vw;
+  height: 60vw;
+  background: url(${({ photo }) => photo}) center/cover no-repeat;
+`;
+
+export const H1 = styled.h1`
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0px;
+  padding: 0px;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
 `;

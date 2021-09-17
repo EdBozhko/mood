@@ -6,8 +6,8 @@ import Hallway_5 from '../../assets/static/hallway/hallway_5.png';
 import Hallway_6 from '../../assets/static/hallway/hallway_6.png';
 
 const Hallway = {
-  title: 'Ванна кімната',
-  description: 'Шикарна ванна кімната у шикарному домі Шикарна ванна у шикарному домі',
+  title: 'Холл',
+  description: '',
   gallery: [
     {
       src: Hallway_1,

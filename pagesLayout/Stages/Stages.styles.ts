@@ -19,7 +19,6 @@ export const StagesItem = styled.li`
   display: flex;
   flex-direction: column;
   @media ${screen.lp} {
-    display: flex;
     flex-direction: row;
     :nth-child(even) {
       flex-direction: row-reverse;
@@ -49,21 +48,6 @@ export const DescriptionContainer = styled.div<DescriptionProps>`
     padding: 60px;
     width: 40%;
     box-sizing: unset;
-    display: flex;
-    flex-direction: column;
-    font-family: ${theme.fontsFamily.bloggerSans};
-    ${({ textColor, backgroundColor }) =>
-      textColor &&
-      backgroundColor &&
-      css`
-        color: ${textColor};
-        background-color: ${backgroundColor};
-      `}
-    > * {
-      :not(:last-child) {
-        margin-bottom: 30px;
-      }
-    }
   }
 `;
 export const ImageContainer = styled.div`
@@ -71,7 +55,6 @@ export const ImageContainer = styled.div`
   width: 100%;
   height: 80vh;
   @media ${screen.lp} {
-    position: relative;
     width: 60%;
     height: unset;
   }
@@ -101,4 +84,15 @@ export const Separator = styled.span<SeparatorProps>`
     css`
       background-color: ${textColor};
     `}
+`;
+
+export const H1 = styled.h1`
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0px;
+  padding: 0px;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
 `;

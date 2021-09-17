@@ -1,6 +1,4 @@
-import styled, { css, keyframes } from 'styled-components';
-import theme from '@themeConfigs/theme';
-import { screen } from '@themeConfigs/media';
+import styled, { keyframes } from 'styled-components';
 
 const verticalLineAnimation = keyframes`
     0% {

@@ -1,4 +1,4 @@
-import styled, { createGlobalStyle, css, keyframes } from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import theme from '@themeConfigs/theme';
 import { screen } from '@themeConfigs/media';
 
@@ -37,7 +37,6 @@ export const IconScroll = styled.div`
   display: none;
   @media ${screen.lp} {
     position: absolute;
-    /* right: 50%; */
     width: 40px;
     height: 70px;
     bottom: 3%;

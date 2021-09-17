@@ -1,8 +1,7 @@
 import Head from 'next/head';
 import React from 'react';
 
-const SEO = (props) => {
-  const { title, metaDescriptionContent } = props;
+const SEO = ({ title, metaDescriptionContent }) => {
   return (
     <Head
       children={

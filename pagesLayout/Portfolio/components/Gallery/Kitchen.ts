@@ -6,8 +6,8 @@ import Kitchen_5 from '../../assets/static/kitchen/kitchen_5.png';
 import Kitchen_6 from '../../assets/static/kitchen/kitchen_6.png';
 
 const Kitchen = {
-  title: 'Ванна кімната',
-  description: 'Шикарна ванна кімната у шикарному домі Шикарна ванна у шикарному домі',
+  title: 'Кухня',
+  description: '',
   gallery: [
     {
       src: Kitchen_1,

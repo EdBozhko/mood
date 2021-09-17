@@ -46,29 +46,18 @@ export const MenuStyled = styled.div<MenuStyledProps>`
     `}
   @media ${screen.lp} {
     width: 0;
-    visibility: hidden;
     transition: width ease 0.4s;
     ::before {
-      content: '';
-      position: absolute;
-      opacity: 0.5;
       left: 0;
       height: 0;
       width: 2px;
       top: 50%;
       transform: translateY(-50%);
-      background-color: ${theme.colors.golden};
       transition: height 0.4s ease-in-out;
-      transition-delay: 0.2s;
     }
     ${({ isMenuOpen }) =>
       isMenuOpen &&
       css`
-        visibility: visible;
-        position: relative;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
         width: 300px;
         height: 100%;
         margin-top: unset;
@@ -77,7 +66,6 @@ export const MenuStyled = styled.div<MenuStyledProps>`
         padding-left: 13px;
         padding-bottom: unset;
 
-        box-sizing: border-box;
         ::before {
           height: 80%;
         }

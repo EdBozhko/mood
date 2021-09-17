@@ -12,8 +12,8 @@ import Office_11 from '../../assets/static/office/office_11.png';
 import Office_12 from '../../assets/static/office/office_12.png';
 
 const Office = {
-  title: 'Ванна кімната',
-  description: 'Шикарна ванна кімната у шикарному домі Шикарна ванна у шикарному домі',
+  title: 'Офіс',
+  description: '',
   gallery: [
     {
       src: Office_1,

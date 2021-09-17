@@ -31,7 +31,7 @@ html {
     -webkit-font-smoothing: grayscale;
     -moz-font-smoothing: grayscale;
     scroll-behavior:smooth;
-    font-size: .0692vw
+    font-size: .06865vw
   }
 
   

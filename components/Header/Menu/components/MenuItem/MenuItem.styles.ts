@@ -1,6 +1,5 @@
 import styled, { css } from 'styled-components';
 import theme from '@themeConfigs/theme';
-import { screen } from '@themeConfigs/media';
 
 interface ItemProps {
   transitionDelay: string;

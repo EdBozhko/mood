@@ -9,8 +9,8 @@ import Guest_8 from '../../assets/static/guest_1/guest_8.png';
 import Guest_9 from '../../assets/static/guest_1/guest_9.png';
 
 const Guest1 = {
-  title: 'Ванна кімната',
-  description: 'Шикарна ванна кімната у шикарному домі Шикарна ванна у шикарному домі',
+  title: 'Гостьова №1',
+  description: '',
   gallery: [
     {
       src: Guest_1,

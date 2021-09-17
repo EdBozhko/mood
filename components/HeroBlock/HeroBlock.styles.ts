@@ -26,20 +26,7 @@ export const HeroContainer = styled.section<HeroContainerProps>`
     `}
   @media ${screen.lp} {
     margin-top: unset;
-    width: 100%;
     height: 100vh;
-    display: flex;
-    align-items: center;
-    position: relative;
-    ${({ backgroundImg, blackout }) =>
-      backgroundImg &&
-      blackout &&
-      css`
-        background: linear-gradient(rgba(0, 0, 0, ${blackout}), rgba(0, 0, 0, ${blackout})), url(${backgroundImg});
-        background-size: cover;
-        background-position: center center;
-        background-attachment: fixed;
-      `}
   }
 `;
 export const H2 = styled.h2`
@@ -50,15 +37,13 @@ export const H2 = styled.h2`
   z-index: 1;
   pointer-events: none;
   text-align: center;
+  padding: 16px;
+  box-sizing: border-box;
   @media ${screen.lp} {
     text-align: unset;
     width: unset;
-    display: flex;
-    flex-direction: column;
-    padding-left: 100px;
-    box-sizing: border-box;
-    z-index: 1;
-    pointer-events: none;
+    padding: unset;
+    padding-left: 100rem;
   }
 `;
 export const Title = styled.span`
@@ -70,8 +55,8 @@ export const Title = styled.span`
   color: ${theme.colors.orange};
   text-shadow: 4.83px 1.294px 11.7px rgba(0, 0, 0, 0.7);
   @media ${screen.lp} {
-    font-size: 100px;
-    line-height: 120px;
+    font-size: 100rem;
+    line-height: 120rem;
   }
 `;
 export const Subtitle = styled.span`
@@ -82,7 +67,7 @@ export const Subtitle = styled.span`
   color: ${theme.colors.beige};
   text-shadow: 4.83px 1.294px 11.7px rgba(0, 0, 0, 0.7);
   @media ${screen.lp} {
-    font-size: 40px;
-    line-height: 48px;
+    font-size: 40rem;
+    line-height: 48rem;
   }
 `;

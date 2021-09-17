@@ -3,8 +3,8 @@ import DressingRoom_2 from '../../assets/static/dressing_room/dressing_room_2.pn
 import DressingRoom_3 from '../../assets/static/dressing_room/dressing_room_3.png';
 
 const DressingRoom = {
-  title: 'Ванна кімната',
-  description: 'Шикарна ванна кімната у шикарному домі Шикарна ванна у шикарному домі',
+  title: 'Гардеробна',
+  description: '',
   gallery: [
     {
       src: DressingRoom_1,

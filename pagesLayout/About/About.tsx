@@ -1,22 +1,20 @@
 import React, { FC } from 'react';
 import HeroBlock from '@comp/HeroBlock';
-import theme from '@themeConfigs/theme';
 import backgroundImg from './assets/static/about.png';
-import { TextBlock, TextBlockContainer } from './About.styles';
+import { TextBlock, TextBlockContainer, H1, PhotoBlock } from './About.styles';
 import CallToAction from '@comp/CallToAction';
-import CallToActionImg from './assets/static/callToAction.png';
-import Image from 'next/image';
-import Block_1 from './assets/static/block_1.png';
-import Block_2 from './assets/static/block_2.jpg';
+import CallToActionImg from './assets/static/callToAction.jpg';
+import Team from './assets/static/team.jpg';
 
 const data = {
+  h1: 'Mood - наш дизайн створить Ваш настрій.',
   title: 'про нас',
   subtitle: 'розробляємо дизайн, який створює настрій',
   backgroundImg: backgroundImg,
   blackout: 0.18,
   callToAction: {
     href: '/portfolio',
-    blackout: 0.05,
+    blackout: 0.5,
     title: 'знайди своє натхнення',
     subtitle: 'перейти до портфоліо',
     src: CallToActionImg,
@@ -24,44 +22,22 @@ const data = {
   },
   textBlocks: {
     block_1: {
-      src: Block_1,
-      blackout: 0.3,
-      text_1: 'ваш будинок має бути відображенням вас самого, але не тільки зовнішньо гарно, а і функціонально',
-      textColor_1: theme.colors.orange,
-      blockAlign_1: 'right',
-    },
-    block_2: {
-      src: Block_2,
-      blackout: 0.45,
       text_1:
-        'життя буває вдома. це місце затишку, місце збору вашої родини та місце для натхнення. у вашому домі повинно відображатися, ким ви є, не тільки красиво, але й красиво функціонально. так ви зможете прожити своє найкраще життя.',
-      textColor_1: theme.colors.beige,
-      blockAlign_1: 'left',
-      text_2:
-        'основою нашої компанії є особистий підхід до створення вашого ідеального простору. спільно з вами та нашою спільнотою майстрів та дизайнерів ми створюємо унікальний будинок для вас та вашої родини.',
-      textColor_2: theme.colors.orange,
-      blockAlign_2: 'right',
+        'Mood design studio - це сучасна архітектурно-дизайнерска студія з комплексним підходом націлені на результат.<br/><br/>З 2007 року почалась наша історія.<br/><br/>Ми професійно почали займатись покрівельними матеріалами та віконними конструкціями і виросли у цій справі, стали успішними.<br/><br/>Під час роботи ми постійно співпрацювали з дизайнерами, архітекторами та прорабами у різних напрямках.<br/><br/>Дуже багато було сумісної співпраці з ними і реалізовані велики цікаві проекти.<br/><br/>З часом в нашій команді з’явились високо кваліфіковані інжинери, проектувальники і ми самостійно почали розробляти свої власні проекти та успішно їх реалізовувати.<br/><br/>Пройшов час, ми виросли. Штат нашої команди збільшився в три рази і ми прийняли рішення розділити наші напрямки, відкрити ще один офіс де повноцінно і професійно зможемо надавати послуги архітектури та дизайну.<br/><br/> 14 років досвіду, дає нам можливість бачити потребу клієнта в цілому, реалізовувати її якісно, наперед враховуючи всі нюанси при проектуванні.<br/><br/>Наша задача - зберегти та примножити здобуті знання та досвід, перетворюючи його на користь для суспільства.<br/><br/>Наша місія - зробити максимально якісну послугу, в якій наші клієнти отримають комплексне рішення, де кожна деталь буде приносити естетичне задоволення, радість та душевний спокій.<br/><br/>В наших проектах ви отримаєте інновації та найсучасніший стиль, який буде індивідуальним та неповторним  для кожного.',
     },
   },
+  photoBlock: Team,
 };
 
 const AboutPage: FC = () => {
   return (
     <>
+      <H1>{data.h1}</H1>
       <HeroBlock title={data.title} subtitle={data.subtitle} backgroundImg={data.backgroundImg} blackout={data.blackout} />
-      <TextBlockContainer backgroundImg={data.textBlocks.block_1.src} blackout={data.textBlocks.block_1.blackout}>
-        <TextBlock blockAlign={data.textBlocks.block_1.blockAlign_1} textColor={data.textBlocks.block_1.textColor_1}>
-          {data.textBlocks.block_1.text_1}
-        </TextBlock>
+      <TextBlockContainer>
+        <TextBlock dangerouslySetInnerHTML={{ __html: data.textBlocks.block_1.text_1 }} />
       </TextBlockContainer>
-      <TextBlockContainer backgroundImg={data.textBlocks.block_2.src} blackout={data.textBlocks.block_2.blackout}>
-        <TextBlock blockAlign={data.textBlocks.block_2.blockAlign_1} textColor={data.textBlocks.block_2.textColor_1}>
-          {data.textBlocks.block_2.text_1}
-        </TextBlock>
-        <TextBlock blockAlign={data.textBlocks.block_2.blockAlign_2} textColor={data.textBlocks.block_2.textColor_2}>
-          {data.textBlocks.block_2.text_2}
-        </TextBlock>
-      </TextBlockContainer>
+      <PhotoBlock photo={data.photoBlock} />
       <CallToAction data={data.callToAction} />
     </>
   );

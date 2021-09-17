@@ -36,7 +36,6 @@ const Menu: FC<MenuProps> = ({ isMenuOpen, onClickHandler }) => {
   useEffect(() => {
     setVh(`${window.innerHeight - 96}px`);
   }, []);
-  console.log(vh);
 
   const MenuItemList = data.map((item, index) => {
     return <MenuItem href={item.link} key={index} children={item.value} isMenuOpen={isMenuOpen} transitionDelay={`0.${index + 1}s`} onClickHandler={onClickHandler} />;

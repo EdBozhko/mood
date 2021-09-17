@@ -4,8 +4,8 @@ import Bedroom_3 from '../../assets/static/bedroom_2/bedroom_3.png';
 import Bedroom_4 from '../../assets/static/bedroom_2/bedroom_4.png';
 
 const Bedroom2 = {
-  title: 'Ванна кімната',
-  description: 'Шикарна ванна кімната у шикарному домі Шикарна ванна у шикарному домі',
+  title: 'Спальня №2',
+  description: '',
   gallery: [
     {
       src: Bedroom_1,
