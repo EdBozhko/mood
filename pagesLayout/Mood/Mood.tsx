@@ -78,6 +78,9 @@ const MoodPage: FC = () => {
     links.forEach((link) => {
       mutationObserver.observe(link, { attributes: true });
     });
+    return () => {
+      window.scrollTo(0, 0);
+    };
   }, []);
 
   if (!data.slides.length) {
