@@ -4,6 +4,7 @@ import ContactForm from './components/ContactForm';
 import { Loader } from '@googlemaps/js-api-loader';
 import Marker from '../../../../public/MarkerS.png';
 import InfoBox from './components/InfoBox';
+import { config } from 'config';
 
 interface FooterProps {
   page?: boolean;
@@ -23,7 +24,7 @@ const Footer: FC<FooterProps> = ({ title, subtitle }) => {
   const googlemap = useRef(null);
   useEffect(() => {
     const loader = new Loader({
-      apiKey: 'AIzaSyANzEYNJmN08j7hnOHuM2rGIe7QRJwE4dE',
+      apiKey: config.GOOGLE_MAP_API_KEY,
       version: 'weekly',
     });
     let map;

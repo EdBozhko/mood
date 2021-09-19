@@ -119,8 +119,6 @@ select:-webkit-autofill:focus {
   #slider {
         width: 12px;
         height: 12px;
-        /* margin: 8px 0; */
-
         border-radius: 50%;
         background: ${theme.colors.golden};
         z-index: 1;
