@@ -104,6 +104,8 @@ typings/
 # dotenv environment variables file
 .env
 
+config.ts
+
 .DS_Store
 .idea
 

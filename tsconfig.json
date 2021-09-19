@@ -26,6 +26,6 @@
       "@img/*": ["public/static/images/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "next-sitemap.js", "additional.d.ts", "**/*.d.ts", "**/*.spec.ts", "pagesLayout/Mood/assets/static/navDots.js", "pages/api/contact.ts"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "next-sitemap.js", "additional.d.ts", "**/*.d.ts", "**/*.spec.ts", "pagesLayout/Mood/assets/static/navDots.js", "pages/api/contact.ts", ".env"],
   "exclude": ["node_modules"]
 }
