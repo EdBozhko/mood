@@ -132,7 +132,7 @@ export const SliderWrapper = styled.div<SliderWrapperProps>`
   box-sizing: border-box;
   background-color: ${theme.colors.brown};
   position: fixed;
-  z-index: 1;
+  z-index: 10;
   top: -1000%;
   transition: top 0.5s ease;
   ${({ isSliderOpen }) =>
@@ -229,6 +229,9 @@ export const SliderContainer = styled.div`
 export const SliderItem = styled.div`
   display: inline-flex !important;
   justify-content: center;
+  > * {
+    background-color: rgba(205, 190, 167, 0.3);
+  }
   /* height: 100%; */
   img {
     box-shadow: 4.83px 1.294px 11.7px 1.3px rgba(0, 0, 0, 0.47);

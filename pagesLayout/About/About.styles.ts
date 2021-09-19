@@ -41,7 +41,7 @@ export const TextBlock = styled.p`
 `;
 
 export const PhotoBlock = styled.div<PhotoBlockProps>`
-  width: 100vw;
+  width: 100%;
   height: 60vw;
   background: url(${({ photo }) => photo}) center/cover no-repeat;
 `;
