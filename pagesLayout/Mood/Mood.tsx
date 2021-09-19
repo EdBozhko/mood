@@ -1,4 +1,4 @@
-import React, { FC, useEffect } from 'react';
+import React, { FC, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import { H1, SliderBox, SliderItem, HeadingContainer, Heading, Title, Subtitle, TitleContainer } from './Mood.styles';
 import Slide_1 from './assets/static/slide_1.jpg';
@@ -23,6 +23,7 @@ const data = {
   ],
 };
 const MoodPage: FC = () => {
+  const sliderRef = useRef();
   useEffect(() => {
     const navigation = document.querySelector('#fp-nav ul');
     const slider = document.createElement('div');
@@ -78,9 +79,6 @@ const MoodPage: FC = () => {
     links.forEach((link) => {
       mutationObserver.observe(link, { attributes: true });
     });
-    return () => {
-      window.scrollTo(0, 0);
-    };
   }, []);
 
   if (!data.slides.length) {
@@ -89,7 +87,7 @@ const MoodPage: FC = () => {
 
   const Slides = data.slides.map((slide, index) => {
     return (
-      <div key={index} className="section">
+      <div key={index} className="section" onClick={() => sliderRef?.current?.fullpageApi?.moveTo(1, 0)}>
         <Link href={slide.link}>
           <SliderItem blackout={slide.blackout}>
             <HeadingContainer>
@@ -111,6 +109,7 @@ const MoodPage: FC = () => {
       <H1>{data.h1}</H1>
       <SliderBox>
         <ReactFullpage
+          ref={sliderRef}
           navigation
           render={(comp) => (
             <ReactFullpage.Wrapper>

@@ -10,8 +10,15 @@ interface HeroProps {
 
 const HeroBlock: FC<HeroProps> = ({ title, subtitle, backgroundImg, blackout = 0, children }) => {
   const [vh, setVh] = useState('');
+  const handleResize = () => {
+    setVh(`${window.innerHeight - 80}px`);
+  };
   useEffect(() => {
     setVh(`${window.innerHeight - 80}px`);
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
   }, []);
   return (
     <HeroContainer backgroundImg={backgroundImg} blackout={blackout} vh={vh}>

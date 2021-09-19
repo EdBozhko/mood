@@ -41,7 +41,7 @@ export const TextBlock = styled.p`
 `;
 
 export const PhotoBlock = styled.div<PhotoBlockProps>`
-  width: 100vw;
+  width: 100%;
   height: 60vw;
   background: url(${({ photo }) => photo}) center/cover no-repeat;
 `;
@@ -55,4 +55,41 @@ export const H1 = styled.h1`
   padding: 0px;
   clip: rect(0 0 0 0);
   overflow: hidden;
+`;
+
+export const TeamBlock = styled.section`
+  width: 100%;
+  padding: 16px;
+  box-sizing: border-box;
+  background-color: ${theme.colors.grey};
+  @media ${screen.lp} {
+    padding: 100rem;
+  }
+`;
+export const TeamList = styled.ul`
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  @media ${screen.lp} {
+    flex-wrap: wrap;
+    justify-content: space-around;
+    flex-direction: unset;
+    align-items: unset;
+  }
+`;
+export const TeamItem = styled.li`
+  width: 100%;
+  height: 80vh;
+  margin-top: 25px;
+  @media ${screen.tb} {
+    width: 70%;
+    height: 80vh;
+  }
+  @media ${screen.lp} {
+    width: 27%;
+    height: 500rem;
+    margin-right: 10px;
+  }
 `;

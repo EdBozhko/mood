@@ -17,7 +17,7 @@ export const StagesList = styled.ul`
 `;
 export const StagesItem = styled.li`
   display: flex;
-  flex-direction: column;
+  flex-direction: column-reverse;
   @media ${screen.lp} {
     flex-direction: row;
     :nth-child(even) {

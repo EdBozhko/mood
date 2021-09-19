@@ -4,7 +4,7 @@ import { TeamMemberBackground, TeamMemberInfo, Name, Position, Telephone } from 
 interface TeamMemberProps {
   name: string;
   photoSrc: string;
-  telephone: string;
+  telephone?: string;
   position: string;
 }
 
