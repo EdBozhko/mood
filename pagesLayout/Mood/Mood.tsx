@@ -85,25 +85,6 @@ const MoodPage: FC = () => {
     return null;
   }
 
-  const Slides = data.slides.map((slide, index) => {
-    return (
-      <div key={index} className="section" onClick={() => sliderRef?.current?.fullpageApi?.moveTo(1, 0)}>
-        <Link href={slide.link}>
-          <SliderItem blackout={slide.blackout}>
-            <HeadingContainer>
-              <Heading>{slide.heading}</Heading>
-              <TitleContainer>
-                <Title>{slide.title}</Title>
-                <Subtitle>{slide.subtitle}</Subtitle>
-              </TitleContainer>
-            </HeadingContainer>
-            <Image objectFit="cover" objectPosition="center" layout="fill" src={slide.src} alt={slide.alt} />
-          </SliderItem>
-        </Link>
-      </div>
-    );
-  });
-
   return (
     <>
       <H1>{data.h1}</H1>
@@ -113,7 +94,24 @@ const MoodPage: FC = () => {
           navigation
           render={(comp) => (
             <ReactFullpage.Wrapper>
-              {Slides}
+              {data.slides.map((slide, index) => {
+                return (
+                  <div key={index} className="section" onClick={() => comp.fullpageApi.moveTo(1, 0)}>
+                    <Link href={slide.link}>
+                      <SliderItem blackout={slide.blackout}>
+                        <HeadingContainer>
+                          <Heading>{slide.heading}</Heading>
+                          <TitleContainer>
+                            <Title>{slide.title}</Title>
+                            <Subtitle>{slide.subtitle}</Subtitle>
+                          </TitleContainer>
+                        </HeadingContainer>
+                        <Image objectFit="cover" objectPosition="center" layout="fill" src={slide.src} alt={slide.alt} />
+                      </SliderItem>
+                    </Link>
+                  </div>
+                );
+              })}
               <div className="section">
                 <Footer title="Замовити безкоштовну консультацію" />
               </div>
