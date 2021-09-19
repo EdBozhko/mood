@@ -8,28 +8,32 @@ interface MenuProps {
   onClickHandler?: () => void;
 }
 
-const data = [
-  {
-    value: 'mood',
-    link: '/mood',
-  },
-  {
-    value: 'портфоліо',
-    link: '/portfolio',
-  },
-  {
-    value: 'етапи роботи',
-    link: '/stages',
-  },
-  {
-    value: 'про нас',
-    link: '/about',
-  },
-  {
-    value: 'контакти',
-    link: '/contacts',
-  },
-];
+const data = {
+  telephoneHref: '+380501111111',
+  telephone: '+38 050 111 11 11',
+  links: [
+    {
+      value: 'mood',
+      link: '/mood',
+    },
+    {
+      value: 'портфоліо',
+      link: '/portfolio',
+    },
+    {
+      value: 'етапи роботи',
+      link: '/stages',
+    },
+    {
+      value: 'про нас',
+      link: '/about',
+    },
+    {
+      value: 'контакти',
+      link: '/contacts',
+    },
+  ],
+};
 
 const Menu: FC<MenuProps> = ({ isMenuOpen, onClickHandler }) => {
   const [vh, setVh] = useState('');
@@ -37,14 +41,14 @@ const Menu: FC<MenuProps> = ({ isMenuOpen, onClickHandler }) => {
     setVh(`${window.innerHeight - 96}px`);
   }, []);
 
-  const MenuItemList = data.map((item, index) => {
+  const MenuItemList = data.links.map((item, index) => {
     return <MenuItem href={item.link} key={index} children={item.value} isMenuOpen={isMenuOpen} transitionDelay={`0.${index + 1}s`} onClickHandler={onClickHandler} />;
   });
   return (
     <>
       <MenuStyled isMenuOpen={isMenuOpen} vh={vh}>
-        <Phone href="tel:+380506114689" isMenuOpen={isMenuOpen}>
-          +38 050 611 46 89
+        <Phone href={`tel: ${data.telephoneHref}`} isMenuOpen={isMenuOpen}>
+          {data.telephone}
         </Phone>
         <Nav>
           <MenuList>{MenuItemList}</MenuList>
