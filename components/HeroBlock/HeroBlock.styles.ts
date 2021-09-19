@@ -15,6 +15,7 @@ export const HeroContainer = styled.section<HeroContainerProps>`
   display: flex;
   align-items: center;
   position: relative;
+  background-color: ${theme.colors.brown};
   ${({ backgroundImg, blackout }) =>
     backgroundImg &&
     blackout &&

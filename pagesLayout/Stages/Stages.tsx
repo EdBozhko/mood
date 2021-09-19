@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import theme from '@themeConfigs/theme';
 import HeroBlock from '@comp/HeroBlock';
-import backgroundImg from './assets/static/stages.jpg';
+// import backgroundImg from './assets/static/stages.jpg';
 import Image from 'next/image';
 import { StagesSection, StagesList, StagesItem, DescriptionContainer, ImageContainer, NumberBox, TitleBox, DescriptionBox, Separator, H1 } from './Stages.styles';
 import Stage_1 from './assets/static/stage_1.png';
@@ -17,7 +17,8 @@ const data = {
   title: 'етапи роботи',
   subtitle: 'інтивідуальний підхід від концепції до реалізації',
   blackout: 0.45,
-  backgroundImg: backgroundImg,
+  // backgroundImg: backgroundImg,
+  backgroundImg: '',
   stages: [
     {
       src: Stage_1,
