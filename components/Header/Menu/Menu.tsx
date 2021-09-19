@@ -37,8 +37,15 @@ const data = {
 
 const Menu: FC<MenuProps> = ({ isMenuOpen, onClickHandler }) => {
   const [vh, setVh] = useState('');
+  const handleResize = () => {
+    setVh(`${window.innerHeight - 95}px`);
+  };
   useEffect(() => {
-    setVh(`${window.innerHeight - 96}px`);
+    setVh(`${window.innerHeight - 95}px`);
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
   }, []);
 
   const MenuItemList = data.links.map((item, index) => {
