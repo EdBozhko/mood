@@ -21,7 +21,6 @@ const data = {
 };
 
 const Footer: FC<FooterProps> = ({ title, subtitle }) => {
-  console.log(process.env.SITE_URL);
   const googlemap = useRef(null);
   useEffect(() => {
     const loader = new Loader({
