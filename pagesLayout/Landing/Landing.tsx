@@ -13,8 +13,8 @@ const data = {
   subtitle: 'реалізуй свої мрії',
   telephoneBlock: {
     title: 'Зателефонуйте нам',
-    telephoneHref: '+380501111111',
-    telephone: '+38 050 111 11 11',
+    telephoneHref: '+380972577591',
+    telephone: '+38 097 257 75 91',
   },
   stepsList: [
     {
