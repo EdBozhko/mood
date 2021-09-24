@@ -210,5 +210,7 @@ select:-webkit-autofill:focus {
 #fp-nav ul li .fp-tooltip.fp-left {
     left: 20px !important;
 }
-
+.fp-section{
+  background-color: ${theme.colors.brown};
+}
 `;

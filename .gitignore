@@ -115,3 +115,5 @@ reports
 build
 
 my
+public/sitemap.xml
+public/robots.txt
