@@ -30,8 +30,16 @@ const ContactForm: FC<ContactFormProps> = ({ title, subtitle }) => {
 
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
+  const [url, setUrl] = useState('');
   const [disabled, setDisabled] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+
+  const urlParams = new URLSearchParams(url);
+  const serviceParam = urlParams.get('service');
+
+  useEffect(() => {
+    setUrl(window.location.href);
+  }, []);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -41,6 +49,8 @@ const ContactForm: FC<ContactFormProps> = ({ title, subtitle }) => {
     let data = {
       name,
       phone,
+      url,
+      serviceParam,
     };
 
     fetch('./api/contact', {

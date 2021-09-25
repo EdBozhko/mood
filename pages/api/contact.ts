@@ -16,13 +16,12 @@ export default function (req, res) {
   const mailData = {
     from: 'odk.eurolux@gmail.com',
     to: 'odk.eurolux@gmail.com',
-    subject: `Test message from mood site`,
-    html: `<p>
-    <ul>
-        <li>Имя: ${req.body.name}</li>
-        <li>Телефон: ${req.body.phone}</li>
-    </ul>
-    </p>`,
+    subject: `MOOD Design`,
+    html: `<h2>Новая заявка MOOD Design</h2>
+<b>Имя:</b>  ${req.body.name}<br>
+<b>Телефон:</b> ${req.body.phone}<br>
+<b>Что интересует:</b> ${req.body.serviceParam}<br>
+<b>Джерело:</b> ${req.body.url}<br>`,
   };
 
   transporter.sendMail(mailData, function (err, info) {
