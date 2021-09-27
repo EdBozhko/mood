@@ -5,6 +5,8 @@ import { Fonts } from '@themeConfigs/fonts.style';
 import theme from '@themeConfigs/theme';
 import { GlobalStyle } from '@themeConfigs/global.style';
 import MainLayout from '@comp/MainLayout';
+import { Provider } from 'react-redux';
+import store from '../store/store';
 
 function MyApp({ Component, pageProps }: AppProps) {
   const [isScroll, setIsScroll] = useState(false);
@@ -14,15 +16,17 @@ function MyApp({ Component, pageProps }: AppProps) {
 
   return (
     <>
-      <Fonts />
-      <GlobalStyle />
-      <ThemeProvider theme={theme}>
-        <MainLayout isScroll={isScroll}>
-          <main onWheel={scrollHandler}>
-            <Component {...pageProps} />
-          </main>
-        </MainLayout>
-      </ThemeProvider>
+      <Provider store={store}>
+        <Fonts />
+        <GlobalStyle />
+        <ThemeProvider theme={theme}>
+          <MainLayout isScroll={isScroll}>
+            <main onWheel={scrollHandler}>
+              <Component {...pageProps} />
+            </main>
+          </MainLayout>
+        </ThemeProvider>
+      </Provider>
     </>
   );
 }
