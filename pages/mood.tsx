@@ -2,7 +2,6 @@ import React, { FC, useEffect } from 'react';
 import MoodPage from 'pagesLayout/Mood';
 import Seo from '@comp/Seo';
 import { useDispatch, useSelector } from 'react-redux';
-import { moodInit } from 'store/ducks/mood';
 
 const Mood: FC = () => {
   const dispatch = useDispatch();

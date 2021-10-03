@@ -23,7 +23,7 @@ const CallToAction: FC<CallToActionProps> = ({ data }) => {
             <Title>{data.title}</Title>
             <Subtitle>{data.subtitle}</Subtitle>
           </TitleContainer>
-          <Image objectFit="cover" objectPosition="center" layout="fill" src={data.src} alt={data.alt} />
+          {data.src.length > 0 ? <Image objectFit="cover" objectPosition="center" layout="fill" src={data.src} alt={data.alt} /> : null}
         </CallToActionContainer>
       </Link>
     </CallToActionSection>
