@@ -12,10 +12,6 @@ export const SliderBox = styled.section`
   .fullpage-wrapper {
     width: 100%;
   }
-  @media ${screen.lp} {
-    padding-left: 100px;
-    box-sizing: border-box;
-  }
 `;
 export const SliderItem = styled.a<SliderItemProps>`
   display: flex;

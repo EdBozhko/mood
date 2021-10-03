@@ -42,8 +42,8 @@ body {
     text-rendering: optimizeLegibility;
     overflow-x: hidden;
     @media ${screen.lp} {
-      padding-left: 100px;
-box-sizing: border-box;
+      padding-left: 100px !important;
+      box-sizing: border-box;
     }
 }
 
