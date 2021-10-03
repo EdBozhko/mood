@@ -17,21 +17,13 @@ import {
   Line,
   H1,
 } from './Portfolio.styles';
-import { Bathroom, Bedroom1, Bedroom2, DressingRoom, Facade, Guest1, Guest2, Hallway, Kitchen, Office, Patio } from './components/Gallery';
 import CardParallax from '@comp/CardParallax';
 
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import Slider from 'react-slick';
 
-const data = {
-  h1: 'Mood - наше портфоліо. Знайдіть своє натхнення поміж наших робіт.',
-  title: 'портфоліо',
-  subtitle: 'знайдіть своє натхнення',
-  galleries: [Bathroom, Bedroom1, Bedroom2, DressingRoom, Facade, Guest1, Guest2, Hallway, Kitchen, Office, Patio],
-};
-
-const PortfolioPage: FC = () => {
+const PortfolioPage: FC = ({ data }) => {
   const [isSliderOpen, setIsSliderOpen] = useState(false);
 
   const [activeGallery, setActiveGallery] = useState(0);
@@ -41,7 +33,7 @@ const PortfolioPage: FC = () => {
   };
   const galleriesList = data.galleries.map((gallery, index) => {
     return (
-      <GalleriesItem key={index} onClick={() => onClickHandler(index)}>
+      <GalleriesItem key={index} onClick={() => onClickHandler(index)} onMouseEnter={() => setActiveGallery(index)} onTouchStart={() => setActiveGallery(index)}>
         <CardParallax cardImg={gallery.gallery[0].src} cardTitle={gallery.title} cardDescription={gallery.description} key={index} />
       </GalleriesItem>
     );
@@ -58,13 +50,7 @@ const PortfolioPage: FC = () => {
       height: sliderContainerRef.current.clientHeight,
     });
   }, []);
-  const Slides = data.galleries[activeGallery].gallery.map((image, index) => {
-    return (
-      <SliderItem key={index}>
-        <Image objectPosition="center" width={(sliderContainer.height / image.height) * image.width} height={sliderContainer.height} key={index} src={image.src} alt={image.alt} />
-      </SliderItem>
-    );
-  });
+
   const settings = {
     className: 'slider variable-width',
     dots: true,
@@ -96,7 +82,15 @@ const PortfolioPage: FC = () => {
         </CloseButton>
         <SliderContainer ref={sliderContainerRef}>
           <Slider ref={sliderRef} {...settings}>
-            {Slides}
+            {data.galleries.length > 0
+              ? data.galleries[activeGallery].gallery.map((image, index) => {
+                  return (
+                    <SliderItem key={index}>
+                      <Image objectPosition="center" width={(sliderContainer.height / image.height) * image.width} height={sliderContainer.height} key={index} src={image.src} alt={image.alt} />
+                    </SliderItem>
+                  );
+                })
+              : null}
           </Slider>
         </SliderContainer>
       </SliderWrapper>

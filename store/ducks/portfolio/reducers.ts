@@ -1,4 +1,4 @@
-import { MOOD_INIT } from './actions';
+import { PORTFOLIO_INIT } from './actions';
 
 const defaultState = {
   seo: {
@@ -7,13 +7,15 @@ const defaultState = {
   },
   page: {
     h1: '',
-    slides: [],
+    title: '',
+    subtitle: '',
+    galleries: [],
   },
 };
 
-const moodReducer = (state = defaultState, { type, payload }) => {
+const portfolioReducer = (state = defaultState, { type, payload }) => {
   switch (type) {
-    case MOOD_INIT:
+    case PORTFOLIO_INIT:
       return {
         ...state,
         ...payload,
@@ -24,4 +26,4 @@ const moodReducer = (state = defaultState, { type, payload }) => {
   }
 };
 
-export default moodReducer;
+export default portfolioReducer;

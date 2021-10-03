@@ -1,17 +1,18 @@
-import React, { FC } from 'react';
+import React, { FC, useEffect } from 'react';
 import PortfolioPage from 'pagesLayout/Portfolio';
 import Seo from '@comp/Seo';
-
-const data = {
-  title: 'Портфоліо | mood-design.com.ua',
-  metaDescriptionContent: 'Знайдіть своє натхнення у наших роботах.',
-};
+import { useDispatch, useSelector } from 'react-redux';
 
 const Portfolio: FC = () => {
+  const dispatch = useDispatch();
+  const data = useSelector((state) => state.portfolio);
+  useEffect(() => {
+    dispatch({ type: 'LOCAL_API', payload: 'portfolio_page', types: 'PORTFOLIO_INIT' });
+  }, []);
   return (
     <>
-      <Seo title={data.title} metaDescriptionContent={data.metaDescriptionContent} />
-      <PortfolioPage />
+      <Seo title={data.seo.title} metaDescriptionContent={data.seo.metaDescriptionContent} />
+      <PortfolioPage data={data.page} />
     </>
   );
 };

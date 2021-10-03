@@ -4,11 +4,6 @@ import Seo from '@comp/Seo';
 import { useDispatch, useSelector } from 'react-redux';
 import { moodInit } from 'store/ducks/mood';
 
-// const data = {
-//   title: 'MOOD | Професійна студія дизайну. Дизайн інтер’єру, архітектурне проектування, ландшафтний дизайн, технічний дизайн',
-//   metaDescriptionContent: 'MOOD - професійна студія дизайну та архітектурного проектування, яка втілить Ваші найсміливіші фантазії',
-// };
-
 const Mood: FC = () => {
   const dispatch = useDispatch();
   const data = useSelector((state) => state.mood);
@@ -17,8 +12,8 @@ const Mood: FC = () => {
   }, []);
   return (
     <>
-      <Seo title={data.title} metaDescriptionContent={data.metaDescriptionContent} />
-      <MoodPage data={data} />
+      <Seo title={data.seo.title} metaDescriptionContent={data.seo.metaDescriptionContent} />
+      <MoodPage data={data.page} />
     </>
   );
 };
