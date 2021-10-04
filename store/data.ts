@@ -27,6 +27,8 @@ import TeamMember_4 from '../pagesLayout/About/assets/static/team_member_4.jpg';
 import TeamMember_5 from '../pagesLayout/About/assets/static/team_member_5.jpg';
 import TeamMember_6 from '../pagesLayout/About/assets/static/team_member_6.jpg';
 import TeamMember_7 from '../pagesLayout/About/assets/static/team_member_7.jpg';
+//==========contacts
+import contactsBackgroundImg from '../pagesLayout/Contacts/assets/static/contacts.jpg';
 
 export const data = {
   mood_page: {
@@ -165,6 +167,25 @@ export const data = {
         { name: 'Качур Василь', photoSrc: TeamMember_6, telephone: '', position: 'інженер-геодезист' },
         { name: 'Шелепець Андрій', photoSrc: TeamMember_7, telephone: '', position: 'менеджер-консультант підьємно-розсувних систем, панорамних вікон, маркізам' },
       ],
+    },
+  },
+  contacts_page: {
+    seo: {
+      title: 'Контакти | mood-design.com.ua',
+      metaDescriptionContent: 'Наші спеціалісти з готовністю дадуть відповіді на всі Ваші запитання.',
+    },
+    page: {
+      h1: 'Mood - наші дизайнери з готовністю дадуть відповіді на всі Ваші питання.',
+      title: 'контакти',
+      subtitle: 'давайте обговоримо Ваш дизайн',
+      blackout: 0.1,
+      // backgroundImg: contactsBackgroundImg,
+      backgroundImg: '',
+      telephoneBlock: {
+        title: 'Зателефонуйте нам',
+        telephoneHref: '+380972577591',
+        telephone: '+38 097 257 75 91',
+      },
     },
   },
 };

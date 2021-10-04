@@ -2,9 +2,10 @@ import { combineReducers, createStore, applyMiddleware } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import thunk from 'redux-thunk';
 import { createFetch } from './middlewares/fetch';
-import { about, stages, portfolio, preloader, mood } from './ducks';
+import { contacts, about, stages, portfolio, preloader, mood } from './ducks';
 
 let reducers = combineReducers({
+  contacts,
   about,
   stages,
   portfolio,

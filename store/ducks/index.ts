@@ -1,3 +1,4 @@
+export { default as contacts } from './contacts';
 export { default as about } from './about';
 export { default as stages } from './stages';
 export { default as portfolio } from './portfolio';
