@@ -1,4 +1,5 @@
 import theme from '@themeConfigs/theme';
+
 //==========mood
 import Slide_1 from '../pagesLayout/Mood/assets/static/slide_1.jpg';
 import Slide_2 from '../pagesLayout/Mood/assets/static/slide_2.png';
@@ -6,8 +7,15 @@ import Slide_3 from '../pagesLayout/Mood/assets/static/slide_3.jpg';
 import Slide_4 from '../pagesLayout/Mood/assets/static/slide_4.jpg';
 import Slide_5 from '../pagesLayout/Mood/assets/static/slide_5.png';
 import Slide_6 from '../pagesLayout/Mood/assets/static/slide_6.png';
+
 //==========portfolio
 import { Bathroom, Bedroom1, Bedroom2, DressingRoom, Facade, Guest1, Guest2, Hallway, Kitchen, Office, Patio } from '../pagesLayout/Portfolio/components/Gallery';
+import portfolioColumn_1 from '../pagesLayout/Portfolio/assets/static/column_1.png';
+import portfolioColumn_2 from '../pagesLayout/Portfolio/assets/static/column_2.png';
+import portfolioColumn_3 from '../pagesLayout/Portfolio/assets/static/column_3.png';
+import portfolioColumn_4 from '../pagesLayout/Portfolio/assets/static/column_4.png';
+// import galleriesBackground from './assets/static/galleries_bg.jpg';
+
 //==========stages
 // import stagesBackgroundImg from './assets/static/stages.jpg';
 import Stage_1 from '../pagesLayout/Stages/assets/static/stage_1.png';
@@ -16,6 +24,7 @@ import Stage_3 from '../pagesLayout/Stages/assets/static/stage_3.png';
 import Stage_4 from '../pagesLayout/Stages/assets/static/stage_4.jpg';
 import Stage_5 from '../pagesLayout/Stages/assets/static/stage_5.png';
 import stagesCallToActionImg from '../pagesLayout/Stages/assets/static/callToAction.jpg';
+
 //==========about
 import aboutBackgroundImg from '../pagesLayout/About/assets/static/about.png';
 import AboutCallToActionImg from '../pagesLayout/About/assets/static/callToAction.jpg';
@@ -27,14 +36,21 @@ import TeamMember_4 from '../pagesLayout/About/assets/static/team_member_4.jpg';
 import TeamMember_5 from '../pagesLayout/About/assets/static/team_member_5.jpg';
 import TeamMember_6 from '../pagesLayout/About/assets/static/team_member_6.jpg';
 import TeamMember_7 from '../pagesLayout/About/assets/static/team_member_7.jpg';
+
 //==========contacts
-import contactsBackgroundImg from '../pagesLayout/Contacts/assets/static/contacts.jpg';
+// import contactsBackgroundImg from '../pagesLayout/Contacts/assets/static/contacts.jpg';
+
 //==========error
+import errorBackgroundImg from '../pagesLayout/404/assets/static/cat.svg';
 
 //==========landing
 import Call from '../pagesLayout/Landing/assets/static/call-k.svg';
 import Dreams from '../pagesLayout/Landing/assets/static/dreams-k.svg';
 import Enjoy from '../pagesLayout/Landing/assets/static/enjoy.svg';
+import landingColumn_1 from '../pagesLayout/Landing/assets/static/column_1.png';
+import landingColumn_2 from '../pagesLayout/Landing/assets/static/column_2.png';
+import landingColumn_3 from '../pagesLayout/Landing/assets/static/column_3.png';
+import landingColumn_4 from '../pagesLayout/Landing/assets/static/column_4.png';
 
 export const data = {
   mood_page: {
@@ -64,6 +80,11 @@ export const data = {
       title: 'портфоліо',
       subtitle: 'знайдіть своє натхнення',
       galleries: [Bathroom, Bedroom1, Bedroom2, DressingRoom, Facade, Guest1, Guest2, Hallway, Kitchen, Office, Patio],
+      // backgroundImg: galleriesBackground,
+      column_1_img: portfolioColumn_1,
+      column_2_img: portfolioColumn_2,
+      column_3_img: portfolioColumn_3,
+      column_4_img: portfolioColumn_4,
     },
   },
   stages_page: {
@@ -202,6 +223,7 @@ export const data = {
     page: {
       title: '404',
       subtitle: 'Х’юстон, у нас проблема...',
+      backgroundImg: errorBackgroundImg,
     },
   },
   landing_page: {
@@ -232,6 +254,10 @@ export const data = {
           description: 'НАСОЛОДЖУЙТЕСЬ РЕЗУЛЬТАТОМ',
         },
       ],
+      column_1_img: landingColumn_1,
+      column_2_img: landingColumn_2,
+      column_3_img: landingColumn_3,
+      column_4_img: landingColumn_4,
     },
   },
 };

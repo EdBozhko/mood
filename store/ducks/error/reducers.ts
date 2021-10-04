@@ -8,6 +8,7 @@ const defaultState = {
   page: {
     title: '',
     subtitle: '',
+    backgroundImg: '',
   },
 };
 

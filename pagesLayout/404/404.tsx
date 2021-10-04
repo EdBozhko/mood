@@ -5,7 +5,7 @@ import { SVGContainer } from './404.styles';
 const Page404: FC = ({ data }) => {
   return (
     <HeroBlock title={data.title} subtitle={data.subtitle}>
-      <SVGContainer />
+      <SVGContainer backgroundImg={data.backgroundImg} />
     </HeroBlock>
   );
 };

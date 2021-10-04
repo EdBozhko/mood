@@ -15,6 +15,10 @@ const defaultState = {
       telephone: '',
     },
     stepsList: [],
+    column_1_img: '',
+    column_2_img: '',
+    column_3_img: '',
+    column_4_img: '',
   },
 };
 

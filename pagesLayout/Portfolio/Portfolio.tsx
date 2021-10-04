@@ -70,10 +70,10 @@ const PortfolioPage: FC = ({ data }) => {
       <H1>{data.h1}</H1>
       <HeroBlock title={data.title} subtitle={data.subtitle}>
         <FlexContainer>
-          <ColumnOne />
-          <ColumnTwo />
-          <ColumnThree />
-          <ColumnFour />
+          <ColumnOne columnImg={data.column_1_img} />
+          <ColumnTwo columnImg={data.column_2_img} />
+          <ColumnThree columnImg={data.column_3_img} />
+          <ColumnFour columnImg={data.column_4_img} />
         </FlexContainer>
       </HeroBlock>
       <SliderWrapper isSliderOpen={isSliderOpen}>

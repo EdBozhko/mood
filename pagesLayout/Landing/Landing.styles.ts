@@ -1,14 +1,14 @@
 import styled, { css, keyframes } from 'styled-components';
 import theme from '@themeConfigs/theme';
 import { screen } from '@themeConfigs/media';
-import Column_1 from './assets/static/column_1.png';
-import Column_2 from './assets/static/column_2.png';
-import Column_3 from './assets/static/column_3.png';
-import Column_4 from './assets/static/column_4.png';
 
 interface IllustrationProps {
   illustrationHeight?: number;
   imgUrl?: string;
+}
+
+interface ColumnProps {
+  columnImg?: string;
 }
 
 const flexSlide = css`
@@ -71,26 +71,26 @@ export const FlexContainer = styled.div`
   }
 `;
 
-export const ColumnOne = styled.div`
+export const ColumnOne = styled.div<ColumnProps>`
   ${flexSlide}
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.2)),  url(${Column_1})  center/cover no-repeat;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.2)), url(${({ columnImg }) => columnImg})  center/cover no-repeat;
   animation: ${aboutFlexSlide} 3s 1;
   animation-delay: 0s;
 `;
 
-export const ColumnTwo = styled.div`
+export const ColumnTwo = styled.div<ColumnProps>`
   ${flexSlide}
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.2)),  url(${Column_2})  center/cover no-repeat;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.2)), url(${({ columnImg }) => columnImg}) center/cover no-repeat;
 `;
 
-export const ColumnThree = styled.div`
+export const ColumnThree = styled.div<ColumnProps>`
   ${flexSlide}
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.2)),  url(${Column_3})  center/cover no-repeat;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.2)), url(${({ columnImg }) => columnImg}) center/cover no-repeat;
 `;
 
-export const ColumnFour = styled.div`
+export const ColumnFour = styled.div<ColumnProps>`
   ${flexSlide}
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.2)),  url(${Column_4})  center/cover no-repeat;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.2)), url(${({ columnImg }) => columnImg}) center/cover no-repeat;
 `;
 
 export const StepsContainer = styled.section`
