@@ -2,12 +2,7 @@ import React, { FC } from 'react';
 import HeroBlock from '@comp/HeroBlock';
 import { SVGContainer } from './404.styles';
 
-const data = {
-  title: '404',
-  subtitle: 'Х’юстон, у нас проблема...',
-};
-
-const Page404: FC = () => {
+const Page404: FC = ({ data }) => {
   return (
     <HeroBlock title={data.title} subtitle={data.subtitle}>
       <SVGContainer />

@@ -1,17 +1,18 @@
-import React, { FC } from 'react';
+import React, { FC, useEffect } from 'react';
 import LandingPage from 'pagesLayout/Landing';
 import Seo from '@comp/Seo';
-
-const data = {
-  title: 'MOOD | Професійна студія дизайну. Дизайн інтер’єру, архітектурне проектування, ландшафтний дизайн, технічний дизайн',
-  metaDescriptionContent: 'MOOD - професійна студія дизайну та архітектурного проектування, яка втілить Ваші найсміливіші фантазії',
-};
+import { useDispatch, useSelector } from 'react-redux';
 
 const Landing: FC = () => {
+  const dispatch = useDispatch();
+  const data = useSelector((state) => state.landing);
+  useEffect(() => {
+    dispatch({ type: 'LOCAL_API', payload: 'landing_page', types: 'LANDING_INIT' });
+  }, []);
   return (
     <>
-      <Seo title={data.title} metaDescriptionContent={data.metaDescriptionContent} />
-      <LandingPage />
+      <Seo title={data.seo.title} metaDescriptionContent={data.seo.metaDescriptionContent} />
+      <LandingPage data={data.page} />
     </>
   );
 };

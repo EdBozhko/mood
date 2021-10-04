@@ -29,6 +29,12 @@ import TeamMember_6 from '../pagesLayout/About/assets/static/team_member_6.jpg';
 import TeamMember_7 from '../pagesLayout/About/assets/static/team_member_7.jpg';
 //==========contacts
 import contactsBackgroundImg from '../pagesLayout/Contacts/assets/static/contacts.jpg';
+//==========error
+
+//==========landing
+import Call from '../pagesLayout/Landing/assets/static/call-k.svg';
+import Dreams from '../pagesLayout/Landing/assets/static/dreams-k.svg';
+import Enjoy from '../pagesLayout/Landing/assets/static/enjoy.svg';
 
 export const data = {
   mood_page: {
@@ -186,6 +192,46 @@ export const data = {
         telephoneHref: '+380972577591',
         telephone: '+38 097 257 75 91',
       },
+    },
+  },
+  error_page: {
+    seo: {
+      title: '404 | mood-design.com.ua',
+      metaDescriptionContent: 'Х’юстон, у нас проблема...',
+    },
+    page: {
+      title: '404',
+      subtitle: 'Х’юстон, у нас проблема...',
+    },
+  },
+  landing_page: {
+    seo: {
+      title: 'MOOD | Професійна студія дизайну. Дизайн інтер’єру, архітектурне проектування, ландшафтний дизайн, технічний дизайн',
+      metaDescriptionContent: 'MOOD - професійна студія дизайну та архітектурного проектування, яка втілить Ваші найсміливіші фантазії',
+    },
+    page: {
+      h1: 'Mood - студія дизайну, яка допоможе створити не тільки зовнішню красу, але і Ваш внутрішній настрій. Наша спеціалізація - дизайн інтер’єрів, архітектурне проектування, ландшафтний та технічний дизайн, а також ми надаємо комплекс послуг.',
+      title: 'mood',
+      subtitle: 'реалізуй свої мрії',
+      telephoneBlock: {
+        title: 'Зателефонуйте нам',
+        telephoneHref: '+380972577591',
+        telephone: '+38 097 257 75 91',
+      },
+      stepsList: [
+        {
+          imgUrl: Call,
+          description: 'ЗАТЕЛЕФОНУЙТЕ НАМ АБО ЗАЛИШІТЬ СВОЇ КОНТАКТИ',
+        },
+        {
+          imgUrl: Dreams,
+          description: 'РОЗКАЖІТЬ НАМ СВОЇ МРІЇ, ІДЕЇ ТА ФАНАТАЗІЇ',
+        },
+        {
+          imgUrl: Enjoy,
+          description: 'НАСОЛОДЖУЙТЕСЬ РЕЗУЛЬТАТОМ',
+        },
+      ],
     },
   },
 };

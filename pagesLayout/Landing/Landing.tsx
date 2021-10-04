@@ -1,38 +1,9 @@
 import React, { FC, useState, useRef, useEffect } from 'react';
 import HeroBlock from '@comp/HeroBlock';
-import Image from 'next/image';
 import { FlexContainer, ColumnOne, ColumnTwo, ColumnThree, ColumnFour, H1, StepsContainer, StepsList, StepsItem, Illustration, Description } from './Landing.styles';
 import { TelephoneBlock, Title, Telephone } from 'pagesLayout/Contacts/Contacts.styles';
-import Call from './assets/static/call-k.svg';
-import Dreams from './assets/static/dreams-k.svg';
-import Enjoy from './assets/static/enjoy.svg';
 
-const data = {
-  h1: 'Mood - студія дизайну, яка допоможе створити не тільки зовнішню красу, але і Ваш внутрішній настрій. Наша спеціалізація - дизайн інтер’єрів, архітектурне проектування, ландшафтний та технічний дизайн, а також ми надаємо комплекс послуг.',
-  title: 'mood',
-  subtitle: 'реалізуй свої мрії',
-  telephoneBlock: {
-    title: 'Зателефонуйте нам',
-    telephoneHref: '+380972577591',
-    telephone: '+38 097 257 75 91',
-  },
-  stepsList: [
-    {
-      imgUrl: Call,
-      description: 'ЗАТЕЛЕФОНУЙТЕ НАМ АБО ЗАЛИШІТЬ СВОЇ КОНТАКТИ',
-    },
-    {
-      imgUrl: Dreams,
-      description: 'РОЗКАЖІТЬ НАМ СВОЇ МРІЇ, ІДЕЇ ТА ФАНАТАЗІЇ',
-    },
-    {
-      imgUrl: Enjoy,
-      description: 'НАСОЛОДЖУЙТЕСЬ РЕЗУЛЬТАТОМ',
-    },
-  ],
-};
-
-const PortfolioPage: FC = () => {
+const PortfolioPage: FC = ({ data }) => {
   const stepsListRef = useRef(null);
 
   const handleResize = () => {
