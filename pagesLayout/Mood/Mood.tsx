@@ -113,7 +113,7 @@ const MoodPage: FC = () => {
                 );
               })}
               <div className="section">
-                <Footer title="Замовити безкоштовну консультацію" />
+                <Footer title="Завантажити прайс" subtitle="Заповніть форму, щоб почати завантаження прайсу" />
               </div>
             </ReactFullpage.Wrapper>
           )}
