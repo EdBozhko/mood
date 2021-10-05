@@ -9,10 +9,11 @@ const About: FC = () => {
   useEffect(() => {
     dispatch({ type: 'LOCAL_API', payload: 'about_page', types: 'ABOUT_INIT' });
   }, []);
+  const { seo, page } = data;
   return (
     <>
-      <Seo title={data.seo.title} metaDescriptionContent={data.seo.metaDescriptionContent} />
-      <AboutPage data={data.page} />
+      <Seo title={seo.title} metaDescriptionContent={seo.metaDescriptionContent} />
+      <AboutPage data={page} />
     </>
   );
 };

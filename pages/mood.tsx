@@ -9,10 +9,11 @@ const Mood: FC = () => {
   useEffect(() => {
     dispatch({ type: 'LOCAL_API', payload: 'mood_page', types: 'MOOD_INIT' });
   }, []);
+  const { seo, page } = data;
   return (
     <>
-      <Seo title={data.seo.title} metaDescriptionContent={data.seo.metaDescriptionContent} />
-      <MoodPage data={data.page} />
+      <Seo title={seo.title} metaDescriptionContent={seo.metaDescriptionContent} />
+      <MoodPage data={page} />
     </>
   );
 };

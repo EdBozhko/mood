@@ -4,15 +4,21 @@ import Image from 'next/image';
 import { StagesSection, StagesList, StagesItem, DescriptionContainer, ImageContainer, NumberBox, TitleBox, DescriptionBox, Separator, H1 } from './Stages.styles';
 import CallToAction from '@comp/CallToAction';
 
-const StagesPage: FC = ({ data }) => {
+interface StagesPageProps {
+  data?: {};
+}
+
+const StagesPage: FC<StagesPageProps> = ({ data }) => {
+  const { h1, title, subtitle, backgroundImg, blackout, stages, callToAction } = data;
+
   return (
     <>
-      <H1>{data.h1}</H1>
-      <HeroBlock title={data.title} subtitle={data.subtitle} backgroundImg={data.backgroundImg} blackout={data.blackout} />
+      <H1>{h1}</H1>
+      <HeroBlock title={title} subtitle={subtitle} backgroundImg={backgroundImg} blackout={blackout} />
       <StagesSection>
         <StagesList>
-          {data.stages.length > 0
-            ? data.stages.map((item, index) => {
+          {stages.length > 0
+            ? stages.map((item, index) => {
                 return (
                   <StagesItem key={index}>
                     <ImageContainer>
@@ -30,7 +36,7 @@ const StagesPage: FC = ({ data }) => {
             : null}
         </StagesList>
       </StagesSection>
-      <CallToAction data={data.callToAction} />
+      <CallToAction data={callToAction} />
     </>
   );
 };

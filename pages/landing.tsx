@@ -9,10 +9,11 @@ const Landing: FC = () => {
   useEffect(() => {
     dispatch({ type: 'LOCAL_API', payload: 'landing_page', types: 'LANDING_INIT' });
   }, []);
+  const { seo, page } = data;
   return (
     <>
-      <Seo title={data.seo.title} metaDescriptionContent={data.seo.metaDescriptionContent} />
-      <LandingPage data={data.page} />
+      <Seo title={seo.title} metaDescriptionContent={seo.metaDescriptionContent} />
+      <LandingPage data={page} />
     </>
   );
 };

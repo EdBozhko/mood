@@ -9,10 +9,11 @@ const ErrorPage: FC = () => {
   useEffect(() => {
     dispatch({ type: 'LOCAL_API', payload: 'error_page', types: 'ERROR_INIT' });
   }, []);
+  const { seo, page } = data;
   return (
     <>
-      <Seo title={data.seo.title} metaDescriptionContent={data.seo.metaDescriptionContent} />
-      <Page404 data={data.page} />
+      <Seo title={seo.title} metaDescriptionContent={seo.metaDescriptionContent} />
+      <Page404 data={page} />
     </>
   );
 };

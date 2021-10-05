@@ -9,10 +9,11 @@ const Contacts: FC = () => {
   useEffect(() => {
     dispatch({ type: 'LOCAL_API', payload: 'contacts_page', types: 'CONTACTS_INIT' });
   }, []);
+  const { seo, page } = data;
   return (
     <>
-      <Seo title={data.seo.title} metaDescriptionContent={data.seo.metaDescriptionContent} />
-      <ContactsPage data={data.page} />
+      <Seo title={seo.title} metaDescriptionContent={seo.metaDescriptionContent} />
+      <ContactsPage data={page} />
     </>
   );
 };

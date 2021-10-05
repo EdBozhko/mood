@@ -9,10 +9,11 @@ const Portfolio: FC = () => {
   useEffect(() => {
     dispatch({ type: 'LOCAL_API', payload: 'portfolio_page', types: 'PORTFOLIO_INIT' });
   }, []);
+  const { seo, page } = data;
   return (
     <>
-      <Seo title={data.seo.title} metaDescriptionContent={data.seo.metaDescriptionContent} />
-      <PortfolioPage data={data.page} />
+      <Seo title={seo.title} metaDescriptionContent={seo.metaDescriptionContent} />
+      <PortfolioPage data={page} />
     </>
   );
 };

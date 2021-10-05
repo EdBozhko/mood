@@ -5,7 +5,8 @@ import CallToAction from '@comp/CallToAction';
 import TeamMember from './components';
 
 const AboutPage: FC = ({ data }) => {
-  const Team = data.team.map((member, index) => {
+  const { team, h1, title, subtitle, backgroundImg, blackout, photoBlock, textBlocks, callToAction } = data;
+  const Team = team.map((member, index) => {
     return (
       <TeamItem key={index}>
         <TeamMember name={member.name} photoSrc={member.photoSrc} telephone={member.telephone} position={member.position} />
@@ -14,16 +15,16 @@ const AboutPage: FC = ({ data }) => {
   });
   return (
     <>
-      <H1>{data.h1}</H1>
-      <HeroBlock title={data.title} subtitle={data.subtitle} backgroundImg={data.backgroundImg} blackout={data.blackout} />
+      <H1>{h1}</H1>
+      <HeroBlock title={title} subtitle={subtitle} backgroundImg={backgroundImg} blackout={blackout} />
       <TextBlockContainer>
-        <TextBlock dangerouslySetInnerHTML={{ __html: data.textBlocks.block_1.text_1 }} />
+        <TextBlock dangerouslySetInnerHTML={{ __html: textBlocks.block_1.text_1 }} />
       </TextBlockContainer>
-      <PhotoBlock photo={data.photoBlock} />
+      <PhotoBlock photo={photoBlock} />
       <TeamBlock>
         <TeamList>{Team}</TeamList>
       </TeamBlock>
-      <CallToAction data={data.callToAction} />
+      <CallToAction data={callToAction} />
     </>
   );
 };

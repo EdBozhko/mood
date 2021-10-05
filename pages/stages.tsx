@@ -9,10 +9,11 @@ const Stages: FC = () => {
   useEffect(() => {
     dispatch({ type: 'LOCAL_API', payload: 'stages_page', types: 'STAGES_INIT' });
   }, []);
+  const { seo, page } = data;
   return (
     <>
-      <Seo title={data.seo.title} metaDescriptionContent={data.seo.metaDescriptionContent} />
-      <StagesPage data={data.page} />
+      <Seo title={seo.title} metaDescriptionContent={seo.metaDescriptionContent} />
+      <StagesPage data={page} />
     </>
   );
 };

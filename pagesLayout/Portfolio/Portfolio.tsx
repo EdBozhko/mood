@@ -24,6 +24,8 @@ import 'slick-carousel/slick/slick-theme.css';
 import Slider from 'react-slick';
 
 const PortfolioPage: FC = ({ data }) => {
+  const { galleries, h1, title, subtitle, column_1_img, column_2_img, column_3_img, column_4_img } = data;
+
   const [isSliderOpen, setIsSliderOpen] = useState(false);
 
   const [activeGallery, setActiveGallery] = useState(0);
@@ -31,7 +33,7 @@ const PortfolioPage: FC = ({ data }) => {
     setActiveGallery(index);
     setIsSliderOpen(true);
   };
-  const galleriesList = data.galleries.map((gallery, index) => {
+  const galleriesList = galleries.map((gallery, index) => {
     return (
       <GalleriesItem key={index} onClick={() => onClickHandler(index)} onMouseEnter={() => setActiveGallery(index)} onTouchStart={() => setActiveGallery(index)}>
         <CardParallax cardImg={gallery.gallery[0].src} cardTitle={gallery.title} cardDescription={gallery.description} key={index} />
@@ -67,13 +69,13 @@ const PortfolioPage: FC = ({ data }) => {
   };
   return (
     <>
-      <H1>{data.h1}</H1>
-      <HeroBlock title={data.title} subtitle={data.subtitle}>
+      <H1>{h1}</H1>
+      <HeroBlock title={title} subtitle={subtitle}>
         <FlexContainer>
-          <ColumnOne columnImg={data.column_1_img} />
-          <ColumnTwo columnImg={data.column_2_img} />
-          <ColumnThree columnImg={data.column_3_img} />
-          <ColumnFour columnImg={data.column_4_img} />
+          <ColumnOne columnImg={column_1_img} />
+          <ColumnTwo columnImg={column_2_img} />
+          <ColumnThree columnImg={column_3_img} />
+          <ColumnFour columnImg={column_4_img} />
         </FlexContainer>
       </HeroBlock>
       <SliderWrapper isSliderOpen={isSliderOpen}>
@@ -82,8 +84,8 @@ const PortfolioPage: FC = ({ data }) => {
         </CloseButton>
         <SliderContainer ref={sliderContainerRef}>
           <Slider ref={sliderRef} {...settings}>
-            {data.galleries.length > 0
-              ? data.galleries[activeGallery].gallery.map((image, index) => {
+            {galleries.length > 0
+              ? galleries[activeGallery].gallery.map((image, index) => {
                   return (
                     <SliderItem key={index}>
                       <Image objectPosition="center" width={(sliderContainer.height / image.height) * image.width} height={sliderContainer.height} key={index} src={image.src} alt={image.alt} />
