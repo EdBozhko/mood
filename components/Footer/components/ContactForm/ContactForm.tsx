@@ -1,5 +1,6 @@
 import React, { FC, useRef, useEffect, useState } from 'react';
 import { Form, Name, Phone, Submit, InputBox, Title, Subtitle, Heading, InputContainer } from './ContactForm.styles';
+// import Catalog from '../../../../public/static/MOOD_price.pdf';
 
 interface ContactFormProps {
   title?: string;
@@ -64,6 +65,7 @@ const ContactForm: FC<ContactFormProps> = ({ title, subtitle }) => {
       console.log('Response received');
       if (res.status === 200) {
         console.log('Response succeeded!');
+        window.open('https://drive.google.com/uc?export=download&id=1PA2CFwfx1ODvEVZgF8Ya0h_rj73MouMv', '_blank');
         setSubmitted(true);
         setName('');
         setPhone('');
@@ -112,7 +114,7 @@ const ContactForm: FC<ContactFormProps> = ({ title, subtitle }) => {
           </svg>
         </InputBox>
         <Submit disabled={disabled} type="submit">
-          Замовити
+          Завантажити
         </Submit>
       </InputContainer>
     </Form>
