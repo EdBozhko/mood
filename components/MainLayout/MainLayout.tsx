@@ -7,8 +7,8 @@ import Preloader from '@comp/Preloader';
 import ScrollIcon from '@comp/ScrollIcon';
 
 const data = {
-  title: 'Готові розпочати проект?',
-  subtitle: 'Замовте безкоштовну консультацію',
+  title: 'Завантажити прайс',
+  subtitle: 'Заповніть форму, щоб почати завантаження прайсу',
 };
 
 interface MainLayoutProps {

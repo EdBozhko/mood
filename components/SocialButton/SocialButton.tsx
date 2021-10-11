@@ -9,7 +9,9 @@ interface SocialButtonProps {
 export const SocialButton: FC<SocialButtonProps> = ({ children, href }) => {
   return (
     <>
-      <Social href={href}>{children}</Social>
+      <Social href={href} target="_blank">
+        {children}
+      </Social>
     </>
   );
 };
