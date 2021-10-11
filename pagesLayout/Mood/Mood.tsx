@@ -10,6 +10,7 @@ interface MoodPageProps {
 }
 
 const MoodPage: FC<MoodPageProps> = ({ data }) => {
+  const { slides, h1, footer } = data;
   const sliderRef = useRef();
   useEffect(() => {
     setTimeout(() => {
@@ -70,20 +71,20 @@ const MoodPage: FC<MoodPageProps> = ({ data }) => {
     }, 100);
   }, []);
 
-  if (!data.slides.length) {
+  if (!slides.length) {
     return null;
   }
 
   return (
     <>
-      <H1>{data.h1}</H1>
+      <H1>{h1}</H1>
       <SliderBox>
         <ReactFullpage
           ref={sliderRef}
           navigation
           render={(comp) => (
             <ReactFullpage.Wrapper>
-              {data.slides.map((slide, index) => {
+              {slides.map((slide, index) => {
                 return (
                   <div key={index} className="section" onClick={() => comp.fullpageApi.moveTo(1, 0)}>
                     <Link href={slide.link}>
@@ -102,7 +103,7 @@ const MoodPage: FC<MoodPageProps> = ({ data }) => {
                 );
               })}
               <div className="section">
-                <Footer title="Замовити безкоштовну консультацію" />
+                <Footer title={footer} />
               </div>
             </ReactFullpage.Wrapper>
           )}
