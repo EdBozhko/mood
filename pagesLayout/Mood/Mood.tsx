@@ -103,7 +103,7 @@ const MoodPage: FC<MoodPageProps> = ({ data }) => {
                 );
               })}
               <div className="section">
-                <Footer title={footer.title} subtitle={footer.subtitle} />
+                <Footer title={footer.title} subtitle={footer.subtitle} infoBox={footer.infoBox} />
               </div>
             </ReactFullpage.Wrapper>
           )}

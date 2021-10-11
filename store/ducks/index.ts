@@ -1,3 +1,4 @@
+export { default as footer } from './footer';
 export { default as landing } from './landing';
 export { default as error } from './error';
 export { default as contacts } from './contacts';

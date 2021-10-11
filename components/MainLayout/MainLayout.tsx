@@ -1,4 +1,5 @@
-import React, { FC } from 'react';
+import React, { FC, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 
 import Header from '@comp/Header';
 import Footer from '@comp/Footer';
@@ -6,16 +7,18 @@ import LineDecoration from '@comp/LineDecoration';
 import Preloader from '@comp/Preloader';
 import ScrollIcon from '@comp/ScrollIcon';
 
-const data = {
-  title: 'Завантажити прайс',
-  subtitle: 'Заповніть форму, щоб почати завантаження прайсу',
-};
-
 interface MainLayoutProps {
   isScroll?: boolean;
 }
 
 const MainLayout: FC<MainLayoutProps> = ({ children, isScroll }) => {
+  const dispatch = useDispatch();
+  const data = useSelector((state) => state.footer);
+  useEffect(() => {
+    dispatch({ type: 'LOCAL_API', payload: 'footer', types: 'FOOTER_INIT' });
+  }, []);
+  const { title, subtitle, infoBox } = data;
+
   return (
     <>
       <Preloader />
@@ -23,7 +26,7 @@ const MainLayout: FC<MainLayoutProps> = ({ children, isScroll }) => {
       <ScrollIcon isScroll={isScroll} />
       <Header />
       {children}
-      <Footer title={data.title} subtitle={data.subtitle} />
+      <Footer title={title} subtitle={subtitle} infoBox={infoBox} />
     </>
   );
 };

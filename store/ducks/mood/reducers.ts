@@ -8,6 +8,7 @@ const defaultState = {
   page: {
     h1: '',
     slides: [],
+    footer: {},
   },
 };
 

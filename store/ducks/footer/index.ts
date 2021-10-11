@@ -1,5 +1,5 @@
 import reducer from './reducers';
 
-export { contactsInit } from './actions';
+export { footerInit } from './actions';
 
 export default reducer;

@@ -53,6 +53,15 @@ import landingColumn_3 from '../pagesLayout/Landing/assets/static/column_3.png';
 import landingColumn_4 from '../pagesLayout/Landing/assets/static/column_4.png';
 
 export const data = {
+  footer: {
+    title: 'Завантажити прайс',
+    subtitle: 'Заповніть форму, щоб почати завантаження прайсу',
+    infoBox: {
+      address: `м.Ужгород,</br>пл.Петефі 29,</br>3 поверх`,
+      addressHref: 'https://goo.gl/maps/TJFAXFpw2t9zpTgh7',
+      workingHours: `Пн-Пт: 10.00-18.00</br>Сб: за домовленістю</br>Нд: вихідний`,
+    },
+  },
   mood_page: {
     seo: {
       title: 'MOOD | Професійна студія дизайну. Дизайн інтер’єру, архітектурне проектування, ландшафтний дизайн, технічний дизайн',
@@ -68,7 +77,15 @@ export const data = {
         { link: '/stages', src: Slide_5, alt: 'послуга - комплекс послуг', blackout: 0.35, heading: 'choose your design', title: 'комплекс послуг', subtitle: 'дізнатись більше' },
         { link: '/stages', src: Slide_6, alt: 'дизайн, який створює настрій', blackout: 0.2, heading: '', title: 'дизайн, який створює настрій', subtitle: 'замовити проект' },
       ],
-      footer: { title: 'Завантажити прайс', subtitle: 'Заповніть форму, щоб почати завантаження прайсу' },
+      footer: {
+        title: 'Завантажити прайс',
+        subtitle: 'Заповніть форму, щоб почати завантаження прайсу',
+        infoBox: {
+          address: `м.Ужгород,</br>пл.Петефі 29,</br>3 поверх`,
+          addressHref: 'https://goo.gl/maps/TJFAXFpw2t9zpTgh7',
+          workingHours: `Пн-Пт: 10.00-18.00</br>Сб: за домовленістю</br>Нд: вихідний`,
+        },
+      },
     },
   },
   portfolio_page: {
