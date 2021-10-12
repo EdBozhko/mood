@@ -53,6 +53,32 @@ import landingColumn_3 from '../pagesLayout/Landing/assets/static/column_3.png';
 import landingColumn_4 from '../pagesLayout/Landing/assets/static/column_4.png';
 
 export const data = {
+  menu: {
+    telephoneHref: '+380972577591',
+    telephone: '+38 097 257 75 91',
+    links: [
+      {
+        value: 'mood',
+        link: '/mood',
+      },
+      {
+        value: 'портфоліо',
+        link: '/portfolio',
+      },
+      {
+        value: 'етапи роботи',
+        link: '/stages',
+      },
+      {
+        value: 'про нас',
+        link: '/about',
+      },
+      {
+        value: 'контакти',
+        link: '/contacts',
+      },
+    ],
+  },
   footer: {
     title: 'Завантажити прайс',
     subtitle: 'Заповніть форму, щоб почати завантаження прайсу',

@@ -1,4 +1,5 @@
 import React, { FC, useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { MenuStyled, Nav, MenuList, Socials, Phone, SVG } from './Menu.styles';
 import MenuItem from './components/MenuItem';
 import SocialButton from '@comp/SocialButton';
@@ -8,34 +9,14 @@ interface MenuProps {
   onClickHandler?: () => void;
 }
 
-const data = {
-  telephoneHref: '+380972577591',
-  telephone: '+38 097 257 75 91',
-  links: [
-    {
-      value: 'mood',
-      link: '/mood',
-    },
-    {
-      value: 'портфоліо',
-      link: '/portfolio',
-    },
-    {
-      value: 'етапи роботи',
-      link: '/stages',
-    },
-    {
-      value: 'про нас',
-      link: '/about',
-    },
-    {
-      value: 'контакти',
-      link: '/contacts',
-    },
-  ],
-};
-
 const Menu: FC<MenuProps> = ({ isMenuOpen, onClickHandler }) => {
+  const dispatch = useDispatch();
+  const data = useSelector((state) => state.menu);
+  useEffect(() => {
+    dispatch({ type: 'LOCAL_API', payload: 'menu', types: 'MENU_INIT' });
+  }, []);
+  const { links, telephoneHref, telephone } = data;
+
   const [vh, setVh] = useState('');
   const handleResize = () => {
     setVh(`${window.innerHeight - 95}px`);
@@ -48,14 +29,14 @@ const Menu: FC<MenuProps> = ({ isMenuOpen, onClickHandler }) => {
     };
   }, []);
 
-  const MenuItemList = data.links.map((item, index) => {
+  const MenuItemList = links.map((item, index) => {
     return <MenuItem href={item.link} key={index} children={item.value} isMenuOpen={isMenuOpen} transitionDelay={`0.${index + 1}s`} onClickHandler={onClickHandler} />;
   });
   return (
     <>
       <MenuStyled isMenuOpen={isMenuOpen} vh={vh}>
-        <Phone href={`tel: ${data.telephoneHref}`} isMenuOpen={isMenuOpen}>
-          {data.telephone}
+        <Phone href={`tel: ${telephoneHref}`} isMenuOpen={isMenuOpen}>
+          {telephone}
         </Phone>
         <Nav>
           <MenuList>{MenuItemList}</MenuList>
