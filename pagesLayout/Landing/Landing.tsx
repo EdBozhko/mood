@@ -3,7 +3,30 @@ import HeroBlock from '@comp/HeroBlock';
 import { FlexContainer, ColumnOne, ColumnTwo, ColumnThree, ColumnFour, H1, StepsContainer, StepsList, StepsItem, Illustration, Description } from './Landing.styles';
 import { TelephoneBlock, Title, Telephone } from 'pagesLayout/Contacts/Contacts.styles';
 
-const PortfolioPage: FC = ({ data }) => {
+interface PortfolioPageProps {
+  data: {
+    h1: string;
+    title: string;
+    subtitle: string;
+    telephoneBlock: {
+      title: string;
+      telephoneHref: string;
+      telephone: string;
+    };
+    stepsList: [
+      {
+        imgUrl: string;
+        description: string;
+      },
+    ];
+    column_1_img: string;
+    column_2_img: string;
+    column_3_img: string;
+    column_4_img: string;
+  };
+}
+
+const PortfolioPage: FC<PortfolioPageProps> = ({ data }) => {
   const stepsListRef = useRef(null);
 
   const handleResize = () => {

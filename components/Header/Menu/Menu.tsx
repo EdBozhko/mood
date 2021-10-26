@@ -9,9 +9,22 @@ interface MenuProps {
   onClickHandler?: () => void;
 }
 
+interface MenuDataProps {
+  menu: {
+    telephoneHref: string;
+    telephone: string;
+    links: [
+      {
+        value: string;
+        link: string;
+      },
+    ];
+  };
+}
+
 const Menu: FC<MenuProps> = ({ isMenuOpen, onClickHandler }) => {
   const dispatch = useDispatch();
-  const data = useSelector((state) => state.menu);
+  const data = useSelector((state: MenuDataProps) => state.menu);
   useEffect(() => {
     dispatch({ type: 'LOCAL_API', payload: 'menu', types: 'MENU_INIT' });
   }, []);

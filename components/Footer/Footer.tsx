@@ -6,13 +6,17 @@ import Marker from '../../public/MarkerS.png';
 import InfoBox from './components/InfoBox';
 import { config } from 'config';
 
-interface FooterProps {
+export interface FooterDataProps {
   title?: string;
   subtitle?: string;
-  infoBox?: {};
+  infoBox?: {
+    address?: string;
+    addressHref?: string;
+    workingHours?: string;
+  };
 }
 
-const Footer: FC<FooterProps> = ({ title, subtitle, infoBox }) => {
+const Footer: FC<FooterDataProps> = ({ title, subtitle, infoBox }) => {
   const googlemap = useRef(null);
   useEffect(() => {
     const loader = new Loader({

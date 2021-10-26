@@ -1,4 +1,4 @@
-import React, { FC, useState, useRef, useEffect } from 'react';
+import React, { FC, useState, useRef, useEffect, ReactNode } from 'react';
 import HeroBlock from '@comp/HeroBlock';
 import Image from 'next/image';
 import {
@@ -23,14 +23,46 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import Slider from 'react-slick';
 
-const PortfolioPage: FC = ({ data }) => {
-  const { galleries, h1, title, subtitle, column_1_img, column_2_img, column_3_img, column_4_img } = data;
+interface PortfolioPageProps {
+  data: {
+    h1: string;
+    title: string;
+    subtitle: string;
+    galleries: [
+      {
+        title: string;
+        description: string;
+        gallery: [
+          {
+            src: string;
+            alt: string;
+            width: number;
+            height: number;
+          },
+        ];
+      },
+    ];
+    column_1_img: string;
+    column_2_img: string;
+    column_3_img: string;
+    column_4_img: string;
+  };
+}
 
+const PortfolioPage: FC<PortfolioPageProps> = ({ data }) => {
+  const { galleries, h1, title, subtitle, column_1_img, column_2_img, column_3_img, column_4_img } = data;
+  const sliderRef = useRef(null);
+  const sliderContainerRef = useRef(null);
+  const [sliderContainer, setSliderContainer] = useState({
+    width: 0,
+    height: 0,
+  });
   const [isSliderOpen, setIsSliderOpen] = useState(false);
 
   const [activeGallery, setActiveGallery] = useState(0);
   const onClickHandler = (index) => {
     setActiveGallery(index);
+    sliderRef.current.slickGoTo(0);
     setIsSliderOpen(true);
   };
   const galleriesList = galleries.map((gallery, index) => {
@@ -40,12 +72,7 @@ const PortfolioPage: FC = ({ data }) => {
       </GalleriesItem>
     );
   });
-  const sliderRef = useRef(null);
-  const sliderContainerRef = useRef(null);
-  const [sliderContainer, setSliderContainer] = useState({
-    width: 0,
-    height: 0,
-  });
+
   useEffect(() => {
     setSliderContainer({
       width: sliderContainerRef.current.clientWidth,

@@ -8,9 +8,15 @@ import Link from 'next/link';
 import Menu from './Menu';
 import { isMenuOpen } from 'store/ducks/menu';
 
+interface MenuDataProps {
+  menu: {
+    isMenuOpen: boolean;
+  };
+}
+
 const Header: FC = () => {
   const dispatch = useDispatch();
-  const isMenuOpened = useSelector((state) => state.menu.isMenuOpen);
+  const isMenuOpened = useSelector((state: MenuDataProps) => state.menu.isMenuOpen);
   const menuOpenHandler = () => {
     dispatch(isMenuOpen({ isMenuOpen: !isMenuOpened }));
   };
@@ -27,7 +33,6 @@ const Header: FC = () => {
           <Link href="/mood" prefetch={false} passHref>
             <a>
               <Logo onClickHandler={onLogoClickHandler} />
-              {/* <Logo /> */}
             </a>
           </Link>
           <Tagline firstLine="we will design" secondLine="your mood" />

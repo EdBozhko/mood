@@ -5,14 +5,9 @@ import { Loader } from '@googlemaps/js-api-loader';
 import Marker from '../../../../public/MarkerS.png';
 import InfoBox from './components/InfoBox';
 import { config } from 'config';
+import { FooterDataProps } from '@comp/Footer/Footer';
 
-interface FooterProps {
-  title?: string;
-  subtitle?: string;
-  infoBox?: {};
-}
-
-const Footer: FC<FooterProps> = ({ title, subtitle, infoBox }) => {
+const Footer: FC<FooterDataProps> = ({ title, subtitle, infoBox }) => {
   const googlemap = useRef(null);
   useEffect(() => {
     const loader = new Loader({

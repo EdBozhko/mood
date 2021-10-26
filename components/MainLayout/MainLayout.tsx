@@ -11,9 +11,21 @@ interface MainLayoutProps {
   isScroll?: boolean;
 }
 
+interface FooterDataProps {
+  footer: {
+    title: string;
+    subtitle: string;
+    infoBox: {
+      address: string;
+      addressHref: string;
+      workingHours: string;
+    };
+  };
+}
+
 const MainLayout: FC<MainLayoutProps> = ({ children, isScroll }) => {
   const dispatch = useDispatch();
-  const data = useSelector((state) => state.footer);
+  const data = useSelector((state: FooterDataProps) => state.footer);
   useEffect(() => {
     dispatch({ type: 'LOCAL_API', payload: 'footer', types: 'FOOTER_INIT' });
   }, []);

@@ -2,7 +2,22 @@ import React, { FC } from 'react';
 import HeroBlock from '@comp/HeroBlock';
 import { H1, TelephoneBlock, Telephone, Title } from './Contacts.styles';
 
-const ContactsPage: FC = ({ data }) => {
+interface ContactsPageProps {
+  data: {
+    h1: string;
+    title: string;
+    subtitle: string;
+    blackout: number;
+    backgroundImg: string;
+    telephoneBlock: {
+      title: string;
+      telephoneHref: string;
+      telephone: string;
+    };
+  };
+}
+
+const ContactsPage: FC<ContactsPageProps> = ({ data }) => {
   const { h1, title, subtitle, backgroundImg, blackout, telephoneBlock } = data;
   return (
     <>

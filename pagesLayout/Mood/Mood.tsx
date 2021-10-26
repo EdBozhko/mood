@@ -1,4 +1,4 @@
-import React, { FC, ReactNode, useEffect, useRef, useCallback, useState } from 'react';
+import React, { FC, ReactNode, useEffect } from 'react';
 import Image from 'next/image';
 import { H1, SliderBox, SliderItem, HeadingContainer, Heading, Title, Subtitle, TitleContainer } from './Mood.styles';
 import Footer from './components/Footer/Footer';
@@ -6,7 +6,7 @@ import Link from 'next/link';
 import ReactFullpage from '@fullpage/react-fullpage';
 
 interface MoodPageProps {
-  data?: {
+  data: {
     slides: [{ link: string; src: ReactNode; alt: string; blackout: number; heading: string; title: string; subtitle: string }];
     h1: string;
     footer: {
@@ -85,6 +85,7 @@ const MoodPage: FC<MoodPageProps> = ({ data }) => {
       setTimeout(() => {
         window.scrollTo({
           top: 0,
+          // @ts-ignore
           behavior: 'instant',
         });
       }, 300);

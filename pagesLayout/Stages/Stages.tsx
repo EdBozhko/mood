@@ -5,7 +5,32 @@ import { StagesSection, StagesList, StagesItem, DescriptionContainer, ImageConta
 import CallToAction from '@comp/CallToAction';
 
 interface StagesPageProps {
-  data?: {};
+  data: {
+    h1: string;
+    title: string;
+    subtitle: string;
+    blackout: number;
+    backgroundImg: string;
+    stages: [
+      {
+        src: string;
+        alt: string;
+        number: string;
+        title: string;
+        description: string;
+        textColor: string;
+        backgroundColor: string;
+      },
+    ];
+    callToAction: {
+      href: string;
+      blackout: number;
+      title: string;
+      subtitle: string;
+      src: string;
+      alt: string;
+    };
+  };
 }
 
 const StagesPage: FC<StagesPageProps> = ({ data }) => {
