@@ -1,38 +1,32 @@
 import React, { FC, useState, useRef, useEffect } from 'react';
 import HeroBlock from '@comp/HeroBlock';
-import Image from 'next/image';
 import { FlexContainer, ColumnOne, ColumnTwo, ColumnThree, ColumnFour, H1, StepsContainer, StepsList, StepsItem, Illustration, Description } from './Landing.styles';
 import { TelephoneBlock, Title, Telephone } from 'pagesLayout/Contacts/Contacts.styles';
-import Call from './assets/static/call-k.svg';
-import Dreams from './assets/static/dreams-k.svg';
-import Enjoy from './assets/static/enjoy.svg';
 
-const data = {
-  h1: 'Mood - студія дизайну, яка допоможе створити не тільки зовнішню красу, але і Ваш внутрішній настрій. Наша спеціалізація - дизайн інтер’єрів, архітектурне проектування, ландшафтний та технічний дизайн, а також ми надаємо комплекс послуг.',
-  title: 'mood',
-  subtitle: 'реалізуй свої мрії',
-  telephoneBlock: {
-    title: 'Зателефонуйте нам',
-    telephoneHref: '+380972577591',
-    telephone: '+38 097 257 75 91',
-  },
-  stepsList: [
-    {
-      imgUrl: Call,
-      description: 'ЗАТЕЛЕФОНУЙТЕ НАМ АБО ЗАЛИШІТЬ СВОЇ КОНТАКТИ',
-    },
-    {
-      imgUrl: Dreams,
-      description: 'РОЗКАЖІТЬ НАМ СВОЇ МРІЇ, ІДЕЇ ТА ФАНАТАЗІЇ',
-    },
-    {
-      imgUrl: Enjoy,
-      description: 'НАСОЛОДЖУЙТЕСЬ РЕЗУЛЬТАТОМ',
-    },
-  ],
-};
+interface PortfolioPageProps {
+  data: {
+    h1: string;
+    title: string;
+    subtitle: string;
+    telephoneBlock: {
+      title: string;
+      telephoneHref: string;
+      telephone: string;
+    };
+    stepsList: [
+      {
+        imgUrl: string;
+        description: string;
+      },
+    ];
+    column_1_img: string;
+    column_2_img: string;
+    column_3_img: string;
+    column_4_img: string;
+  };
+}
 
-const PortfolioPage: FC = () => {
+const PortfolioPage: FC<PortfolioPageProps> = ({ data }) => {
   const stepsListRef = useRef(null);
 
   const handleResize = () => {
@@ -60,10 +54,10 @@ const PortfolioPage: FC = () => {
       <H1>{data.h1}</H1>
       <HeroBlock title={data.title} subtitle={data.subtitle}>
         <FlexContainer>
-          <ColumnOne />
-          <ColumnTwo />
-          <ColumnThree />
-          <ColumnFour />
+          <ColumnOne columnImg={data.column_1_img} />
+          <ColumnTwo columnImg={data.column_2_img} />
+          <ColumnThree columnImg={data.column_3_img} />
+          <ColumnFour columnImg={data.column_4_img} />
         </FlexContainer>
       </HeroBlock>
       <StepsContainer>

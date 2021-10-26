@@ -1,30 +1,31 @@
 import React, { FC } from 'react';
 import HeroBlock from '@comp/HeroBlock';
-import backgroundImg from './assets/static/contacts.jpg';
 import { H1, TelephoneBlock, Telephone, Title } from './Contacts.styles';
 
-const data = {
-  h1: 'Mood - наші дизайнери з готовністю дадуть відповіді на всі Ваші питання.',
-  title: 'контакти',
-  subtitle: 'давайте обговоримо Ваш дизайн',
-  blackout: 0.1,
-  // backgroundImg: backgroundImg,
-  backgroundImg: '',
-  telephoneBlock: {
-    title: 'Зателефонуйте нам',
-    telephoneHref: '+380972577591',
-    telephone: '+38 097 257 75 91',
-  },
-};
+interface ContactsPageProps {
+  data: {
+    h1: string;
+    title: string;
+    subtitle: string;
+    blackout: number;
+    backgroundImg: string;
+    telephoneBlock: {
+      title: string;
+      telephoneHref: string;
+      telephone: string;
+    };
+  };
+}
 
-const ContactsPage: FC = () => {
+const ContactsPage: FC<ContactsPageProps> = ({ data }) => {
+  const { h1, title, subtitle, backgroundImg, blackout, telephoneBlock } = data;
   return (
     <>
-      <H1>{data.h1}</H1>
-      <HeroBlock title={data.title} subtitle={data.subtitle} backgroundImg={data.backgroundImg} blackout={data.blackout} />
+      <H1>{h1}</H1>
+      <HeroBlock title={title} subtitle={subtitle} backgroundImg={backgroundImg} blackout={blackout} />
       <TelephoneBlock>
-        <Title>{data.telephoneBlock.title}</Title>
-        <Telephone href={`tel: ${data.telephoneBlock.telephoneHref}`}>{data.telephoneBlock.telephone}</Telephone>
+        <Title>{telephoneBlock.title}</Title>
+        <Telephone href={`tel: ${telephoneBlock.telephoneHref}`}>{telephoneBlock.telephone}</Telephone>
       </TelephoneBlock>
     </>
   );

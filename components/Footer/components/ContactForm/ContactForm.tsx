@@ -1,6 +1,5 @@
 import React, { FC, useRef, useEffect, useState } from 'react';
 import { Form, Name, Phone, Submit, InputBox, Title, Subtitle, Heading, InputContainer } from './ContactForm.styles';
-// import Catalog from '../../../../public/static/MOOD_price.pdf';
 
 interface ContactFormProps {
   title?: string;

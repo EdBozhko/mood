@@ -12,10 +12,6 @@ export const SliderBox = styled.section`
   .fullpage-wrapper {
     width: 100%;
   }
-  @media ${screen.lp} {
-    padding-left: 100px;
-    box-sizing: border-box;
-  }
 `;
 export const SliderItem = styled.a<SliderItemProps>`
   display: flex;
@@ -113,6 +109,8 @@ export const TitleContainer = styled.div`
   :hover {
     -webkit-mask-image: linear-gradient(-75deg, rgba(0, 0, 0, 0.6) 30%, #fff 50%, rgba(0, 0, 0, 0.6) 70%);
     -webkit-mask-size: 200%;
+    mask-image: linear-gradient(-75deg, rgba(0, 0, 0, 0.6) 30%, #fff 50%, rgba(0, 0, 0, 0.6) 70%);
+    mask-size: 200%;
     animation: shine 1.2s infinite;
   }
 

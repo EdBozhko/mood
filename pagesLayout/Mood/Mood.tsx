@@ -1,102 +1,111 @@
-import React, { FC, useEffect, useRef } from 'react';
+import React, { FC, ReactNode, useEffect } from 'react';
 import Image from 'next/image';
 import { H1, SliderBox, SliderItem, HeadingContainer, Heading, Title, Subtitle, TitleContainer } from './Mood.styles';
-import Slide_1 from './assets/static/slide_1.jpg';
-import Slide_2 from './assets/static/slide_2.png';
-import Slide_3 from './assets/static/slide_3.jpg';
-import Slide_4 from './assets/static/slide_4.jpg';
-import Slide_5 from './assets/static/slide_5.png';
-import Slide_6 from './assets/static/slide_6.png';
 import Footer from './components/Footer/Footer';
 import Link from 'next/link';
 import ReactFullpage from '@fullpage/react-fullpage';
 
-const data = {
-  h1: 'Mood - студія дизайну, яка допоможе створити не тільки зовнішню красу, але і Ваш внутрішній настрій. Наша спеціалізація - дизайн інтер’єрів, архітектурне проектування, ландшафтний та технічний дизайн, а також ми надаємо комплекс послуг.',
-  slides: [
-    { link: '/stages', src: Slide_1, alt: 'послуга - дизайн інтер’єру', blackout: 0.5, heading: 'choose your design', title: 'дизайн інтер’єру', subtitle: 'дізнатись більше' },
-    { link: '/stages', src: Slide_2, alt: 'послуга - архітектурне проектування', blackout: 0.45, heading: 'choose your design', title: 'архітектурне проектування', subtitle: 'дізнатись більше' },
-    { link: '/stages', src: Slide_3, alt: 'послуга - ландшафтний дизайн', blackout: 0.5, heading: 'choose your design', title: 'ландшафтний дизайн', subtitle: 'дізнатись більше' },
-    { link: '/stages', src: Slide_4, alt: 'послуга - технічний дизайн', blackout: 0.4, heading: 'choose your design', title: 'технічний дизайн', subtitle: 'дізнатись більше' },
-    { link: '/stages', src: Slide_5, alt: 'послуга - комплекс послуг', blackout: 0.35, heading: 'choose your design', title: 'комплекс послуг', subtitle: 'дізнатись більше' },
-    { link: '/stages', src: Slide_6, alt: 'дизайн, який створює настрій', blackout: 0.2, heading: '', title: 'дизайн, який створює настрій', subtitle: 'замовити проект' },
-  ],
-};
-const MoodPage: FC = () => {
-  const sliderRef = useRef();
+interface MoodPageProps {
+  data: {
+    slides: [{ link: string; src: ReactNode; alt: string; blackout: number; heading: string; title: string; subtitle: string }];
+    h1: string;
+    footer: {
+      title: string;
+      subtitle: string;
+      infoBox: {
+        address: string;
+        addressHref: string;
+        workingHours: string;
+      };
+    };
+  };
+}
+
+const MoodPage: FC<MoodPageProps> = ({ data }) => {
+  const { slides, h1, footer } = data;
   useEffect(() => {
-    const navigation = document.querySelector('#fp-nav ul');
-    const slider = document.createElement('div');
+    setTimeout(() => {
+      const navigation = document.querySelector('#fp-nav ul');
+      const slider = document.createElement('div');
 
-    const svg = document.createElement('svg');
+      const svg = document.createElement('svg');
 
-    const defs = document.createElementNS('http://www.w3.org/2000/svg', 'defs');
-    svg.appendChild(defs);
-    const filter = document.createElementNS('http://www.w3.org/2000/svg', 'filter');
-    filter.setAttribute('id', 'fancy-goo');
-    defs.appendChild(filter);
-    slider.setAttribute('id', 'slider');
+      const defs = document.createElementNS('http://www.w3.org/2000/svg', 'defs');
+      svg.appendChild(defs);
+      const filter = document.createElementNS('http://www.w3.org/2000/svg', 'filter');
+      filter.setAttribute('id', 'fancy-goo');
+      defs.appendChild(filter);
+      slider.setAttribute('id', 'slider');
 
-    const feGaussianBlur = document.createElementNS('http://www.w3.org/2000/svg', 'feGaussianBlur');
-    feGaussianBlur.setAttribute('in', 'SourceGraphic');
-    feGaussianBlur.setAttribute('stdDeviation', '5');
-    feGaussianBlur.setAttribute('result', 'blur');
-    filter.appendChild(feGaussianBlur);
+      const feGaussianBlur = document.createElementNS('http://www.w3.org/2000/svg', 'feGaussianBlur');
+      feGaussianBlur.setAttribute('in', 'SourceGraphic');
+      feGaussianBlur.setAttribute('stdDeviation', '5');
+      feGaussianBlur.setAttribute('result', 'blur');
+      filter.appendChild(feGaussianBlur);
 
-    const feColorMatrix = document.createElementNS('http://www.w3.org/2000/svg', 'feColorMatrix');
-    feColorMatrix.setAttribute('in', 'blur');
-    feColorMatrix.setAttribute('type', 'matrix');
-    feColorMatrix.setAttribute('values', '1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 28 -10');
-    feColorMatrix.setAttribute('result', 'goo');
-    filter.appendChild(feColorMatrix);
+      const feColorMatrix = document.createElementNS('http://www.w3.org/2000/svg', 'feColorMatrix');
+      feColorMatrix.setAttribute('in', 'blur');
+      feColorMatrix.setAttribute('type', 'matrix');
+      feColorMatrix.setAttribute('values', '1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 28 -10');
+      feColorMatrix.setAttribute('result', 'goo');
+      filter.appendChild(feColorMatrix);
 
-    const feComposite = document.createElementNS('http://www.w3.org/2000/svg', 'feComposite');
-    feComposite.setAttribute('in', 'SourceGraphic');
-    feComposite.setAttribute('in2', 'goo');
-    feComposite.setAttribute('operator', 'atop');
-    filter.appendChild(feComposite);
+      const feComposite = document.createElementNS('http://www.w3.org/2000/svg', 'feComposite');
+      feComposite.setAttribute('in', 'SourceGraphic');
+      feComposite.setAttribute('in2', 'goo');
+      feComposite.setAttribute('operator', 'atop');
+      filter.appendChild(feComposite);
 
-    navigation.appendChild(slider);
-    navigation.appendChild(svg);
+      navigation.appendChild(slider);
+      navigation.appendChild(svg);
 
-    const links = document.querySelectorAll(' #fp-nav ul li a');
+      const links = document.querySelectorAll(' #fp-nav ul li a');
 
-    function callback(mutationsList) {
-      mutationsList.forEach((mutation) => {
-        if (mutation.attributeName === 'class') {
-          const target = mutationsList[1];
-          const position = {
-            top: target.target.offsetParent.offsetTop,
-            left: target.target.offsetParent.offsetLeft,
-          };
-          slider.style.marginTop = '0px';
-          slider.style.top = `${position.top}px`;
-        }
+      function callback(mutationsList) {
+        mutationsList.forEach((mutation) => {
+          if (mutation.attributeName === 'class') {
+            const target = mutationsList[1];
+            const position = {
+              top: target.target.offsetParent.offsetTop,
+              left: target.target.offsetParent.offsetLeft,
+            };
+            slider.style.marginTop = '0px';
+            slider.style.top = `${position.top}px`;
+          }
+        });
+      }
+
+      const mutationObserver = new MutationObserver(callback);
+      links.forEach((link) => {
+        mutationObserver.observe(link, { attributes: true });
       });
-    }
+    }, 100);
 
-    const mutationObserver = new MutationObserver(callback);
-    links.forEach((link) => {
-      mutationObserver.observe(link, { attributes: true });
-    });
+    return () => {
+      setTimeout(() => {
+        window.scrollTo({
+          top: 0,
+          // @ts-ignore
+          behavior: 'instant',
+        });
+      }, 300);
+    };
   }, []);
 
-  if (!data.slides.length) {
+  if (!slides.length) {
     return null;
   }
-
   return (
     <>
-      <H1>{data.h1}</H1>
+      <H1>{h1}</H1>
       <SliderBox>
         <ReactFullpage
-          ref={sliderRef}
           navigation
           render={(comp) => (
             <ReactFullpage.Wrapper>
-              {data.slides.map((slide, index) => {
+              {slides.map((slide, index) => {
                 return (
-                  <div key={index} className="section" onClick={() => comp.fullpageApi.moveTo(1, 0)}>
+                  <div key={index} className="section" onClick={() => comp.fullpageApi.silentMoveTo(1, 0)}>
                     <Link href={slide.link}>
                       <SliderItem blackout={slide.blackout}>
                         <HeadingContainer>
@@ -113,7 +122,7 @@ const MoodPage: FC = () => {
                 );
               })}
               <div className="section">
-                <Footer title="Завантажити прайс" subtitle="Заповніть форму, щоб почати завантаження прайсу" />
+                <Footer title={footer.title} subtitle={footer.subtitle} infoBox={footer.infoBox} />
               </div>
             </ReactFullpage.Wrapper>
           )}

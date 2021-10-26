@@ -42,8 +42,8 @@ body {
     text-rendering: optimizeLegibility;
     overflow-x: hidden;
     @media ${screen.lp} {
-      padding-left: 100px;
-box-sizing: border-box;
+      padding-left: 100px !important;
+      box-sizing: border-box;
     }
 }
 
@@ -91,6 +91,7 @@ select:-webkit-autofill,
 select:-webkit-autofill:hover,
 select:-webkit-autofill:focus {
   -webkit-box-shadow: 0 0 0px 1000px #ffffff inset !important;
+  box-shadow: 0 0 0px 1000px #ffffff inset !important;
 }
 
 /* carousel navigation dots styles */

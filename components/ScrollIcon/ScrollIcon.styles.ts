@@ -8,28 +8,27 @@ interface IconContainerProps {
 
 const Mouse = keyframes`
 
-
-0% {
-          transform: translateY(0) ;
-        }
-        40% {
-          transform: translateY(-50%);
-        }
-        100% {
-          transform: translateY(0);
-        }
+  0% {
+    transform: translateY(0) translateX(-50%);
+  }
+  40% {
+    transform: translateY(-50%) translateX(-50%);
+  }
+  100% {
+    transform: translateY(0) translateX(-50%);
+  }
 
 `;
 const Scroll = keyframes`
-        0% {
-          opacity: 1;
-          transform: translateX(-50%);
+  0% {
+    opacity: 1;
+    transform: translateX(-50%);
 
-        }
-        100% {
-          opacity: 0;
-          transform: translateY(46px)  translateX(-50%);
-        }
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(46px) translateX(-50%);
+  }
 
 `;
 
@@ -75,7 +74,7 @@ export const IconContainer = styled.div<IconContainerProps>`
   height: 70px;
   position: absolute;
   z-index: 2;
-  right: 45%;
+  right: calc(50% - 100px);
   top: 90vh;
   display: ${({ isScroll }) => (isScroll ? 'none' : 'flex')};
 `;

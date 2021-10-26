@@ -6,21 +6,17 @@ import Marker from '../../public/MarkerS.png';
 import InfoBox from './components/InfoBox';
 import { config } from 'config';
 
-interface FooterProps {
-  page?: boolean;
+export interface FooterDataProps {
   title?: string;
   subtitle?: string;
+  infoBox?: {
+    address?: string;
+    addressHref?: string;
+    workingHours?: string;
+  };
 }
 
-const data = {
-  infoBox: {
-    address: `м.Ужгород,</br>пл.Петефі 29,</br>3 поверх`,
-    addressHref: 'https://goo.gl/maps/TJFAXFpw2t9zpTgh7',
-    workingHours: `Пн-Пт: 10.00-18.00</br>Сб: за домовленістю</br>Нд: вихідний`,
-  },
-};
-
-const Footer: FC<FooterProps> = ({ title, subtitle }) => {
+const Footer: FC<FooterDataProps> = ({ title, subtitle, infoBox }) => {
   const googlemap = useRef(null);
   useEffect(() => {
     const loader = new Loader({
@@ -133,7 +129,7 @@ const Footer: FC<FooterProps> = ({ title, subtitle }) => {
       <FooterStyled>
         <ContactForm title={title} subtitle={subtitle} />
         <MapBox>
-          <InfoBox address={data.infoBox.address} addressHref={data.infoBox.addressHref} workingHours={data.infoBox.workingHours} />
+          <InfoBox address={infoBox.address} addressHref={infoBox.addressHref} workingHours={infoBox.workingHours} />
           <div id="map" ref={googlemap}></div>
         </MapBox>
       </FooterStyled>

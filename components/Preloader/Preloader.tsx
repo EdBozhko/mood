@@ -1,11 +1,21 @@
-import React, { FC, useState } from 'react';
+import React, { FC } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { preloaderInit } from '../../store/ducks/preloader';
 import { PreloaderContainer, LogoContainer } from './Preloader.styles';
 
+interface FooterDataProps {
+  preloader: {
+    preloaderAnimationEnd: boolean;
+  };
+}
+
 const Preloader: FC = () => {
-  const [animationEnd, setAnimationEnd] = useState(false);
+  const animationEnd = useSelector((state: FooterDataProps) => state.preloader.preloaderAnimationEnd);
+  const dispatch = useDispatch();
+
   const handleAnimationEnd = () => {
     setTimeout(() => {
-      setAnimationEnd(true);
+      dispatch(preloaderInit({ preloaderAnimationEnd: true }));
     }, 3000);
   };
   return (

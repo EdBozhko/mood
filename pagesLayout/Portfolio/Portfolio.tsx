@@ -1,4 +1,4 @@
-import React, { FC, useState, useRef, useEffect } from 'react';
+import React, { FC, useState, useRef, useEffect, ReactNode } from 'react';
 import HeroBlock from '@comp/HeroBlock';
 import Image from 'next/image';
 import {
@@ -17,54 +17,69 @@ import {
   Line,
   H1,
 } from './Portfolio.styles';
-import { Bathroom, Bedroom1, Bedroom2, DressingRoom, Facade, Guest1, Guest2, Hallway, Kitchen, Office, Patio } from './components/Gallery';
 import CardParallax from '@comp/CardParallax';
 
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import Slider from 'react-slick';
 
-const data = {
-  h1: 'Mood - наше портфоліо. Знайдіть своє натхнення поміж наших робіт.',
-  title: 'портфоліо',
-  subtitle: 'знайдіть своє натхнення',
-  galleries: [Bathroom, Bedroom1, Bedroom2, DressingRoom, Facade, Guest1, Guest2, Hallway, Kitchen, Office, Patio],
-};
-
-const PortfolioPage: FC = () => {
-  const [isSliderOpen, setIsSliderOpen] = useState(false);
-
-  const [activeGallery, setActiveGallery] = useState(0);
-  const onClickHandler = (index) => {
-    setActiveGallery(index);
-    setIsSliderOpen(true);
+interface PortfolioPageProps {
+  data: {
+    h1: string;
+    title: string;
+    subtitle: string;
+    galleries: [
+      {
+        title: string;
+        description: string;
+        gallery: [
+          {
+            src: string;
+            alt: string;
+            width: number;
+            height: number;
+          },
+        ];
+      },
+    ];
+    column_1_img: string;
+    column_2_img: string;
+    column_3_img: string;
+    column_4_img: string;
   };
-  const galleriesList = data.galleries.map((gallery, index) => {
-    return (
-      <GalleriesItem key={index} onClick={() => onClickHandler(index)}>
-        <CardParallax cardImg={gallery.gallery[0].src} cardTitle={gallery.title} cardDescription={gallery.description} key={index} />
-      </GalleriesItem>
-    );
-  });
+}
+
+const PortfolioPage: FC<PortfolioPageProps> = ({ data }) => {
+  const { galleries, h1, title, subtitle, column_1_img, column_2_img, column_3_img, column_4_img } = data;
   const sliderRef = useRef(null);
   const sliderContainerRef = useRef(null);
   const [sliderContainer, setSliderContainer] = useState({
     width: 0,
     height: 0,
   });
+  const [isSliderOpen, setIsSliderOpen] = useState(false);
+
+  const [activeGallery, setActiveGallery] = useState(0);
+  const onClickHandler = (index) => {
+    setActiveGallery(index);
+    sliderRef.current.slickGoTo(0);
+    setIsSliderOpen(true);
+  };
+  const galleriesList = galleries.map((gallery, index) => {
+    return (
+      <GalleriesItem key={index} onClick={() => onClickHandler(index)} onMouseEnter={() => setActiveGallery(index)} onTouchStart={() => setActiveGallery(index)}>
+        <CardParallax cardImg={gallery.gallery[0].src} cardTitle={gallery.title} cardDescription={gallery.description} key={index} />
+      </GalleriesItem>
+    );
+  });
+
   useEffect(() => {
     setSliderContainer({
       width: sliderContainerRef.current.clientWidth,
       height: sliderContainerRef.current.clientHeight,
     });
   }, []);
-  const Slides = data.galleries[activeGallery].gallery.map((image, index) => {
-    return (
-      <SliderItem key={index}>
-        <Image objectPosition="center" width={(sliderContainer.height / image.height) * image.width} height={sliderContainer.height} key={index} src={image.src} alt={image.alt} />
-      </SliderItem>
-    );
-  });
+
   const settings = {
     className: 'slider variable-width',
     dots: true,
@@ -81,13 +96,13 @@ const PortfolioPage: FC = () => {
   };
   return (
     <>
-      <H1>{data.h1}</H1>
-      <HeroBlock title={data.title} subtitle={data.subtitle}>
+      <H1>{h1}</H1>
+      <HeroBlock title={title} subtitle={subtitle}>
         <FlexContainer>
-          <ColumnOne />
-          <ColumnTwo />
-          <ColumnThree />
-          <ColumnFour />
+          <ColumnOne columnImg={column_1_img} />
+          <ColumnTwo columnImg={column_2_img} />
+          <ColumnThree columnImg={column_3_img} />
+          <ColumnFour columnImg={column_4_img} />
         </FlexContainer>
       </HeroBlock>
       <SliderWrapper isSliderOpen={isSliderOpen}>
@@ -96,7 +111,15 @@ const PortfolioPage: FC = () => {
         </CloseButton>
         <SliderContainer ref={sliderContainerRef}>
           <Slider ref={sliderRef} {...settings}>
-            {Slides}
+            {galleries.length > 0
+              ? galleries[activeGallery].gallery.map((image, index) => {
+                  return (
+                    <SliderItem key={index}>
+                      <Image objectPosition="center" width={(sliderContainer.height / image.height) * image.width} height={sliderContainer.height} key={index} src={image.src} alt={image.alt} />
+                    </SliderItem>
+                  );
+                })
+              : null}
           </Slider>
         </SliderContainer>
       </SliderWrapper>

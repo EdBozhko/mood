@@ -1,17 +1,41 @@
-import React, { FC } from 'react';
+import React, { FC, useEffect, ReactNode } from 'react';
 import MoodPage from 'pagesLayout/Mood';
 import Seo from '@comp/Seo';
+import { useDispatch, useSelector } from 'react-redux';
 
-const data = {
-  title: 'MOOD | Професійна студія дизайну. Дизайн інтер’єру, архітектурне проектування, ландшафтний дизайн, технічний дизайн',
-  metaDescriptionContent: 'MOOD - професійна студія дизайну та архітектурного проектування, яка втілить Ваші найсміливіші фантазії',
-};
+interface MoodDataProps {
+  mood: {
+    seo: {
+      title: string;
+      metaDescriptionContent: string;
+    };
+    page: {
+      slides: [{ link: string; src: ReactNode; alt: string; blackout: number; heading: string; title: string; subtitle: string }];
+      h1: string;
+      footer: {
+        title: string;
+        subtitle: string;
+        infoBox: {
+          address: string;
+          addressHref: string;
+          workingHours: string;
+        };
+      };
+    };
+  };
+}
 
 const Mood: FC = () => {
+  const dispatch = useDispatch();
+  const data = useSelector((state: MoodDataProps) => state.mood);
+  useEffect(() => {
+    dispatch({ type: 'LOCAL_API', payload: 'mood_page', types: 'MOOD_INIT' });
+  }, []);
+  const { seo, page } = data;
   return (
     <>
-      <Seo title={data.title} metaDescriptionContent={data.metaDescriptionContent} />
-      <MoodPage />
+      <Seo title={seo.title} metaDescriptionContent={seo.metaDescriptionContent} />
+      <MoodPage data={page} />
     </>
   );
 };
