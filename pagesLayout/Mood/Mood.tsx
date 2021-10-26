@@ -1,4 +1,4 @@
-import React, { FC, useEffect, useRef } from 'react';
+import React, { FC, ReactNode, useEffect, useRef, useCallback, useState } from 'react';
 import Image from 'next/image';
 import { H1, SliderBox, SliderItem, HeadingContainer, Heading, Title, Subtitle, TitleContainer } from './Mood.styles';
 import Footer from './components/Footer/Footer';
@@ -6,12 +6,23 @@ import Link from 'next/link';
 import ReactFullpage from '@fullpage/react-fullpage';
 
 interface MoodPageProps {
-  data?: {};
+  data?: {
+    slides: [{ link: string; src: ReactNode; alt: string; blackout: number; heading: string; title: string; subtitle: string }];
+    h1: string;
+    footer: {
+      title: string;
+      subtitle: string;
+      infoBox: {
+        address: string;
+        addressHref: string;
+        workingHours: string;
+      };
+    };
+  };
 }
 
 const MoodPage: FC<MoodPageProps> = ({ data }) => {
   const { slides, h1, footer } = data;
-  const sliderRef = useRef();
   useEffect(() => {
     setTimeout(() => {
       const navigation = document.querySelector('#fp-nav ul');
@@ -69,24 +80,31 @@ const MoodPage: FC<MoodPageProps> = ({ data }) => {
         mutationObserver.observe(link, { attributes: true });
       });
     }, 100);
+
+    return () => {
+      setTimeout(() => {
+        window.scrollTo({
+          top: 0,
+          behavior: 'instant',
+        });
+      }, 300);
+    };
   }, []);
 
   if (!slides.length) {
     return null;
   }
-
   return (
     <>
       <H1>{h1}</H1>
       <SliderBox>
         <ReactFullpage
-          ref={sliderRef}
           navigation
           render={(comp) => (
             <ReactFullpage.Wrapper>
               {slides.map((slide, index) => {
                 return (
-                  <div key={index} className="section" onClick={() => comp.fullpageApi.moveTo(1, 0)}>
+                  <div key={index} className="section" onClick={() => comp.fullpageApi.silentMoveTo(1, 0)}>
                     <Link href={slide.link}>
                       <SliderItem blackout={slide.blackout}>
                         <HeadingContainer>
